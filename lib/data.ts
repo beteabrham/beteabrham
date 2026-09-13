@@ -44,7 +44,7 @@ export interface ProjectItem {
   description: string;
   tags: string[];
   liveUrl: string;
-  githubUrl: string;
+  githubUrl?: string;
   image: string;
   aspect?: string;
   featured?: boolean;
@@ -61,8 +61,8 @@ export interface ExplorationItem {
 export const personalInfo = {
   name: "Bete Abrham",
   brandName: "Growth & Design by Bete.",
-  role: "Digital Marketing Strategist, UI Designer & Frontend Developer",
-  focus: "SEO/SEM, UI/UX Design & Frontend Development",
+  role: "Digital Marketing Strategist & UI/UX Designer",
+  focus: "SEO/SEM, UI/UX Design & Growth Strategy",
   education: "CPU Business and Information Technology College",
   location: "Addis Ababa, Ethiopia",
   timezone: "GMT+3",
@@ -78,17 +78,17 @@ export const personalInfo = {
     part4: ".",
   },
   shortBio:
-    "Digital Marketing Strategist, UI/UX Designer, and Frontend Developer. Combining search engine optimization (SEO/SEM), Figma design, and frontend code to build products that captivate users and accelerate business growth.",
+    "Digital Marketing Strategist and UI/UX Designer. Combining search engine optimization (SEO/SEM), Figma design, and data-driven marketing to build brand experiences that captivate users and accelerate business growth.",
   aboutNarrative: [
-    "I'm Bete Abrham, a Digital Marketing Specialist, Graphic & UI Designer, and Frontend Developer based in Addis Ababa, Ethiopia. I combine creative design, user-centric interfaces, and data-driven marketing to help businesses grow their online presence.",
-    "I specialize in multi-channel digital marketing operations — spanning Search Engine Optimization (SEO), Search Engine Marketing (SEM), and targeted ad campaigns — while crafting refined brand visuals and web interfaces using Figma, Adobe Photoshop, and modern frontend tools.",
-    "I'm studying Business Administration and Management at CPU Business and Information Technology College, giving me a strong strategic foundation in aligning design and engineering with measurable commercial impact.",
+    "I'm Bete Abrham, a Digital Marketing Specialist and Graphic & UI Designer based in Addis Ababa, Ethiopia. I combine creative design, user-centric interfaces, and data-driven marketing to help businesses grow their online presence.",
+    "I specialize in multi-channel digital marketing operations — spanning Search Engine Optimization (SEO), Search Engine Marketing (SEM), and targeted ad campaigns — while crafting refined brand visuals and user interface designs using Figma, Adobe Photoshop, and Canva.",
+    "I'm studying Business Administration and Management at CPU Business and Information Technology College, giving me a strong strategic foundation in aligning design and business operations with measurable commercial impact.",
   ],
   stats: [
     { value: "2+", label: "Years Experience", description: "Driving digital growth & design" },
     { value: "100%", label: "Google Certified", description: "Fundamentals of Digital Marketing" },
     { value: "HP LIFE", label: "Certified Strategist", description: "Advanced Social Media Strategy" },
-    { value: "Full-Cycle", label: "Creative & Code", description: "From Figma to live SEO campaigns" },
+    { value: "Full-Cycle", label: "Creative & Strategy", description: "From Figma to live SEO campaigns" },
   ] as StatItem[],
   experiences: [
     {
@@ -100,22 +100,22 @@ export const personalInfo = {
       highlights: [
         "Architected and executed high-ROI Search Engine Marketing (SEM) and SEO strategies to maximize discoverability and organic conversions.",
         "Managed end-to-end content distribution, performance advertising, and analytics reporting across multiple digital touchpoints.",
-        "Collaborated cross-functionally with creative and engineering teams to optimize landing page performance and lead-generation funnels.",
+        "Collaborated cross-functionally with creative and technical teams to optimize landing page performance and lead-generation funnels.",
       ],
       skills: ["SEO", "SEM", "Online Advertising", "Social Media Marketing", "Content Strategy"],
     },
     {
       company: "Chiraro Digital Solutions",
-      role: "Graphic & UI Designer / Frontend Developer",
+      role: "Graphic & UI Designer",
       period: "Aug 2024 — Oct 2025",
       type: "Full-time · Hybrid",
       location: "Addis Ababa, Ethiopia",
       highlights: [
         "Designed comprehensive digital branding materials, visual identities, and marketing creatives utilizing Adobe Photoshop and Canva.",
-        "Built responsive user interfaces (UI) and prototypes in Figma, translating wireframes into functional, clean frontend web experiences.",
+        "Built responsive user interfaces (UI) and prototypes in Figma, translating wireframes into functional, clean digital product experiences.",
         "Ensured visual consistency across digital advertising assets, client social media channels, and web properties.",
       ],
-      skills: ["Figma", "UI Design", "Front-End Development", "Adobe Photoshop", "Canva"],
+      skills: ["Figma", "UI Design", "UX Prototyping", "Adobe Photoshop", "Canva"],
     },
   ] as ExperienceItem[],
   educationDetails: {
@@ -144,7 +144,7 @@ export const personalInfo = {
   socialLinks: [
     { name: "LinkedIn", url: "https://www.linkedin.com/in/bete-a-526899434", icon: "Linkedin" },
     { name: "Instagram", url: "https://www.instagram.com/bethe_abrham/", icon: "Instagram" },
-    { name: "GitHub", url: "https://github.com", icon: "Github" },
+    { name: "GitHub", url: "https://github.com/beteabrham", icon: "Github" },
     { name: "Email", url: "mailto:beteabrham07@gmail.com", icon: "Mail" },
   ],
 };
@@ -155,7 +155,6 @@ export const navItems: NavItem[] = [
   { label: "Experience", href: "#experience" },
   { label: "Services", href: "#services" },
   { label: "Work", href: "#work" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export const servicesData: ServiceItem[] = [
@@ -169,13 +168,13 @@ export const servicesData: ServiceItem[] = [
     skills: ["Search Engine Optimization (SEO)", "Search Engine Marketing (SEM)", "Keyword Research", "Google Analytics"],
   },
   {
-    id: "ui-frontend",
+    id: "ui-ux-design",
     number: "002",
-    title: "UI/UX & Frontend Development",
+    title: "UI/UX Design & Prototyping",
     tagline: "Clarity, hierarchy, and interaction.",
     description:
-      "Intuitive digital product interfaces created in Figma and translated into fast, responsive, and engaging frontend web code that guides user action.",
-    skills: ["Figma", "User Interface (UI) Design", "Front-End Development", "Responsive Layouts"],
+      "Intuitive digital product interfaces created in Figma, focused on clear visual hierarchy, user journey mapping, and interactive prototypes that guide user action.",
+    skills: ["Figma", "User Interface (UI) Design", "UX Prototyping", "Design Systems", "Wireframing"],
   },
   {
     id: "graphic-design",
@@ -207,7 +206,6 @@ export const projectsData: ProjectItem[] = [
       "Comprehensive SEO/SEM campaign architecture, keyword clustering, and high-converting landing page experiences engineered for measurable client acquisition.",
     tags: ["SEO", "SEM", "Google Analytics", "Landing Page UI", "Content Strategy"],
     liveUrl: "https://www.linkedin.com/in/bete-a-526899434",
-    githubUrl: "https://github.com",
     image: "/images/project-growth.webp",
     featured: true,
   },
@@ -220,22 +218,20 @@ export const projectsData: ProjectItem[] = [
       "A centralized design system and marketing asset hub built in Figma and Adobe Photoshop, unifying visual identities and accelerating campaign turnarounds.",
     tags: ["Figma", "User Interface Design", "Adobe Photoshop", "Canva", "Brand Guidelines"],
     liveUrl: "https://www.linkedin.com/in/bete-a-526899434",
-    githubUrl: "https://github.com",
     image: "/images/project-ui.webp",
     featured: true,
   },
   {
-    id: "pulse-frontend",
-    title: "Responsive Web Experiences",
-    category: "Front-End Web Development",
-    tagline: "Modern, lightweight frontend interfaces optimized for Core Web Vitals",
+    id: "performance-marketing",
+    title: "Multi-Channel Social & Ad Strategy",
+    category: "Performance & Social Marketing",
+    tagline: "HP LIFE & Google certified multi-channel marketing campaigns",
     description:
-      "Sub-second loading web layouts designed with fluid responsiveness, accessibility compliance, and search-engine-friendly semantic markup.",
-    tags: ["Front-End Development", "HTML5/CSS3", "JavaScript", "Responsive Design", "SEO"],
+      "Targeted digital advertising architectures, audience segmentation, high-converting social media creative assets, and cross-channel campaign analytics.",
+    tags: ["Social Media Marketing", "Online Advertising", "Brand Strategy", "Content Marketing", "Canva"],
     liveUrl: "https://www.linkedin.com/in/bete-a-526899434",
-    githubUrl: "https://github.com",
     image: "/images/project-web.webp",
-    featured: false,
+    featured: true,
   },
 ];
 
@@ -271,7 +267,7 @@ export const techStackTicker = [
   "Search Engine Marketing (SEM)",
   "Figma",
   "User Interface (UI) Design",
-  "Front-End Development",
+  "UX Prototyping & Wireframing",
   "Adobe Photoshop",
   "Canva",
   "Social Media Marketing",
@@ -281,7 +277,7 @@ export const techStackTicker = [
   "Affiliate Marketing",
   "Google Fundamentals Certified",
   "HP LIFE Certified",
-  "Next.js & React",
-  "Tailwind CSS",
+  "Design Systems",
+  "Brand Identity Strategy",
   "Business Administration & Strategy",
 ];

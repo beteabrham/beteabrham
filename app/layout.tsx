@@ -15,16 +15,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bete Abrham — Digital Marketing Strategist, UI Designer & Frontend Developer",
+  title: "Bete Abrham — Digital Marketing Strategist & UI/UX Designer",
   description:
-    "Digital Marketing Strategist, UI/UX Designer, and Frontend Developer specializing in SEO/SEM, Figma, and high-converting web applications.",
+    "Digital Marketing Strategist and UI/UX Designer specializing in SEO/SEM, Figma, brand visual systems, and growth marketing.",
   keywords: [
     "Bete Abrham",
     "Digital Marketing Manager",
     "SEO",
     "SEM",
-    "UI Designer",
-    "Frontend Developer",
+    "UI/UX Designer",
+    "Digital Marketing Strategist",
+    "Brand Strategy",
     "Figma",
     "Adobe Photoshop",
     "Addis Ababa",
@@ -35,24 +36,34 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://beteabrham.dev",
-    title: "Bete Abrham — Digital Marketing Strategist, UI Designer & Frontend Developer",
+    title: "Bete Abrham — Digital Marketing Strategist & UI/UX Designer",
     description:
-      "Digital Marketing Strategist, UI/UX Designer, and Frontend Developer specializing in SEO/SEM, Figma, and high-converting web applications.",
+      "Digital Marketing Strategist and UI/UX Designer specializing in SEO/SEM, Figma, brand visual systems, and growth marketing.",
     siteName: "Bete Abrham Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bete Abrham — Digital Marketing Strategist, UI Designer & Frontend Developer",
+    title: "Bete Abrham — Digital Marketing Strategist & UI/UX Designer",
     description:
-      "Digital Marketing Strategist, UI/UX Designer, and Frontend Developer specializing in SEO/SEM, Figma, and high-converting web applications.",
+      "Digital Marketing Strategist and UI/UX Designer specializing in SEO/SEM, Figma, brand visual systems, and growth marketing.",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "32x32" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+  },
+  manifest: "/site.webmanifest",
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
-  ],
+  themeColor: "#09090b",
   width: "device-width",
   initialScale: 1,
 };
@@ -65,32 +76,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} scroll-smooth antialiased`}
+      className={`dark ${geistSans.variable} ${geistMono.variable} scroll-smooth antialiased`}
     >
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var saved = localStorage.getItem('theme');
-                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  if (saved === 'dark' || (!saved && prefersDark)) {
-                    document.documentElement.classList.add('dark');
-                  } else {
-                    document.documentElement.classList.remove('dark');
-                  }
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
-      </head>
-      <body className="min-h-screen bg-[var(--bg-main)] text-[var(--text-main)] font-sans transition-colors duration-200">
+      <body className="min-h-screen bg-[var(--bg-main)] text-[var(--text-main)] font-sans antialiased">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded-md focus:shadow-md dark:focus:bg-zinc-800 dark:focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-zinc-800 focus:text-white focus:rounded-md focus:shadow-md"
         >
           Skip to content
         </a>

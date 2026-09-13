@@ -1,8 +1,8 @@
 # Bete Abrham — Portfolio Website
 
-> **Digital Marketing Strategist, UI/UX Designer & Frontend Developer** based in Addis Ababa, Ethiopia.
+> **Digital Marketing Strategist & UI/UX Designer** based in Addis Ababa, Ethiopia.
 
-A modern, fast, and responsive personal portfolio showcasing digital marketing campaigns, UI design systems, and frontend web applications.
+A modern, fast, and responsive personal portfolio showcasing digital marketing campaigns, SEO/SEM strategies, and UI/UX design systems.
 
 ---
 
@@ -28,7 +28,7 @@ A modern, fast, and responsive personal portfolio showcasing digital marketing c
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/xcpurp/beteabrham.git
+   git clone https://github.com/beteabrham/beteabrham.git
    cd beteabrham
    ```
 
@@ -94,10 +94,10 @@ npm run start
 - **Email**: [beteabrham07@gmail.com](mailto:beteabrham07@gmail.com)
 - **LinkedIn**: [Bete Abrham](https://www.linkedin.com/in/bete-a-526899434)
 - **Instagram**: [@bethe_abrham](https://www.instagram.com/bethe_abrham/)
-- **GitHub**: [@xcpurp](https://github.com/xcpurp)
+- **GitHub**: [@beteabrham](https://github.com/beteabrham)
 
 ---
 
 ## 📄 License
 
-This project is private and created by [Bete Abrham](https://github.com/xcpurp). All rights reserved.
+This project is private and created by [Bete Abrham](https://github.com/beteabrham). All rights reserved.

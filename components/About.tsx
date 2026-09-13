@@ -34,10 +34,10 @@ export default function About() {
           {/* Quick Pillars / Principles */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
             {[
-              "Performance-first architecture",
-              "Accessible (a11y) & WCAG ready",
-              "Maintainable, modular codebases",
+              "Data-driven SEO & SEM strategy",
+              "High-converting funnel optimization",
               "Pixel-precision UI design systems",
+              "Brand storytelling & visual identity",
             ].map((pillar, index) => (
               <div
                 key={index}

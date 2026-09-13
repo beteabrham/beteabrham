@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { projectsData, explorationsData } from "@/lib/data";
-import { ExternalLink, Sparkles, Laptop, ShieldCheck } from "lucide-react";
+import { ExternalLink, Sparkles, Laptop } from "lucide-react";
 
 function GithubIcon({ className = "w-3 h-3" }: { className?: string }) {
   return (
@@ -37,9 +37,8 @@ export default function Projects() {
           </p>
           <div className="flex flex-col justify-between space-y-3">
             <p className="text-sm sm:text-base leading-relaxed text-neutral-500 dark:text-neutral-400">
-              A selection of engineering projects across full-stack web platforms,
-              design systems, and developer infrastructure — built for speed,
-              resilience, and user delight.
+              A selection of work across digital marketing campaigns, search
+              engine optimization (SEO/SEM), visual identity systems, and UI/UX designs.
             </p>
             <div className="flex items-center gap-2 pt-1">
               <button
@@ -78,10 +77,6 @@ export default function Projects() {
                 {/* Subtle Mockup Header */}
                 <div className="flex items-center justify-between text-[11px] font-mono text-neutral-400 border-b border-neutral-200/50 dark:border-neutral-800 pb-2">
                   <span className="truncate max-w-[140px]">{project.title.toLowerCase()}.app</span>
-                  <span className="flex items-center gap-1 text-emerald-500">
-                    <ShieldCheck className="w-3 h-3" />
-                    v2.4
-                  </span>
                 </div>
 
                 {/* Central Visual Presentation */}
@@ -131,19 +126,21 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-xs font-medium text-neutral-800 hover:text-black dark:text-neutral-200 dark:hover:text-white transition-colors"
                   >
-                    <span>Live Demo</span>
+                    <span>View Project</span>
                     <ExternalLink className="w-3 h-3" />
                   </a>
 
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs font-medium text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white transition-colors"
-                  >
-                    <GithubIcon className="w-3 h-3" />
-                    <span>Source</span>
-                  </a>
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs font-medium text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white transition-colors"
+                    >
+                      <GithubIcon className="w-3 h-3" />
+                      <span>Source</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -179,14 +176,14 @@ export default function Projects() {
                   Explorations &amp; Lab
                 </h3>
                 <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">
-                  Creative experiments in interactive graphics, UI physics, WebGL
-                  shaders, and experimental frontend mechanics.
+                  Creative studies in visual ad design, social media marketing,
+                  UI prototypes, and search engine optimization experiments.
                 </p>
               </div>
 
               <div className="pt-4 mt-2 border-t border-neutral-100 dark:border-neutral-800/60">
                 <span className="text-xs font-medium text-neutral-400">
-                  Updated frequently on GitHub
+                  Continuously updated with new case studies
                 </span>
               </div>
             </div>

@@ -5,31 +5,21 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    color-scheme: dark;
   }
 
   body {
-    background-color: var(--bg-main, #ffffff);
-    color: var(--text-main, #111111);
+    background-color: var(--bg-main, #09090b);
+    color: var(--text-main, #f4f4f5);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Light Theme Defaults (matching arturospatino.com aesthetic) */
+  /* Permanent Dark Theme Palette */
   :root {
-    --bg-main: #ffffff;
-    --bg-subtle: #f8f8f9;
-    --bg-card: #ffffff;
-    --text-main: #111111;
-    --text-muted: #8e8e93;
-    --text-subtle: #b2b2b2;
-    --border-color: #f0f0f2;
-    --border-subtle: #e5e5ea;
-  }
-
-  /* Dark Theme Palette (sleek dark slate / zinc) */
-  html.dark {
+    color-scheme: dark;
     --bg-main: #09090b;
     --bg-subtle: #121215;
     --bg-card: #18181b;
@@ -86,9 +76,6 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #d4d4d8;
-  border-radius: 9999px;
-}
-html.dark ::-webkit-scrollbar-thumb {
   background: #3f3f46;
+  border-radius: 9999px;
 }

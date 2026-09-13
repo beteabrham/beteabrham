@@ -22,11 +22,6 @@ export default function Footer() {
           <span className="hidden sm:inline">{personalInfo.location}</span>
         </div>
 
-        {/* Center: Tech Note */}
-        <div className="text-center text-[11px] text-neutral-400 dark:text-neutral-500">
-          Crafted with Next.js, TypeScript &amp; Tailwind CSS
-        </div>
-
         {/* Right: Back to top button */}
         <div>
           <button

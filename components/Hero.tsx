@@ -14,16 +14,6 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column: Split-Tone Editorial Typography */}
           <div className="flex flex-col justify-center space-y-6 md:space-y-8">
-            {/* Status Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/50 w-fit">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span className="text-xs font-medium text-neutral-600 dark:text-neutral-400">
-                {personalInfo.status}
-              </span>
-            </div>
 
             {/* Split-Tone Main Headline */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-normal leading-[1.1] tracking-[-1.5px] sm:tracking-[-2px] md:tracking-[-2.5px]">
@@ -77,12 +67,7 @@ export default function Hero() {
                 sizes="(min-width: 1024px) 512px, 100vw"
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                <div className="text-white">
-                  <p className="text-sm font-medium">{personalInfo.name}</p>
-                  <p className="text-xs text-neutral-300">{personalInfo.role}</p>
-                </div>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             </div>
           </div>
         </div>

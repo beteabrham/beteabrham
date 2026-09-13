@@ -33,59 +33,89 @@ export default function Experience() {
               <span>Experience</span>
             </div>
 
-            <div className="space-y-8">
-              {personalInfo.experiences.map((exp, idx) => (
-                <div
-                  key={idx}
-                  className="group relative pl-6 border-l border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors"
-                >
-                  {/* Timeline dot */}
-                  <span className="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-neutral-400 dark:bg-neutral-600 group-hover:bg-neutral-900 dark:group-hover:bg-white transition-colors" />
+            {/* Experience list with timeline connecting both roles under the sub-headlines */}
+            <div className="relative pl-7">
+              <div>
+                {personalInfo.experiences.map((exp, idx) => (
+                  <div key={idx} className="group">
+                    {/* Header: Headline & Sub-headline */}
+                    <div className="relative mb-2">
+                      {/* Connecting Line segment in Experience 2 (runs through headline & sub-headline down to Dot 2) */}
+                      {idx === 1 && (
+                        <div className="absolute -left-7 top-0 bottom-0 w-4 flex justify-center pointer-events-none">
+                          <span className="w-0.5 h-full bg-neutral-200 dark:bg-neutral-800 rounded-b-full transition-colors" />
+                        </div>
+                      )}
 
-                  <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
-                    <h3 className="text-base font-semibold text-neutral-950 dark:text-white tracking-tight">
-                      {exp.role}
-                    </h3>
-                    <span className="text-xs font-mono text-neutral-500 dark:text-neutral-400 flex items-center gap-1">
-                      <Calendar className="w-3 h-3" />
-                      {exp.period}
-                    </span>
+                      {/* Headline: Role & Period */}
+                      <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
+                        <h3 className="text-base font-semibold text-neutral-950 dark:text-white tracking-tight">
+                          {exp.role}
+                        </h3>
+                        <span className="text-xs font-mono text-neutral-500 dark:text-neutral-400 flex items-center gap-1">
+                          <Calendar className="w-3 h-3" />
+                          {exp.period}
+                        </span>
+                      </div>
+
+                      {/* Sub-headline: Company, Type, Location */}
+                      <div className="flex items-center gap-2 text-xs text-neutral-600 dark:text-neutral-300 font-medium">
+                        <span className="text-neutral-900 dark:text-neutral-100">{exp.company}</span>
+                        <span>·</span>
+                        <span className="text-neutral-400">{exp.type}</span>
+                        <span>·</span>
+                        <span className="text-neutral-400 flex items-center gap-0.5">
+                          <MapPin className="w-2.5 h-2.5" />
+                          {exp.location}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Content under the sub-headline (holds Dot and connects to next experience) */}
+                    <div className={`relative pt-1 ${idx === 0 ? "pb-8 md:pb-10" : ""}`}>
+                      {/* Timeline Dot & Connecting Line */}
+                      <div className="absolute -left-7 top-0 bottom-0 w-4 flex flex-col items-center pointer-events-none">
+                        {/* Dot container under the sub-headline with separate hover indicator animation */}
+                        <div className="relative flex items-center justify-center h-4 mt-0.5">
+                          {/* Animated radar ripple on hover */}
+                          <span className="absolute w-4 h-4 rounded-full bg-neutral-900/20 dark:bg-white/30 scale-0 group-hover:scale-125 group-hover:animate-ping opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                          {/* Concentric focus halo ring on hover */}
+                          <span className="absolute w-3.5 h-3.5 rounded-full border border-neutral-400 dark:border-neutral-500 scale-0 group-hover:scale-100 transition-all duration-300" />
+                          {/* Core indicator dot */}
+                          <span className="w-2 h-2 rounded-full bg-neutral-400 dark:bg-neutral-600 group-hover:bg-neutral-950 dark:group-hover:bg-white group-hover:scale-125 transition-all duration-300 shrink-0 shadow-xs" />
+                        </div>
+
+                        {/* Connecting line below Dot 1 (only on Experience 1, spans through the gap) */}
+                        {idx === 0 && (
+                          <span className="w-0.5 flex-1 bg-neutral-200 dark:bg-neutral-800 rounded-t-full mt-2 transition-colors" />
+                        )}
+                      </div>
+
+                      <ul className="space-y-1.5 mb-3">
+                        {exp.highlights.map((highlight, hIdx) => (
+                          <li
+                            key={hIdx}
+                            className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed list-disc list-inside"
+                          >
+                            {highlight}
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {exp.skills.map((skill, sIdx) => (
+                          <span
+                            key={sIdx}
+                            className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-
-                  <div className="flex items-center gap-2 text-xs text-neutral-600 dark:text-neutral-300 font-medium mb-3">
-                    <span className="text-neutral-900 dark:text-neutral-100">{exp.company}</span>
-                    <span>·</span>
-                    <span className="text-neutral-400">{exp.type}</span>
-                    <span>·</span>
-                    <span className="text-neutral-400 flex items-center gap-0.5">
-                      <MapPin className="w-2.5 h-2.5" />
-                      {exp.location}
-                    </span>
-                  </div>
-
-                  <ul className="space-y-1.5 mb-3">
-                    {exp.highlights.map((highlight, hIdx) => (
-                      <li
-                        key={hIdx}
-                        className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed list-disc list-inside"
-                      >
-                        {highlight}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="flex flex-wrap gap-1.5 pt-1">
-                    {exp.skills.map((skill, sIdx) => (
-                      <span
-                        key={sIdx}
-                        className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
 

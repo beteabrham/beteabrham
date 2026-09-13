@@ -161,7 +161,7 @@ export default function Contact() {
               </div>
               <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">
                 Available for remote freelance engagements, digital marketing strategy,
-                UI/UX design systems, and frontend development projects.
+                UI/UX design systems, and brand growth campaigns.
               </p>
               <div className="pt-3 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between text-xs text-neutral-400">
                 <span>Location: {personalInfo.location}</span>

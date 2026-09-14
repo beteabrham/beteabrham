@@ -226,7 +226,7 @@ export const projectsData: ProjectItem[] = [
     category: "Brand Identity & Visual Arts",
     tagline: "Commercial logo identities, packaging graphics, and advertising assets",
     description:
-      "Curated collection of 23 commercial design projects for brands including Aye Hiking Tour, Rdvate, Kaff Leather, Pattern 33, Lele Baltena, and Lifelong Learning Library. Click to open the full interactive showcase.",
+      "Curated collection of 22 commercial design projects for brands including Aye Hiking Tour, Rdvate, Kaff Leather, Pattern 33, Lele Baltena, and Lifelong Learning Library. Click to open the full interactive showcase.",
     tags: ["Logo Design", "Ad Campaigns", "Packaging", "Adobe Photoshop", "Canva"],
     liveUrl: "#work",
     image: "/graphics work/0001-1778030199_20210524_064435_0000 (2).png",
@@ -504,17 +504,6 @@ export const graphicsWorkData: GraphicWorkItem[] = [
     tags: ["Editorial Design", "Brochure Layout", "Information Hierarchy", "Print Design"],
     aspect: "landscape",
     year: "2023",
-  },
-  {
-    id: "lele-baltena-pouch-mockup",
-    title: "Lele Baltena — Berbere Pouch Packaging Mockup",
-    category: "Packaging & Banner",
-    client: "Lele Baltena",
-    description: "Realistic 3D matte pouch packaging mockup for Lele Baltena authentic Ethiopian Berbere spice blend, featuring custom typography, Amharic branding, and clay spice bowl styling.",
-    image: "/graphics work/lele-baltena-pouch-mockup.jpg",
-    tags: ["Packaging Design", "3D Mockup", "Food Branding", "Berbere", "Brand Identity"],
-    aspect: "square",
-    year: "2024",
   },
   {
     id: "lele-baltena-brand-suite",

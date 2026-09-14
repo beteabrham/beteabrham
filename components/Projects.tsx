@@ -119,17 +119,17 @@ export default function Projects() {
                         </span>
                       </div>
 
-                      {/* Tile 2: Lele Baltena Berbere Spice Branding (1:1) */}
+                      {/* Tile 2: Lele Baltena Brand Suite (1:1) */}
                       <div
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleOpenShowcase("lele-baltena-pouch-mockup");
+                          handleOpenShowcase("lele-baltena-brand-suite");
                         }}
                         className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile"
                       >
                         <Image
-                          src="/graphics%20work/lele-baltena-pouch-mockup.jpg"
-                          alt="Lele Baltena Berbere Spice Packaging Mockup"
+                          src="/graphics%20work/lele-baltena-brand-suite.jpg"
+                          alt="Lele Baltena Brand Packaging Suite"
                           fill
                           sizes="(max-width: 768px) 50vw, 260px"
                           className="object-cover group-hover/tile:scale-105 transition-transform duration-300"

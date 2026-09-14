@@ -155,6 +155,14 @@ export const personalInfo = {
       skills: ["Social Media Marketing", "Online Advertising", "Brand Strategy"],
       url: "https://www.life-global.org/certificate/d4bd84db-551d-495b-bc77-8738637b9e18",
     },
+    {
+      title: "Graphic Design Masterclass - Learn GREAT Design",
+      issuer: "Udemy",
+      date: "Issued Sep 2026 · 32 Hours",
+      credentialId: "UC-f4fb16b2-4e5a-42e8-91e8-2a381a8a347f",
+      skills: ["Graphic Design", "Typography", "Branding", "Adobe Photoshop"],
+      url: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-f4fb16b2-4e5a-42e8-91e8-2a381a8a347f.pdf",
+    },
   ] as CertificationItem[],
   socialLinks: [
     { name: "LinkedIn", url: "https://www.linkedin.com/in/bete-a-526899434", icon: "Linkedin" },

@@ -123,16 +123,16 @@ export default function Projects() {
                       <div
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleOpenShowcase("lele-baltena-berbere");
+                          handleOpenShowcase("lele-baltena-pouch-mockup");
                         }}
                         className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile"
                       >
                         <Image
-                          src="/graphics%20work/04.png"
-                          alt="Lele Baltena Berbere Spice Branding"
+                          src="/graphics%20work/lele-baltena-pouch-mockup.jpg"
+                          alt="Lele Baltena Berbere Spice Packaging Mockup"
                           fill
                           sizes="(max-width: 768px) 50vw, 260px"
-                          className="object-cover object-right group-hover/tile:scale-105 transition-transform duration-300"
+                          className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
                         />
                         <div className="absolute inset-0 bg-black/15 group-hover/tile:bg-transparent transition-colors" />
                         <span className="absolute bottom-1.5 left-1.5 text-[9px] font-mono font-medium px-1.5 py-0.5 rounded-xs bg-black/75 text-neutral-200 backdrop-blur-md border border-white/10">

@@ -226,7 +226,7 @@ export const projectsData: ProjectItem[] = [
     category: "Brand Identity & Visual Arts",
     tagline: "Commercial logo identities, packaging graphics, and advertising assets",
     description:
-      "Curated collection of 21 commercial design projects for brands including Aye Hiking Tour, Rdvate, Kaff Leather, Pattern 33, Lele Baltena, and Lifelong Learning Library. Click to open the full interactive showcase.",
+      "Curated collection of 23 commercial design projects for brands including Aye Hiking Tour, Rdvate, Kaff Leather, Pattern 33, Lele Baltena, and Lifelong Learning Library. Click to open the full interactive showcase.",
     tags: ["Logo Design", "Ad Campaigns", "Packaging", "Adobe Photoshop", "Canva"],
     liveUrl: "#work",
     image: "/graphics work/0001-1778030199_20210524_064435_0000 (2).png",

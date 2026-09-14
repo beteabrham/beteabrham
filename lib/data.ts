@@ -161,7 +161,7 @@ export const personalInfo = {
       date: "Issued Sep 2026 · 32 Hours",
       credentialId: "UC-f4fb16b2-4e5a-42e8-91e8-2a381a8a347f",
       skills: ["Graphic Design", "Typography", "Branding", "Adobe Photoshop"],
-      url: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-f4fb16b2-4e5a-42e8-91e8-2a381a8a347f.pdf",
+      url: "https://ude.my/UC-f4fb16b2-4e5a-42e8-91e8-2a381a8a347f",
     },
   ] as CertificationItem[],
   socialLinks: [

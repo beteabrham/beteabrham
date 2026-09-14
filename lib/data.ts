@@ -142,7 +142,7 @@ export const personalInfo = {
     {
       title: "Graphic Design Masterclass - Learn GREAT Design",
       issuer: "Udemy",
-      date: "Issued Sep 2026 · 32 Hours",
+      date: "Issued Sep 2026",
       credentialId: "UC-f4fb16b2-4e5a-42e8-91e8-2a381a8a347f",
       skills: ["Graphic Design", "Typography", "Branding", "Adobe Photoshop"],
       url: "https://ude.my/UC-f4fb16b2-4e5a-42e8-91e8-2a381a8a347f",

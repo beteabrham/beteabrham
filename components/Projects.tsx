@@ -43,21 +43,19 @@ export default function Projects() {
             <div className="flex items-center gap-2 pt-1">
               <button
                 onClick={() => setActiveTab("all")}
-                className={`text-xs px-3 py-1 rounded-full transition-colors ${
-                  activeTab === "all"
+                className={`text-xs px-3 py-1 rounded-full transition-colors ${activeTab === "all"
                     ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
                     : "text-neutral-500 hover:text-neutral-900 dark:hover:text-white"
-                }`}
+                  }`}
               >
                 All Projects ({projectsData.length})
               </button>
               <button
                 onClick={() => setActiveTab("featured")}
-                className={`text-xs px-3 py-1 rounded-full transition-colors ${
-                  activeTab === "featured"
+                className={`text-xs px-3 py-1 rounded-full transition-colors ${activeTab === "featured"
                     ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
                     : "text-neutral-500 hover:text-neutral-900 dark:hover:text-white"
-                }`}
+                  }`}
               >
                 Featured
               </button>

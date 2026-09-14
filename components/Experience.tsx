@@ -2,7 +2,7 @@
 
 import React from "react";
 import { personalInfo } from "@/lib/data";
-import { Briefcase, GraduationCap, Award, Calendar, MapPin } from "lucide-react";
+import { Briefcase, GraduationCap, Award, Calendar, MapPin, ExternalLink } from "lucide-react";
 
 export default function Experience() {
   return (
@@ -153,18 +153,25 @@ export default function Experience() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {personalInfo.certifications.map((cert, cIdx) => (
-                <div
+                <a
                   key={cIdx}
-                  className="p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/40 flex flex-col justify-between shadow-2xs"
+                  href={cert.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Verify ${cert.title} issued by ${cert.issuer} (opens in a new tab)`}
+                  className="group p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/40 hover:bg-neutral-50/70 dark:hover:bg-neutral-900/80 flex flex-col justify-between shadow-2xs hover:shadow-md hover:border-neutral-300 dark:hover:border-neutral-700 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] transition-all duration-200 cursor-pointer text-left block"
                 >
                   <div>
                     <div className="flex items-center justify-between text-xs text-neutral-400 mb-1 font-mono">
-                      <span className="font-semibold text-neutral-900 dark:text-neutral-100">
+                      <span className="font-semibold text-neutral-900 dark:text-neutral-100 group-hover:text-black dark:group-hover:text-white transition-colors">
                         {cert.issuer}
                       </span>
-                      <span>Verified</span>
+                      <span className="inline-flex items-center gap-1 text-[11px] text-neutral-500 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-100 transition-colors">
+                        <span>Verified</span>
+                        <ExternalLink className="w-3 h-3 text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </span>
                     </div>
-                    <h5 className="text-xs font-semibold text-neutral-800 dark:text-neutral-200 leading-snug">
+                    <h5 className="text-xs font-semibold text-neutral-800 dark:text-neutral-200 group-hover:text-neutral-950 dark:group-hover:text-white leading-snug transition-colors">
                       {cert.title}
                     </h5>
                     <p className="text-[11px] text-neutral-400 mt-1">{cert.date}</p>
@@ -179,13 +186,13 @@ export default function Experience() {
                     {cert.skills.map((skill, skIdx) => (
                       <span
                         key={skIdx}
-                        className="text-[9px] font-mono px-1.5 py-0.5 rounded-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-500"
+                        className="text-[9px] font-mono px-1.5 py-0.5 rounded-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-500 group-hover:bg-neutral-200/70 dark:group-hover:bg-neutral-800/80 transition-colors"
                       >
                         {skill}
                       </span>
                     ))}
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>

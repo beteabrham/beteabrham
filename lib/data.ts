@@ -34,6 +34,7 @@ export interface CertificationItem {
   date: string;
   credentialId?: string;
   skills: string[];
+  url?: string;
 }
 
 export interface ProjectItem {
@@ -132,13 +133,15 @@ export const personalInfo = {
       date: "Issued Aug 2023 · Expires Aug 2026",
       credentialId: "175820G55",
       skills: ["Content Management", "Email Marketing", "SEO", "Analytics"],
+      url: "https://skillshop.exceedlms.com/student/award/oa32Yn8nenfqCDhL1HCMxLxW",
     },
     {
       title: "Advanced Social Media Strategy Training and Certification",
       issuer: "HP LIFE",
       date: "Issued Nov 2023 · Expires Nov 2026",
-      credentialId: "d4bd84db-661d-495b-bc77-8738637b9a18",
+      credentialId: "d4bd84db-551d-495b-bc77-8738637b9e18",
       skills: ["Social Media Marketing", "Online Advertising", "Brand Strategy"],
+      url: "https://www.life-global.org/certificate/d4bd84db-551d-495b-bc77-8738637b9e18",
     },
   ] as CertificationItem[],
   socialLinks: [

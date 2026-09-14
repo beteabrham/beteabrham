@@ -120,7 +120,7 @@ export const personalInfo = {
     {
       company: "Chiraro Digital Solutions",
       role: "Graphic & UI Designer",
-      period: "Aug 2024 — Oct 2025",
+      period: "Aug 2024 — 2026",
       type: "Full-time · Hybrid",
       location: "Addis Ababa, Ethiopia",
       highlights: [

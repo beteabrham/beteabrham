@@ -59,6 +59,18 @@ export interface ExplorationItem {
   link?: string;
 }
 
+export interface GraphicWorkItem {
+  id: string;
+  title: string;
+  category: "Logo Design" | "Ad Campaign" | "Packaging & Banner" | "Editorial & Print";
+  client: string;
+  description: string;
+  image: string;
+  tags: string[];
+  aspect: "square" | "banner" | "landscape";
+  year?: string;
+}
+
 export const personalInfo = {
   name: "Bete Abrham",
   brandName: "Growth & Design by Bete.",
@@ -283,4 +295,139 @@ export const techStackTicker = [
   "Design Systems",
   "Brand Identity Strategy",
   "Business Administration & Strategy",
+];
+
+export const graphicsWorkData: GraphicWorkItem[] = [
+  {
+    id: "pattern-33-dark",
+    title: "Pattern 33 — Urban Athletic Mark (Dark)",
+    category: "Logo Design",
+    client: "Pattern 33",
+    description: "Custom vector typographic emblem designed for sportswear and urban apparel branding, featuring dynamic split lettering and high-impact streetwear aesthetics.",
+    image: "/graphics work/pattern33-1.jpg",
+    tags: ["Logo Design", "Typography", "Apparel Branding", "Vector Emblem"],
+    aspect: "square",
+    year: "2024",
+  },
+  {
+    id: "pattern-33-light",
+    title: "Pattern 33 — Monochromatic Vector Mark (Light)",
+    category: "Logo Design",
+    client: "Pattern 33",
+    description: "High-contrast inverted variant optimized for light merchandise, apparel tags, embroidery, and digital screen applications.",
+    image: "/graphics work/pattern33-2.jpg",
+    tags: ["Logo Design", "Brand Identity", "Minimalism", "Merchandise"],
+    aspect: "square",
+    year: "2024",
+  },
+  {
+    id: "kaff-leather-badge",
+    title: "Kaff Leather — Vintage Emblem & Crest",
+    category: "Logo Design",
+    client: "Kaff Leather",
+    description: "Heritage-inspired ornamental crest and seal logo crafted for handcrafted Ethiopian genuine leather goods and footwear packaging.",
+    image: "/graphics work/5_20231229_131750_0004.png",
+    tags: ["Logo Design", "Vintage Emblem", "Brand Identity", "Adobe Photoshop"],
+    aspect: "square",
+    year: "2023",
+  },
+  {
+    id: "kaff-ad-code18",
+    title: "Kaff Leather — Tassel Loafer Campaign (Code 18)",
+    category: "Ad Campaign",
+    client: "Kaff Leather",
+    description: "Holiday promotional social media poster highlighting handcrafted black tassel loafers with festive discount pricing and high-converting CTA layout.",
+    image: "/graphics work/10_20240502_215444_0009.png",
+    tags: ["Ad Campaign", "Social Media Marketing", "Product Poster", "E-commerce"],
+    aspect: "square",
+    year: "2024",
+  },
+  {
+    id: "kaff-ad-code23",
+    title: "Kaff Leather — Classic Oxford Campaign (Code 23)",
+    category: "Ad Campaign",
+    client: "Kaff Leather",
+    description: "Commercial ad creative for formal derby and oxford shoes, pairing bold typography with refined studio product lighting and seasonal discount highlights.",
+    image: "/graphics work/12_20240502_215445_0011.png",
+    tags: ["Ad Campaign", "Social Ad", "Commercial Design", "Canva Pro"],
+    aspect: "square",
+    year: "2024",
+  },
+  {
+    id: "kaff-ad-code17",
+    title: "Kaff Leather — Textured Loafer Campaign (Code 17)",
+    category: "Ad Campaign",
+    client: "Kaff Leather",
+    description: "Vibrant social ad spotlighting textured casual slip-ons with call-to-action details, price anchoring, and Easter promotional styling.",
+    image: "/graphics work/13_20240502_215445_0012.png",
+    tags: ["Ad Campaign", "Digital Marketing", "Social Poster", "Adobe Photoshop"],
+    aspect: "square",
+    year: "2024",
+  },
+  {
+    id: "kaff-ad-code20",
+    title: "Kaff Leather — Moccasin Slip-On Campaign (Code 20)",
+    category: "Ad Campaign",
+    client: "Kaff Leather",
+    description: "Product campaign poster for casual suede driving moccasins designed for maximum reach and conversion on Instagram and Telegram feeds.",
+    image: "/graphics work/17_20240502_215448_0016.png",
+    tags: ["Ad Campaign", "Product Photography Layout", "Performance Ads", "Branding"],
+    aspect: "square",
+    year: "2024",
+  },
+  {
+    id: "lifelong-learning-editorial",
+    title: "Lifelong Learning Library — Workshop Editorial & Brochure",
+    category: "Editorial & Print",
+    client: "Lifelong Learning Library PLC / Mald International School",
+    description: "Comprehensive editorial design and informational brochure layout detailing speed reading workshop curricula, scheduling, and fee structures.",
+    image: "/graphics work/1.png",
+    tags: ["Editorial Design", "Brochure Layout", "Information Hierarchy", "Print Design"],
+    aspect: "landscape",
+    year: "2023",
+  },
+  {
+    id: "lele-baltena-berbere",
+    title: "Lele Baltena — Berbere Spice Packaging Banner",
+    category: "Packaging & Banner",
+    client: "Lele Baltena",
+    description: "Vibrant warm-toned food packaging and storefront banner design showcasing authentic Ethiopian berbere chili blend with traditional floral motifs.",
+    image: "/graphics work/04.png",
+    tags: ["Packaging Design", "Food Branding", "Banner Design", "Typography"],
+    aspect: "banner",
+    year: "2024",
+  },
+  {
+    id: "lele-baltena-shiro",
+    title: "Lele Baltena — Shiro Spice Packaging Banner",
+    category: "Packaging & Banner",
+    client: "Lele Baltena",
+    description: "Traditional spice blend banner and label layout emphasizing roasted chickpea flour with clean typography, contact details, and appetizing visuals.",
+    image: "/graphics work/15.png",
+    tags: ["Packaging Design", "Brand Identity", "Storefront Banner", "Adobe Photoshop"],
+    aspect: "banner",
+    year: "2024",
+  },
+  {
+    id: "lele-baltena-bulla",
+    title: "Lele Baltena — Bulla Flour Packaging Banner",
+    category: "Packaging & Banner",
+    client: "Lele Baltena",
+    description: "Cool cyan-blue packaging banner designed for pure enset bulla flour, balancing modern geometric layouts with authentic Ethiopian culinary identity.",
+    image: "/graphics work/17.png",
+    tags: ["Packaging Design", "Visual Identity", "Food Packaging", "Graphic Design"],
+    aspect: "banner",
+    year: "2024",
+  },
+  {
+    id: "lele-baltena-miten-shiro",
+    title: "Lele Baltena — Miten Shiro Packaging Banner",
+    category: "Packaging & Banner",
+    client: "Lele Baltena",
+    description: "Rich emerald green packaging identity and digital banner for spiced miten shiro powder, highlighting product weight and order contact lines.",
+    image: "/graphics work/20.png",
+    tags: ["Packaging Design", "Commercial Banner", "Graphic Design", "Canva & Photoshop"],
+    aspect: "banner",
+    year: "2024",
+  },
 ];

@@ -23,6 +23,7 @@ type CategoryFilter =
   | "All"
   | "Logo Design"
   | "Ad Campaign"
+  | "Digital Marketing"
   | "Packaging & Banner"
   | "Editorial & Print";
 
@@ -30,6 +31,7 @@ const CATEGORIES: CategoryFilter[] = [
   "All",
   "Logo Design",
   "Ad Campaign",
+  "Digital Marketing",
   "Packaging & Banner",
   "Editorial & Print",
 ];

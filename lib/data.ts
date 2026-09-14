@@ -62,7 +62,7 @@ export interface ExplorationItem {
 export interface GraphicWorkItem {
   id: string;
   title: string;
-  category: "Logo Design" | "Ad Campaign" | "Packaging & Banner" | "Editorial & Print";
+  category: "Logo Design" | "Ad Campaign" | "Digital Marketing" | "Packaging & Banner" | "Editorial & Print";
   client: string;
   description: string;
   image: string;
@@ -218,10 +218,10 @@ export const projectsData: ProjectItem[] = [
     category: "Brand Identity & Visual Arts",
     tagline: "Commercial logo identities, packaging graphics, and advertising assets",
     description:
-      "Curated collection of 12 commercial design projects for brands including Kaff Leather, Pattern 33, Lele Baltena, and Lifelong Learning Library. Click to open the full interactive showcase.",
-    tags: ["Logo Design", "Packaging", "Ad Campaigns", "Adobe Photoshop", "Canva"],
+      "Curated collection of 21 commercial design projects for brands including Aye Hiking Tour, Rdvate, Kaff Leather, Pattern 33, Lele Baltena, and Lifelong Learning Library. Click to open the full interactive showcase.",
+    tags: ["Logo Design", "Ad Campaigns", "Packaging", "Adobe Photoshop", "Canva"],
     liveUrl: "#work",
-    image: "/graphics work/5_20231229_131750_0004.png",
+    image: "/graphics work/0001-1778030199_20210524_064435_0000 (2).png",
     featured: true,
   },
   {
@@ -310,6 +310,105 @@ export const techStackTicker = [
 ];
 
 export const graphicsWorkData: GraphicWorkItem[] = [
+  {
+    id: "aye-hiking-ziway",
+    title: "Aye Hiking Tour — Lake Ziway Eco-Adventure Campaign",
+    category: "Ad Campaign",
+    client: "Aye Hiking Tour",
+    description: "High-impact promotional tourism campaign poster for Lake Ziway eco-tours, featuring pelican wildlife compositions, package inclusions, itinerary perks, and booking information.",
+    image: "/graphics work/0001-1778030199_20210524_064435_0000 (2).png",
+    tags: ["Ad Campaign", "Tourism Marketing", "Social Media Poster", "Visual Design"],
+    aspect: "square",
+    year: "2021",
+  },
+  {
+    id: "aye-hiking-dendi",
+    title: "Aye Hiking Tour — Lake Dendi Expedition Poster",
+    category: "Ad Campaign",
+    client: "Aye Hiking Tour",
+    description: "Scenic adventure travel poster for Lake Dendi mountain expeditions, featuring double-crater aerial photography, circular visual badges, and complete package inclusions.",
+    image: "/graphics work/01-30-04.30.21.jpg",
+    tags: ["Ad Campaign", "Travel & Tourism", "Eco-Tour", "Canva & Photoshop"],
+    aspect: "square",
+    year: "2021",
+  },
+  {
+    id: "aye-hiking-wenchi",
+    title: "Aye Hiking Tour — Wenchi Crater Lake Adventure Poster",
+    category: "Ad Campaign",
+    client: "Aye Hiking Tour",
+    description: "Serene nature expedition campaign creative for Wenchi Crater Lake, integrating diamond photo cutouts with lakeside landscapes and departure itinerary logistics.",
+    image: "/graphics work/02-28-03.47.46 (2).jpg",
+    tags: ["Ad Campaign", "Outdoor Tourism", "Promotional Design", "Visual Marketing"],
+    aspect: "square",
+    year: "2021",
+  },
+  {
+    id: "aye-hiking-wenchi-urgency",
+    title: "Aye Hiking Tour — Wenchi Urgency Campaign (One Week Left)",
+    category: "Ad Campaign",
+    client: "Aye Hiking Tour",
+    description: "High-conversion last-call promotional poster for the Wenchi Crater Lake tour, utilizing dynamic diagonal color-blocking and clear urgency messaging to drive bookings.",
+    image: "/graphics work/03-07-03.43.06 (2).jpg",
+    tags: ["Ad Campaign", "Social Media Marketing", "Performance Ads", "CTA Strategy"],
+    aspect: "square",
+    year: "2021",
+  },
+  {
+    id: "rdvate-logo",
+    title: "Rdvate — Minimalist Brand Logo & Search Identity",
+    category: "Logo Design",
+    client: "Rdvate",
+    description: "Monogram logo emblem and minimalist brand identity for digital solutions agency Rdvate, incorporating search discovery cues and fluid organic contours.",
+    image: "/graphics work/5upscaled.png",
+    tags: ["Logo Design", "Brand Identity", "Minimalism", "Vector Emblem"],
+    aspect: "square",
+    year: "2024",
+  },
+  {
+    id: "rdvate-web-dev",
+    title: "Rdvate — Web Design & Development Agency Creative",
+    category: "Digital Marketing",
+    client: "Rdvate",
+    description: "High-resolution isometric digital agency ad creative showcasing modern responsive web engineering, SEO performance optimization, and interactive UX services.",
+    image: "/graphics work/1upscaled.png",
+    tags: ["Digital Marketing", "Agency Creative", "Isometric Art", "Web Design"],
+    aspect: "square",
+    year: "2024",
+  },
+  {
+    id: "rdvate-brand-dev",
+    title: "Rdvate — Brand Development Creative Poster",
+    category: "Digital Marketing",
+    client: "Rdvate",
+    description: "Clean modern isometric promotional creative for brand identity architecture, corporate logo design, and strategic visual positioning services.",
+    image: "/graphics work/2upscaled.png",
+    tags: ["Brand Identity", "Digital Marketing", "Isometric Design", "Tech Agency"],
+    aspect: "square",
+    year: "2024",
+  },
+  {
+    id: "rdvate-marketing-strategy",
+    title: "Rdvate — Marketing Strategy & Consulting Creative",
+    category: "Digital Marketing",
+    client: "Rdvate",
+    description: "Vibrant vector marketing creative highlighting data analytics dashboards, audience insights, and strategic business consulting for ROI growth.",
+    image: "/graphics work/3upscaled.png",
+    tags: ["Digital Marketing", "Analytics Strategy", "Social Media", "Consulting"],
+    aspect: "square",
+    year: "2024",
+  },
+  {
+    id: "rdvate-digital-advertising",
+    title: "Rdvate — Digital Advertising & Marketing Campaign",
+    category: "Digital Marketing",
+    client: "Rdvate",
+    description: "Multichannel digital advertising campaign poster illustrating megaphone reach, targeted social media funnels, and performance marketing workflows.",
+    image: "/graphics work/4upscaled.png",
+    tags: ["Digital Marketing", "Online Advertising", "Social Media Marketing", "Campaign Design"],
+    aspect: "square",
+    year: "2024",
+  },
   {
     id: "pattern-33-dark",
     title: "Pattern 33 — Urban Athletic Mark (Dark)",

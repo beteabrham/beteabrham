@@ -119,20 +119,20 @@ export default function Projects() {
                         </span>
                       </div>
 
-                      {/* Tile 2: Kaff Leather Crest Logo (1:1) */}
+                      {/* Tile 2: Lele Baltena Berbere Spice Branding (1:1) */}
                       <div
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleOpenShowcase("kaff-leather-badge");
+                          handleOpenShowcase("lele-baltena-berbere");
                         }}
                         className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile"
                       >
                         <Image
-                          src="/graphics%20work/5_20231229_131750_0004.png"
-                          alt="Kaff Leather Logo"
+                          src="/graphics%20work/04.png"
+                          alt="Lele Baltena Berbere Spice Branding"
                           fill
                           sizes="(max-width: 768px) 50vw, 260px"
-                          className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
+                          className="object-cover object-right group-hover/tile:scale-105 transition-transform duration-300"
                         />
                         <div className="absolute inset-0 bg-black/15 group-hover/tile:bg-transparent transition-colors" />
                         <span className="absolute bottom-1.5 left-1.5 text-[9px] font-mono font-medium px-1.5 py-0.5 rounded-xs bg-black/75 text-neutral-200 backdrop-blur-md border border-white/10">
@@ -140,17 +140,17 @@ export default function Projects() {
                         </span>
                       </div>
 
-                      {/* Tile 3: Kaff Leather Shoe Campaign Ad (1:1) */}
+                      {/* Tile 3: Aye Hiking Tour Ad Campaign (1:1) */}
                       <div
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleOpenShowcase("kaff-ad-code18");
+                          handleOpenShowcase("aye-hiking-ziway");
                         }}
                         className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile"
                       >
                         <Image
-                          src="/graphics%20work/10_20240502_215444_0009.png"
-                          alt="Kaff Leather Shoe Ad"
+                          src="/graphics%20work/0001-1778030199_20210524_064435_0000%20(2).png"
+                          alt="Aye Hiking Tour Ad Campaign"
                           fill
                           sizes="(max-width: 768px) 50vw, 260px"
                           className="object-cover group-hover/tile:scale-105 transition-transform duration-300"

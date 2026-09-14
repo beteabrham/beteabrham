@@ -180,19 +180,17 @@ export default function GraphicsShowcaseModal({
                   setSelectedCategory(cat);
                   setCurrentIndex(0);
                 }}
-                className={`px-3 py-1 rounded-full text-xs font-medium transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 cursor-pointer ${
-                  isSelected
+                className={`px-3 py-1 rounded-full text-xs font-medium transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 cursor-pointer ${isSelected
                     ? "bg-white text-neutral-950 font-semibold shadow-xs"
                     : "text-neutral-400 hover:text-white hover:bg-neutral-800/70"
-                }`}
+                  }`}
               >
                 <span>{cat}</span>
                 <span
-                  className={`text-[10px] font-mono rounded-full px-1.5 py-0.2 ${
-                    isSelected
+                  className={`text-[10px] font-mono rounded-full px-1.5 py-0.2 ${isSelected
                       ? "bg-neutral-900 text-white"
                       : "bg-neutral-800 text-neutral-400"
-                  }`}
+                    }`}
                 >
                   {count}
                 </span>
@@ -209,13 +207,12 @@ export default function GraphicsShowcaseModal({
           {/* Active Image Stage with Aspect Ratio Preservation */}
           <div className="relative w-full h-full max-h-[50vh] sm:max-h-[55vh] flex items-center justify-center">
             <div
-              className={`relative max-w-full max-h-full transition-all duration-300 flex items-center justify-center rounded-xl overflow-hidden border border-neutral-800/80 bg-neutral-900/40 shadow-2xl ${
-                activeItem.aspect === "banner"
+              className={`relative max-w-full max-h-full transition-all duration-300 flex items-center justify-center rounded-xl overflow-hidden border border-neutral-800/80 bg-neutral-900/40 shadow-2xl ${activeItem.aspect === "banner"
                   ? "w-full max-w-3xl aspect-[16/5] sm:aspect-[18/5]"
                   : activeItem.aspect === "landscape"
-                  ? "w-full max-w-2xl aspect-[4/3]"
-                  : "w-full max-w-md aspect-square"
-              }`}
+                    ? "w-full max-w-2xl aspect-[4/3]"
+                    : "w-full max-w-md aspect-square"
+                }`}
             >
               <Image
                 src={encodeURI(activeItem.image)}
@@ -304,17 +301,15 @@ export default function GraphicsShowcaseModal({
                 <button
                   key={item.id}
                   onClick={() => setCurrentIndex(idx)}
-                  className={`group relative h-12 rounded-md overflow-hidden border transition-all shrink-0 focus:outline-hidden cursor-pointer ${
-                    item.aspect === "banner"
+                  className={`group relative h-12 rounded-md overflow-hidden border transition-all shrink-0 focus:outline-hidden cursor-pointer ${item.aspect === "banner"
                       ? "w-24"
                       : item.aspect === "landscape"
-                      ? "w-16"
-                      : "w-12"
-                  } ${
-                    isCurrent
+                        ? "w-16"
+                        : "w-12"
+                    } ${isCurrent
                       ? "border-white ring-2 ring-white/30 shadow-md scale-105"
                       : "border-neutral-800 hover:border-neutral-500 opacity-60 hover:opacity-100"
-                  }`}
+                    }`}
                   aria-label={`Select ${item.title}`}
                 >
                   <Image

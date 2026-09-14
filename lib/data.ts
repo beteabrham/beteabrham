@@ -107,7 +107,7 @@ export const personalInfo = {
     {
       company: "Chiraro Digital Solutions",
       role: "Digital Marketing Manager",
-      period: "Aug 2024 — Sep 2025",
+      period: "Aug 2024 — 2026",
       type: "Full-time · Hybrid",
       location: "Addis Ababa, Ethiopia",
       highlights: [

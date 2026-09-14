@@ -142,7 +142,7 @@ export const personalInfo = {
     {
       title: "Fundamentals of Digital Marketing",
       issuer: "Google",
-      date: "Issued Aug 2023 · Expires Aug 2026",
+      date: "Issued Aug 2023 · Expires Aug 2036",
       credentialId: "175820G55",
       skills: ["Content Management", "Email Marketing", "SEO", "Analytics"],
       url: "https://skillshop.exceedlms.com/student/award/oa32Yn8nenfqCDhL1HCMxLxW",
@@ -150,7 +150,7 @@ export const personalInfo = {
     {
       title: "Advanced Social Media Strategy Training and Certification",
       issuer: "HP LIFE",
-      date: "Issued Nov 2023 · Expires Nov 2026",
+      date: "Issued Nov 2023 · Expires Nov 2036",
       credentialId: "d4bd84db-551d-495b-bc77-8738637b9e18",
       skills: ["Social Media Marketing", "Online Advertising", "Brand Strategy"],
       url: "https://www.life-global.org/certificate/d4bd84db-551d-495b-bc77-8738637b9e18",
@@ -212,6 +212,18 @@ export const servicesData: ServiceItem[] = [
 ];
 
 export const projectsData: ProjectItem[] = [
+  {
+    id: "graphics-design-logos",
+    title: "Graphic Design & Logo Designs",
+    category: "Brand Identity & Visual Arts",
+    tagline: "Commercial logo identities, packaging graphics, and advertising assets",
+    description:
+      "Curated collection of 12 commercial design projects for brands including Kaff Leather, Pattern 33, Lele Baltena, and Lifelong Learning Library. Click to open the full interactive showcase.",
+    tags: ["Logo Design", "Packaging", "Ad Campaigns", "Adobe Photoshop", "Canva"],
+    liveUrl: "#work",
+    image: "/graphics work/5_20231229_131750_0004.png",
+    featured: true,
+  },
   {
     id: "growth-engine",
     title: "Search & Digital Growth Engine",

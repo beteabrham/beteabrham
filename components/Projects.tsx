@@ -61,9 +61,9 @@ export default function Projects() {
             <div className="flex items-center gap-2 pt-1">
               <button
                 onClick={() => setActiveTab("all")}
-                className={`text-xs px-3 py-1 rounded-full transition-colors cursor-pointer ${
+                className={`text-xs px-3.5 py-1 rounded-full transition-colors cursor-pointer ${
                   activeTab === "all"
-                    ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
+                    ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 golden-shimmer-btn shadow-xs"
                     : "text-neutral-500 hover:text-neutral-900 dark:hover:text-white"
                 }`}
               >
@@ -71,9 +71,9 @@ export default function Projects() {
               </button>
               <button
                 onClick={() => setActiveTab("featured")}
-                className={`text-xs px-3 py-1 rounded-full transition-colors cursor-pointer ${
+                className={`text-xs px-3.5 py-1 rounded-full transition-colors cursor-pointer ${
                   activeTab === "featured"
-                    ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
+                    ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 golden-shimmer-btn shadow-xs"
                     : "text-neutral-500 hover:text-neutral-900 dark:hover:text-white"
                 }`}
               >
@@ -92,7 +92,7 @@ export default function Projects() {
                 <div
                   key={project.id}
                   onClick={() => handleOpenShowcase()}
-                  className="group relative flex flex-col justify-between border border-neutral-200/90 dark:border-neutral-800 hover:border-amber-500/50 dark:hover:border-amber-500/50 rounded-xl p-5 bg-white dark:bg-neutral-900/40 hover:bg-neutral-50 dark:hover:bg-neutral-900/70 transition-all duration-300 shadow-xs cursor-pointer ring-1 ring-amber-500/10 hover:shadow-lg"
+                  className="group relative flex flex-col justify-between border border-neutral-200/90 dark:border-neutral-800 rounded-xl p-5 bg-white dark:bg-neutral-900/40 hover:bg-neutral-50 dark:hover:bg-neutral-900/70 transition-all duration-300 shadow-xs cursor-pointer ring-1 ring-amber-500/10 hover:shadow-lg golden-shimmer-container"
                 >
                   {/* Visual Preview Container: 4-Quadrant Design Showcase Grid */}
                   <div className="aspect-[4/3] rounded-lg bg-neutral-950 border border-neutral-800/80 overflow-hidden relative mb-4 group-hover:border-neutral-700 transition-colors">
@@ -240,7 +240,7 @@ export default function Projects() {
             return (
               <div
                 key={project.id}
-                className="group flex flex-col justify-between border border-neutral-200/90 dark:border-neutral-800 rounded-xl p-5 bg-white dark:bg-neutral-900/40 hover:border-neutral-400 dark:hover:border-neutral-600 transition-all duration-300 shadow-xs"
+                className="group flex flex-col justify-between border border-neutral-200/90 dark:border-neutral-800 rounded-xl p-5 bg-white dark:bg-neutral-900/40 hover:border-neutral-400 dark:hover:border-neutral-600 transition-all duration-300 shadow-xs golden-shimmer-container"
               >
                 {/* Project Visual Preview Container */}
                 <div className="aspect-[4/3] rounded-lg bg-neutral-100 dark:bg-neutral-950 border border-neutral-200/60 dark:border-neutral-800/80 overflow-hidden relative mb-4 p-4 flex flex-col justify-between group-hover:shadow-xs transition-shadow">

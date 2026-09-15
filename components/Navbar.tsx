@@ -63,7 +63,7 @@ export default function Navbar() {
             {/* Let's Talk CTA */}
             <Link
               href="#contact"
-              className="inline-flex items-center gap-1.5 text-xs font-medium px-3.5 py-1.5 rounded-full bg-white text-neutral-900 hover:bg-neutral-100 transition-all shadow-xs"
+              className="inline-flex items-center gap-1.5 text-xs font-medium px-3.5 py-1.5 rounded-full bg-white text-neutral-900 golden-shimmer-btn shadow-xs"
             >
               <span>Get in touch</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -100,7 +100,7 @@ export default function Navbar() {
                 <Link
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full flex items-center justify-center gap-1.5 text-xs font-medium py-2 rounded-lg bg-white text-neutral-900 hover:bg-neutral-100 transition-colors"
+                  className="w-full flex items-center justify-center gap-1.5 text-xs font-medium py-2 rounded-lg bg-white text-neutral-900 golden-shimmer-btn shadow-xs"
                 >
                   <span>Get in touch</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />

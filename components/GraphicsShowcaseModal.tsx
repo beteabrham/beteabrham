@@ -181,7 +181,7 @@ export default function GraphicsShowcaseModal({
                   setCurrentIndex(0);
                 }}
                 className={`px-3 py-1 rounded-full text-xs font-medium transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 cursor-pointer ${isSelected
-                  ? "bg-white text-neutral-950 font-semibold shadow-xs"
+                  ? "bg-white text-neutral-950 font-semibold shadow-xs golden-shimmer-btn"
                   : "text-neutral-400 hover:text-white hover:bg-neutral-800/70"
                   }`}
               >
@@ -207,7 +207,7 @@ export default function GraphicsShowcaseModal({
           {/* Active Image Stage with Aspect Ratio Preservation */}
           <div className="relative w-full h-full max-h-[50vh] sm:max-h-[55vh] flex items-center justify-center">
             <div
-              className={`relative max-w-full max-h-full transition-all duration-300 flex items-center justify-center rounded-xl overflow-hidden border border-neutral-800/80 bg-neutral-900/40 shadow-2xl ${activeItem.aspect === "banner"
+              className={`relative max-w-full max-h-full transition-all duration-300 flex items-center justify-center rounded-xl overflow-hidden border border-neutral-800/80 bg-neutral-900/40 shadow-2xl golden-shimmer-container ${activeItem.aspect === "banner"
                 ? "w-full max-w-3xl aspect-[16/5] sm:aspect-[18/5]"
                 : activeItem.aspect === "landscape"
                   ? "w-full max-w-2xl aspect-[4/3]"

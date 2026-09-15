@@ -40,7 +40,7 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <Link
                 href="#work"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-neutral-900 text-white dark:bg-white dark:text-neutral-950 text-sm font-medium hover:opacity-90 transition-opacity"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-neutral-900 text-white dark:bg-white dark:text-neutral-950 text-sm font-medium golden-shimmer-btn shadow-xs"
               >
                 <span>Explore Work</span>
                 <ArrowDown className="w-4 h-4" />
@@ -58,7 +58,7 @@ export default function Hero() {
 
           {/* Right Column: Editorial Portrait (Arturo Spatino Signature Feature) */}
           <div className="relative">
-            <div className="aspect-[3/4] md:aspect-square relative overflow-hidden rounded-2xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900 shadow-xs group">
+            <div className="aspect-[3/4] md:aspect-square relative overflow-hidden rounded-2xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900 shadow-xs group golden-shimmer-container">
               <Image
                 src={personalInfo.heroImage || "/bete.png"}
                 alt="Bete Abrham portrait"

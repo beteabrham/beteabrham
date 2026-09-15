@@ -94,7 +94,7 @@ export default function Contact() {
             <button
               onClick={handleCopyEmail}
               aria-label="Copy email address"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-xs font-medium text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors cursor-pointer shadow-2xs"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-xs font-medium text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors cursor-pointer shadow-2xs golden-shimmer-btn"
             >
               {copied ? (
                 <>
@@ -133,7 +133,7 @@ export default function Contact() {
                   title={social.name}
                   className="group relative flex flex-col items-center gap-2"
                 >
-                  <div className="w-12 h-12 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 flex items-center justify-center text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white hover:border-neutral-400 dark:hover:border-neutral-600 hover:scale-110 transition-all duration-200 shadow-2xs">
+                  <div className="w-12 h-12 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 flex items-center justify-center text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white hover:border-neutral-400 dark:hover:border-neutral-600 hover:scale-110 transition-all duration-200 shadow-2xs golden-shimmer-container">
                     <SocialIcon
                       name={social.name}
                       className="w-5 h-5 transition-transform duration-200 group-hover:scale-110"
@@ -149,7 +149,7 @@ export default function Contact() {
 
           <div className="flex flex-col justify-between space-y-6">
             {/* Availability & Location Card */}
-            <div className="p-5 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-white dark:bg-neutral-950 shadow-2xs space-y-4">
+            <div className="p-5 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-white dark:bg-neutral-950 shadow-2xs space-y-4 golden-shimmer-container">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-medium text-neutral-900 dark:text-white">
                   Current Availability
@@ -170,7 +170,7 @@ export default function Contact() {
             </div>
 
             {/* Direct Inquiries Note */}
-            <div className="p-5 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-white/70 dark:bg-neutral-950/60 shadow-2xs">
+            <div className="p-5 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-white/70 dark:bg-neutral-950/60 shadow-2xs golden-shimmer-container">
               <h4 className="text-xs font-semibold text-neutral-900 dark:text-white uppercase tracking-wider mb-1">
                 Direct Inquiries
               </h4>

@@ -22,7 +22,7 @@ export default function Skills() {
           {servicesData.map((service) => (
             <div
               key={service.id}
-              className="group flex flex-col justify-between border border-neutral-200 dark:border-neutral-800 rounded-xl p-6 bg-white dark:bg-neutral-900/40 hover:border-neutral-400 dark:hover:border-neutral-600 transition-all duration-300 min-h-[340px] shadow-xs"
+              className="group flex flex-col justify-between border border-neutral-200 dark:border-neutral-800 rounded-xl p-6 bg-white dark:bg-neutral-900/40 hover:border-neutral-400 dark:hover:border-neutral-600 transition-all duration-300 min-h-[340px] shadow-xs golden-shimmer-container"
             >
               {/* Top Row: Index */}
               <div className="flex items-center justify-between">

@@ -58,7 +58,7 @@ export default function Hero() {
 
           {/* Right Column: Editorial Portrait (Arturo Spatino Signature Feature) */}
           <div className="relative">
-            <div className="aspect-[3/4] md:aspect-square relative overflow-hidden rounded-2xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900 shadow-xs group golden-shimmer-container">
+            <div className="aspect-[3/4] md:aspect-square relative overflow-hidden rounded-2xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900 shadow-xs group">
               <Image
                 src={personalInfo.heroImage || "/bete.png"}
                 alt="Bete Abrham portrait"

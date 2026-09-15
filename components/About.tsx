@@ -51,21 +51,43 @@ export default function About() {
 
           {/* Key Metrics / Stats Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-neutral-200/60 dark:border-neutral-800/60">
-            {personalInfo.stats.map((stat, index) => (
-              <div key={index} className="flex flex-col">
-                <span className="text-2xl sm:text-3xl font-medium tracking-tight text-neutral-950 dark:text-white font-mono">
-                  {stat.value}
-                </span>
-                <span className="text-xs font-medium text-neutral-800 dark:text-neutral-200 mt-1">
-                  {stat.label}
-                </span>
-                {stat.description && (
-                  <span className="text-[11px] text-neutral-400 dark:text-neutral-500 mt-0.5 leading-tight">
-                    {stat.description}
+            {personalInfo.stats.map((stat, index) => {
+              const content = (
+                <div className="flex flex-col group">
+                  <div className="flex items-center gap-1">
+                    <span className="text-2xl sm:text-3xl font-medium tracking-tight text-neutral-950 dark:text-white font-mono group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors">
+                      {stat.value}
+                    </span>
+                    {stat.url && (
+                      <ArrowUpRight className="w-3.5 h-3.5 text-neutral-400 dark:text-neutral-500 group-hover:text-neutral-900 dark:group-hover:text-white opacity-0 group-hover:opacity-100 transition-all -translate-y-0.5 shrink-0" />
+                    )}
+                  </div>
+                  <span className="text-xs font-medium text-neutral-800 dark:text-neutral-200 mt-1">
+                    {stat.label}
                   </span>
-                )}
-              </div>
-            ))}
+                  {stat.description && (
+                    <span className="text-[11px] text-neutral-400 dark:text-neutral-500 mt-0.5 leading-tight">
+                      {stat.description}
+                    </span>
+                  )}
+                </div>
+              );
+
+              return stat.url ? (
+                <a
+                  key={index}
+                  href={stat.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 rounded-sm block"
+                  title={`View ${stat.label} (${stat.value}) verification`}
+                >
+                  {content}
+                </a>
+              ) : (
+                <div key={index}>{content}</div>
+              );
+            })}
           </div>
 
           {/* Resume & CTA Links */}

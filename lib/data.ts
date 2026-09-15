@@ -7,6 +7,7 @@ export interface StatItem {
   value: string;
   label: string;
   description?: string;
+  url?: string;
 }
 
 export interface ServiceItem {
@@ -98,10 +99,29 @@ export const personalInfo = {
     "I'm studying Business Administration and Management at CPU Business and Information Technology College, giving me a strong strategic foundation in aligning design and business operations with measurable commercial impact.",
   ],
   stats: [
-    { value: "2+", label: "Years Experience", description: "Driving digital growth & design" },
-    { value: "100%", label: "Google Certified", description: "Fundamentals of Digital Marketing" },
-    { value: "HP LIFE", label: "Certified Strategist", description: "Advanced Social Media Strategy" },
-    { value: "Full-Cycle", label: "Creative & Strategy", description: "From Figma to live SEO campaigns" },
+    {
+      value: "2+",
+      label: "Years Experience",
+      description: "Driving digital growth & design",
+    },
+    {
+      value: "Udemy",
+      label: "Certified Designer",
+      description: "Graphic Design Masterclass",
+      url: "https://ude.my/UC-f4fb16b2-4e5a-42e8-91e8-2a381a8a347f",
+    },
+    {
+      value: "Google",
+      label: "Certified Marketer",
+      description: "Fundamentals of Digital Marketing",
+      url: "https://skillshop.exceedlms.com/student/award/oa32Yn8nenfqCDhL1HCMxLxW",
+    },
+    {
+      value: "HP LIFE",
+      label: "Certified Strategist",
+      description: "Advanced Social Media Strategy",
+      url: "https://www.life-global.org/certificate/d4bd84db-551d-495b-bc77-8738637b9e18",
+    },
   ] as StatItem[],
   experiences: [
     {

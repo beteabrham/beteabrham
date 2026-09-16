@@ -214,6 +214,38 @@ export const servicesData: ServiceItem[] = [
     description:
       "Data-backed search engine optimization and targeted pay-per-click search campaigns that increase organic ranking, domain visibility, and qualified leads.",
     skills: ["Search Engine Optimization (SEO)", "Search Engine Marketing (SEM)", "Keyword Research", "Google Analytics"],
+    overview:
+      "Designed to position your business directly in front of buyers actively searching for your solutions. I combine rigorous technical search audits, high-intent keyword clustering, and data-driven Google Ads (SEM) PPC management to build an enduring inbound customer engine.",
+    deliverables: [
+      "Full On-Page & Technical Search Audits (Crawlability, Core Web Vitals, Schema)",
+      "High-Intent Keyword Research & Competitor Opportunity Mapping",
+      "Google Ads (SEM) Campaign Setup, Search Ad Copywriting & Bid Management",
+      "Google Analytics 4 (GA4) & Google Search Console Event Tracking",
+      "CTR-Focused Metadata Optimization & Search Snippet Refinement",
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Audit & Opportunity Mapping",
+        desc: "Analyze indexing roadblocks, technical health, search volume, and high-converting keyword queries across your industry niche.",
+      },
+      {
+        step: "02",
+        title: "On-Page & Campaign Deployment",
+        desc: "Refactor page hierarchies, metadata, and structured data while deploying tightly themed, high-converting PPC search ad groups.",
+      },
+      {
+        step: "03",
+        title: "Analytics & Growth Scaling",
+        desc: "Monitor impression shares, organic climb, and conversion paths to continuously lower acquisition costs and scale top performers.",
+      },
+    ],
+    metrics: [
+      { label: "Search Strategy", value: "Organic + Paid SEM" },
+      { label: "Conversion Focus", value: "High-Intent Inbound" },
+      { label: "Tracking Setup", value: "GA4 & GSC Verified" },
+    ],
+    tools: ["Google Search Console", "Google Analytics 4", "Google Ads", "Ahrefs", "Semrush", "Google Tag Manager"],
   },
   {
     id: "ui-ux-design",
@@ -223,6 +255,38 @@ export const servicesData: ServiceItem[] = [
     description:
       "Intuitive digital product interfaces created in Figma, focused on clear visual hierarchy, user journey mapping, and interactive prototypes that guide user action.",
     skills: ["Figma", "User Interface (UI) Design", "UX Prototyping", "Design Systems", "Wireframing"],
+    overview:
+      "Bridging aesthetic refinement with clean, conversion-focused user journeys. I transform complex workflows into elegant, intuitive Figma interfaces with modular component libraries, clear typography scales, and responsive layouts ready for developer handoff.",
+    deliverables: [
+      "High-Fidelity Interactive Prototypes & Clickable Flows in Figma",
+      "End-to-End User Journey Mapping & Low-Fidelity Wireframes",
+      "Atomic Design Systems (Typography scales, color tokens, reusable components)",
+      "Mobile-First & Desktop Responsive Interface Layouts",
+      "Detailed Developer Handoff Documentation & Interactive State Specs",
+    ],
+    process: [
+      {
+        step: "01",
+        title: "User Journey & Blueprinting",
+        desc: "Map user goals, eliminate cognitive friction, and establish structural wireframes for clear content hierarchy.",
+      },
+      {
+        step: "02",
+        title: "Component Systems & Prototyping",
+        desc: "Build scalable Figma components, interactive micro-states, and prototype user interactions for realistic validation.",
+      },
+      {
+        step: "03",
+        title: "Handoff & Implementation Guidance",
+        desc: "Provide production tokens, layout constraints, and asset packages to engineering teams for seamless frontend fidelity.",
+      },
+    ],
+    metrics: [
+      { label: "Design Environment", value: "Figma & FigJam" },
+      { label: "Architecture", value: "Atomic Components" },
+      { label: "Responsiveness", value: "Mobile & Desktop" },
+    ],
+    tools: ["Figma", "FigJam", "Design Systems", "Wireframing", "Interactive Prototypes"],
   },
   {
     id: "graphic-design",
@@ -232,6 +296,38 @@ export const servicesData: ServiceItem[] = [
     description:
       "High-impact marketing creatives, brand identities, and social media visual assets crafted using Adobe Photoshop and Canva with uncompromising detail.",
     skills: ["Adobe Photoshop", "Canva", "Brand Identity", "Visual Communication"],
+    overview:
+      "Visual communication that captures immediate attention and builds memorable brand recognition. Backed by formal Udemy Graphic Design Masterclass training and 22+ commercial brand deliverables spanning packaging, identity marks, digital advertising, and editorial layouts.",
+    deliverables: [
+      "Distinctive Primary, Secondary & Iconographic Brand Logo Marks",
+      "Complete Brand Visual Guidelines (Color harmony, typography pairings, usage rules)",
+      "High-Converting Social Media Advertising Creatives & Web Banners",
+      "Product Packaging, Label Graphics & Marketing Collaterals",
+      "Multi-Format Production Master Files (Vector SVG, Print PDF, High-Res PNG)",
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Brand Discovery & Creative Direction",
+        desc: "Synthesize business vision, competitive landscape, and moodboards into focused aesthetic themes.",
+      },
+      {
+        step: "02",
+        title: "Iterative Concept Exploration",
+        desc: "Draft diverse vector marks, typographic treatments, and color systems, stress-testing across varied media contexts.",
+      },
+      {
+        step: "03",
+        title: "Final Polish & Asset Packaging",
+        desc: "Deliver production-grade master files across vector formats, digital web resolutions, and press-ready print standards.",
+      },
+    ],
+    metrics: [
+      { label: "Design Credential", value: "Udemy Certified" },
+      { label: "Commercial Works", value: "22+ Live Projects" },
+      { label: "Delivery Formats", value: "Vector & Print Ready" },
+    ],
+    tools: ["Adobe Photoshop", "Adobe Illustrator", "Canva Pro", "Vector Assets", "Brand Identity"],
   },
   {
     id: "growth-social",
@@ -241,6 +337,38 @@ export const servicesData: ServiceItem[] = [
     description:
       "Certified by HP LIFE & Google: End-to-end social media strategy, content marketing funnels, email marketing automation, and multi-channel online advertising.",
     skills: ["Social Media Marketing", "Online Advertising", "Content Management", "Email Marketing"],
+    overview:
+      "Data-driven growth marketing validated by Google and HP LIFE certifications. I develop full-funnel customer acquisition systems, cohesive social media content pillars, and automated lead nurture sequences that convert passive viewers into loyal clients.",
+    deliverables: [
+      "Multi-Platform Social Media Growth Roadmaps & Content Pillars",
+      "Targeted Paid Advertising Campaigns across Meta (Instagram/Facebook) & LinkedIn",
+      "Automated Email Marketing Lead Nurture & Welcome Workflows",
+      "Content Calendar Planning, Strategic Copywriting & Asset Scheduling",
+      "Weekly Engagement, Cost-Per-Acquisition (CAC) & ROAS Performance Reports",
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Audience Profiling & Funnel Design",
+        desc: "Identify ideal client profiles, content triggers, and define top-of-funnel reach through bottom-of-funnel conversion stages.",
+      },
+      {
+        step: "02",
+        title: "Creative Production & Campaign Launch",
+        desc: "Execute targeted ad sets and curated social posts designed to drive immediate engagement and lead capture.",
+      },
+      {
+        step: "03",
+        title: "A/B Testing & Funnel Optimization",
+        desc: "Analyze click-through rates, lead retention, and customer acquisition costs to double down on winning creative vectors.",
+      },
+    ],
+    metrics: [
+      { label: "Strategy Badges", value: "Google & HP LIFE" },
+      { label: "Ad Channels", value: "Meta, Google & LinkedIn" },
+      { label: "Execution Model", value: "Data-Driven ROI" },
+    ],
+    tools: ["Meta Ads Manager", "Google Analytics", "HP LIFE Frameworks", "Email Automation", "Content Scheduling"],
   },
 ];
 

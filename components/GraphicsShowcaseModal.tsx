@@ -150,12 +150,9 @@ export default function GraphicsShowcaseModal({
           <div className="flex items-center gap-2">
             <button
               onClick={onClose}
-              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs text-neutral-300 hover:text-white bg-white/10 hover:bg-white/20 border border-white/15 transition-colors focus:outline-hidden cursor-pointer backdrop-blur-sm"
+              className="w-8 h-8 rounded-lg flex items-center justify-center text-neutral-300 hover:text-white bg-white/10 hover:bg-white/20 border border-white/15 transition-colors focus:outline-hidden cursor-pointer backdrop-blur-sm"
               aria-label="Close modal"
             >
-              <span className="hidden sm:inline font-mono text-[10px] text-neutral-400 uppercase">
-                ESC
-              </span>
               <X className="w-4 h-4" />
             </button>
           </div>

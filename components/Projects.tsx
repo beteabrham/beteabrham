@@ -5,6 +5,7 @@ import Image from "next/image";
 import { projectsData } from "@/lib/data";
 import { ExternalLink, Maximize2, TrendingUp, Layout, Share2 } from "lucide-react";
 import GraphicsShowcaseModal from "@/components/GraphicsShowcaseModal";
+import BrandUiShowcaseModal from "@/components/BrandUiShowcaseModal";
 
 function GithubIcon({ className = "w-3 h-3" }: { className?: string }) {
   return (
@@ -22,9 +23,15 @@ interface ProjectItemRowProps {
   project: (typeof projectsData)[0];
   index: number;
   onOpenShowcase: (id?: string) => void;
+  onOpenBrandUiShowcase: (id?: string) => void;
 }
 
-function ProjectItemRow({ project, index, onOpenShowcase }: ProjectItemRowProps) {
+function ProjectItemRow({
+  project,
+  index,
+  onOpenShowcase,
+  onOpenBrandUiShowcase,
+}: ProjectItemRowProps) {
   const isEven = index % 2 === 0;
 
   // SPECIAL ROW: Graphic Design & Logo Designs (4-photo grid, no container behind, no curved corners)
@@ -208,7 +215,99 @@ function ProjectItemRow({ project, index, onOpenShowcase }: ProjectItemRowProps)
     );
   }
 
-  // STANDARD ROWS (02, 03, 04...): Clean stylized preview without direct images, sharp straight corners
+  // SPECIAL ROW: Fresh Cave Web Design & UI System (Isometric Mockup, sharp straight corners, showcase modal trigger)
+  if (project.id === "brand-ui-system") {
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14 items-center py-10 border-b border-neutral-200/50 dark:border-neutral-800/60 last:border-b-0">
+        {/* Isometric Mockup Image Showcase: Direct image, sharp straight corners, no glow */}
+        <div className={`w-full ${isEven ? "order-1 md:order-1" : "order-1 md:order-2"}`}>
+          <div
+            onClick={() => onOpenBrandUiShowcase()}
+            className="aspect-[4/3] w-full relative cursor-pointer group overflow-hidden border border-neutral-200/80 dark:border-neutral-800 rounded-none bg-neutral-900"
+          >
+            <Image
+              src="/Brand%20%26%20UI/fresh-cave-ui-mockup.jpg"
+              alt="Fresh Cave Web Design Mockup"
+              fill
+              sizes="(max-width: 768px) 100vw, 560px"
+              className="object-cover group-hover:scale-105 transition-transform duration-500 rounded-none"
+              priority
+            />
+            {/* Overlay badge with 12 screens & Mockup info */}
+            <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-white px-2.5 py-1 text-[11px] font-mono rounded-none border border-white/15 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+              <span>12 Screens &amp; 3D Mockup</span>
+            </div>
+            <div className="absolute bottom-3 right-3 bg-black/70 backdrop-blur-md text-white px-2.5 py-1 text-[11px] font-medium rounded-none border border-white/15 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              <Maximize2 className="w-3 h-3" />
+              <span>Open UI Showcase</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Headline & Description Column: Beside the image, clean neutral text, no blue hover */}
+        <div
+          className={`w-full flex flex-col justify-between space-y-4 ${
+            isEven ? "order-2 md:order-2" : "order-2 md:order-1"
+          }`}
+        >
+          <div className="space-y-3">
+            <div className="flex items-center justify-between gap-2">
+              <span className="inline-flex items-center text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 border border-neutral-200/60 dark:border-neutral-700/50">
+                {project.category}
+              </span>
+              <span className="text-xs font-mono text-neutral-400 dark:text-neutral-500">
+                0{index + 1}
+              </span>
+            </div>
+
+            <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-neutral-950 dark:text-neutral-50">
+              {project.title}
+            </h3>
+
+            {project.tagline && (
+              <p className="text-xs sm:text-sm font-medium text-neutral-700 dark:text-neutral-300">
+                {project.tagline}
+              </p>
+            )}
+
+            <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
+              {project.description}
+            </p>
+
+            {/* Stack Tags */}
+            <div className="flex flex-wrap gap-1.5 pt-1">
+              {project.tags.map((tag, tIdx) => (
+                <span
+                  key={tIdx}
+                  className="text-[10px] sm:text-[11px] font-mono px-2 py-0.5 rounded-md bg-neutral-100 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300 border border-neutral-200/60 dark:border-neutral-700/50"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Action Link / Trigger */}
+          <div className="flex items-center justify-between pt-4 mt-2 border-t border-neutral-200/60 dark:border-neutral-800/60">
+            <button
+              type="button"
+              onClick={() => onOpenBrandUiShowcase()}
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-neutral-900 dark:text-neutral-100 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors cursor-pointer"
+            >
+              <Maximize2 className="w-4 h-4" />
+              <span>Explore 12 UI Screens &amp; Mockup</span>
+            </button>
+            <span className="text-xs font-mono text-neutral-400">
+              12 Screens
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // STANDARD ROWS (02, 04...): Clean stylized preview without direct images, sharp straight corners
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14 items-center py-10 border-b border-neutral-200/50 dark:border-neutral-800/60 last:border-b-0">
       {/* Visual Presentation: Clean stylized preview, no direct image, sharp straight corners */}
@@ -331,6 +430,8 @@ export default function Projects() {
   const [activeTab, setActiveTab] = useState<"all" | "featured">("all");
   const [isShowcaseOpen, setIsShowcaseOpen] = useState(false);
   const [selectedGraphicId, setSelectedGraphicId] = useState<string | undefined>(undefined);
+  const [isBrandUiShowcaseOpen, setIsBrandUiShowcaseOpen] = useState(false);
+  const [selectedBrandUiId, setSelectedBrandUiId] = useState<string | undefined>(undefined);
 
   const displayedProjects =
     activeTab === "featured"
@@ -340,6 +441,11 @@ export default function Projects() {
   const handleOpenShowcase = (id?: string) => {
     setSelectedGraphicId(id);
     setIsShowcaseOpen(true);
+  };
+
+  const handleOpenBrandUiShowcase = (id?: string) => {
+    setSelectedBrandUiId(id);
+    setIsBrandUiShowcaseOpen(true);
   };
 
   return (
@@ -391,6 +497,7 @@ export default function Projects() {
               project={project}
               index={index}
               onOpenShowcase={handleOpenShowcase}
+              onOpenBrandUiShowcase={handleOpenBrandUiShowcase}
             />
           ))}
         </div>
@@ -404,6 +511,16 @@ export default function Projects() {
           setSelectedGraphicId(undefined);
         }}
         initialItemId={selectedGraphicId}
+      />
+
+      {/* Brand UI & Web Design Showcase Modal */}
+      <BrandUiShowcaseModal
+        isOpen={isBrandUiShowcaseOpen}
+        onClose={() => {
+          setIsBrandUiShowcaseOpen(false);
+          setSelectedBrandUiId(undefined);
+        }}
+        initialItemId={selectedBrandUiId}
       />
     </section>
   );

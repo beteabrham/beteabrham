@@ -57,7 +57,7 @@ export default function Skills() {
                 <span className="text-xs font-mono text-neutral-400 dark:text-neutral-500">
                   {service.number}
                 </span>
-                <span className="inline-flex items-center gap-1 text-[11px] font-mono text-neutral-400 dark:text-neutral-500 group-hover:text-amber-500 dark:group-hover:text-amber-400 transition-colors">
+                <span className="inline-flex items-center gap-1 text-[11px] font-mono text-neutral-400 dark:text-neutral-500 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors">
                   <span>Details</span>
                   <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </span>
@@ -94,7 +94,7 @@ export default function Skills() {
                   )}
                 </div>
 
-                <div className="text-[11px] font-medium text-neutral-400 dark:text-neutral-500 group-hover:text-amber-500 dark:group-hover:text-amber-400/90 transition-colors flex items-center justify-between">
+                <div className="text-[11px] font-medium text-neutral-400 dark:text-neutral-500 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors flex items-center justify-between">
                   <span>Click to view details</span>
                   <span className="text-xs">→</span>
                 </div>

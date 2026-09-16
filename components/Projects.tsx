@@ -99,11 +99,21 @@ export default function Projects() {
                     <div className="grid grid-cols-2 grid-rows-2 w-full h-full gap-1 p-1 bg-neutral-950">
                       {/* Tile 1: Pattern 33 Logo (1:1) */}
                       <div
+                        role="button"
+                        tabIndex={0}
                         onClick={(e) => {
                           e.stopPropagation();
                           handleOpenShowcase("pattern-33-dark");
                         }}
-                        className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile"
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.stopPropagation();
+                            e.preventDefault();
+                            handleOpenShowcase("pattern-33-dark");
+                          }
+                        }}
+                        aria-label="View Pattern 33 Logo in showcase"
+                        className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile cursor-pointer active:scale-[0.97] transition-transform"
                       >
                         <Image
                           src="/graphics%20work/pattern33-1.jpg"
@@ -120,11 +130,21 @@ export default function Projects() {
 
                       {/* Tile 2: Lele Baltena Brand Suite (1:1) */}
                       <div
+                        role="button"
+                        tabIndex={0}
                         onClick={(e) => {
                           e.stopPropagation();
                           handleOpenShowcase("lele-baltena-brand-suite");
                         }}
-                        className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile"
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.stopPropagation();
+                            e.preventDefault();
+                            handleOpenShowcase("lele-baltena-brand-suite");
+                          }
+                        }}
+                        aria-label="View Lele Baltena Brand Packaging Suite in showcase"
+                        className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile cursor-pointer active:scale-[0.97] transition-transform"
                       >
                         <Image
                           src="/graphics%20work/lele-baltena-brand-suite.jpg"
@@ -141,11 +161,21 @@ export default function Projects() {
 
                       {/* Tile 3: Aye Hiking Tour Ad Campaign (1:1) */}
                       <div
+                        role="button"
+                        tabIndex={0}
                         onClick={(e) => {
                           e.stopPropagation();
                           handleOpenShowcase("aye-hiking-ziway");
                         }}
-                        className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile"
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.stopPropagation();
+                            e.preventDefault();
+                            handleOpenShowcase("aye-hiking-ziway");
+                          }
+                        }}
+                        aria-label="View Aye Hiking Tour Ad Campaign in showcase"
+                        className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile cursor-pointer active:scale-[0.97] transition-transform"
                       >
                         <Image
                           src="/graphics%20work/0001-1778030199_20210524_064435_0000%20(2).png"
@@ -162,11 +192,21 @@ export default function Projects() {
 
                       {/* Tile 4: Kaff Leather Oxford Ad (1:1) */}
                       <div
+                        role="button"
+                        tabIndex={0}
                         onClick={(e) => {
                           e.stopPropagation();
                           handleOpenShowcase("kaff-ad-code23");
                         }}
-                        className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile"
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.stopPropagation();
+                            e.preventDefault();
+                            handleOpenShowcase("kaff-ad-code23");
+                          }
+                        }}
+                        aria-label="View Kaff Leather Oxford Ad in showcase"
+                        className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile cursor-pointer active:scale-[0.97] transition-transform"
                       >
                         <Image
                           src="/graphics%20work/12_20240502_215445_0011.png"
@@ -330,7 +370,10 @@ export default function Projects() {
       {/* Pop-up Showcase Modal with Blurred Background */}
       <GraphicsShowcaseModal
         isOpen={isShowcaseOpen}
-        onClose={() => setIsShowcaseOpen(false)}
+        onClose={() => {
+          setIsShowcaseOpen(false);
+          setSelectedGraphicId(undefined);
+        }}
         initialItemId={selectedGraphicId}
       />
     </section>

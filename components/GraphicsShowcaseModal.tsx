@@ -50,30 +50,31 @@ export default function GraphicsShowcaseModal({
     return graphicsWorkData.filter((item) => item.category === selectedCategory);
   }, [selectedCategory]);
 
-  // Set initial item when opened
+  // Set initial item only when modal opens or initialItemId changes upon opening
   useEffect(() => {
-    if (isOpen && initialItemId) {
-      const idx = filteredItems.findIndex((item) => item.id === initialItemId);
-      if (idx !== -1) {
-        setCurrentIndex(idx);
+    if (!isOpen) return;
+
+    if (initialItemId) {
+      const globalIdx = graphicsWorkData.findIndex((item) => item.id === initialItemId);
+      if (globalIdx !== -1) {
+        setSelectedCategory("All");
+        setCurrentIndex(globalIdx);
       } else {
-        const globalIdx = graphicsWorkData.findIndex((item) => item.id === initialItemId);
-        if (globalIdx !== -1) {
-          setSelectedCategory("All");
-          setCurrentIndex(globalIdx);
-        }
+        setSelectedCategory("All");
+        setCurrentIndex(0);
       }
-    } else if (isOpen) {
+    } else {
+      setSelectedCategory("All");
       setCurrentIndex(0);
     }
-  }, [isOpen, initialItemId, filteredItems]);
+  }, [isOpen, initialItemId]);
 
   // Keep currentIndex in bounds if filter changes
   useEffect(() => {
-    if (currentIndex >= filteredItems.length) {
+    if (filteredItems.length > 0 && currentIndex >= filteredItems.length) {
       setCurrentIndex(0);
     }
-  }, [filteredItems, currentIndex]);
+  }, [filteredItems.length, currentIndex]);
 
   const activeItem: GraphicWorkItem | undefined = filteredItems[currentIndex] || filteredItems[0];
 
@@ -201,8 +202,8 @@ export default function GraphicsShowcaseModal({
 
         {/* Spotlight Showcase Canvas */}
         <div className="relative flex-1 min-h-[280px] sm:min-h-[380px] md:min-h-[440px] bg-neutral-950 flex items-center justify-center p-3 sm:p-6 overflow-hidden">
-          {/* Subtle Stage Gradient Glow */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(255,255,255,0.03),transparent_70%)] pointer-events-none" />
+          {/* Subtle Stage Gradient Glow - Dark Light Blue Ambiance */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(37,99,235,0.08),transparent_70%)] pointer-events-none" />
 
           {/* Active Image Stage with Aspect Ratio Preservation */}
           <div className="relative w-full h-full max-h-[50vh] sm:max-h-[55vh] flex items-center justify-center">
@@ -301,13 +302,18 @@ export default function GraphicsShowcaseModal({
                 <button
                   key={item.id}
                   onClick={() => setCurrentIndex(idx)}
+                  ref={(el) => {
+                    if (isCurrent && el) {
+                      el.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+                    }
+                  }}
                   className={`group relative h-12 rounded-md overflow-hidden border transition-all shrink-0 focus:outline-hidden cursor-pointer ${item.aspect === "banner"
                     ? "w-24"
                     : item.aspect === "landscape"
                       ? "w-16"
                       : "w-12"
                     } ${isCurrent
-                      ? "border-white ring-2 ring-white/30 shadow-md scale-105"
+                      ? "border-blue-400 ring-2 ring-blue-500/50 shadow-md shadow-blue-950/60 scale-105"
                       : "border-neutral-800 hover:border-neutral-500 opacity-60 hover:opacity-100"
                     }`}
                   aria-label={`Select ${item.title}`}
@@ -320,7 +326,7 @@ export default function GraphicsShowcaseModal({
                     className="object-cover"
                   />
                   {isCurrent && (
-                    <div className="absolute inset-0 bg-white/10 pointer-events-none" />
+                    <div className="absolute inset-0 bg-blue-500/15 pointer-events-none" />
                   )}
                 </button>
               );

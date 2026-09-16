@@ -119,7 +119,7 @@ export default function ServiceDetailModal({
           </div>
 
           {/* Horizontal Service Switcher Pills (No numbers) */}
-          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+          <div className="flex items-center gap-2 overflow-x-auto sm:overflow-visible no-scrollbar py-2.5 px-2">
             {servicesData.map((s, idx) => {
               const isActive = idx === currentIndex;
               return (
@@ -215,7 +215,7 @@ export default function ServiceDetailModal({
               </div>
 
               {/* CTA Action */}
-              <div className="pt-1">
+              <div className="pt-2 pb-1.5 px-1">
                 <button
                   onClick={handleInquire}
                   className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white text-neutral-950 font-medium text-xs sm:text-sm hover:scale-[1.01] active:scale-[0.99] transition-transform cursor-pointer golden-shimmer-btn shadow-xs"

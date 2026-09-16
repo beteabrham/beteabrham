@@ -97,9 +97,9 @@
 .golden-shimmer-btn:hover {
   border: none !important;
   outline: none !important;
-  /* Warm skin-tone ambient glow */
-  box-shadow: 0 0 24px 2px rgba(205, 132, 82, 0.45),
-              0 0 10px 0px rgba(228, 162, 112, 0.35);
+  /* Warm skin-tone ambient glow - soft radial falloff without harsh cutoff */
+  box-shadow: 0 0 16px 0px rgba(205, 132, 82, 0.48),
+              0 0 8px 0px rgba(228, 162, 112, 0.38);
   transform: translateY(-1px);
 }
 

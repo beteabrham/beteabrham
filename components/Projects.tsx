@@ -5,7 +5,6 @@ import Image from "next/image";
 import { projectsData } from "@/lib/data";
 import {
   ExternalLink,
-  Sparkles,
   Laptop,
   Palette,
   Maximize2,

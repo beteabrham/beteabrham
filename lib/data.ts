@@ -749,13 +749,13 @@ export const graphicsWorkData: GraphicWorkItem[] = [
 export const brandUiScreenshotsData: BrandUiScreenshotItem[] = [
   {
     id: "fresh-cave-mockup-overview",
-    title: "Fresh Cave — 3D Isometric Web Design Showcase",
+    title: "Fresh Cave — Interactive 3D Web Design & UI Showcase",
     category: "Overview",
     client: "Fresh Cave",
     year: "2024",
-    description: "Multi-screen 3D isometric perspective showcase presenting Fresh Cave's dark mode visual identity, navigation, hero banner, DSP streaming telemetry, artist spotlight cards, and tier pricing matrix.",
-    image: "/brand-ui/fresh-cave-dark-mockup.jpg",
-    tags: ["3D Mockup", "Isometric Presentation", "Design System", "Figma", "Web Design"],
+    description: "Multi-screen interactive 3D isometric perspective showcase presenting Fresh Cave's dark mode visual identity, navigation bar, video hero banner, DSP streaming telemetry, artist spotlight cards, and tier pricing matrix.",
+    image: "/brand-ui/Screenshot 2026-09-16 204227.png",
+    tags: ["3D Mockup", "Isometric Presentation", "Design System", "Figma", "Interactive UI"],
   },
   {
     id: "fresh-cave-hero",

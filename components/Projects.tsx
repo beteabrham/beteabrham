@@ -386,8 +386,6 @@ function ProjectItemRow({
             <div className="inline-flex items-center justify-center w-14 h-14 rounded-none bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-xs mb-2.5">
               {project.id === "growth-engine" ? (
                 <TrendingUp className="w-7 h-7 text-neutral-700 dark:text-neutral-300" />
-              ) : project.id === "performance-marketing" ? (
-                <Share2 className="w-7 h-7 text-neutral-700 dark:text-neutral-300" />
               ) : (
                 <Layout className="w-7 h-7 text-neutral-700 dark:text-neutral-300" />
               )}

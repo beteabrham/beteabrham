@@ -6,6 +6,7 @@ import { projectsData } from "@/lib/data";
 import { ExternalLink, Maximize2, TrendingUp, Layout, Share2 } from "lucide-react";
 import GraphicsShowcaseModal from "@/components/GraphicsShowcaseModal";
 import BrandUiShowcaseModal from "@/components/BrandUiShowcaseModal";
+import GrowthEngineShowcaseModal from "@/components/GrowthEngineShowcaseModal";
 
 function GithubIcon({ className = "w-3 h-3" }: { className?: string }) {
   return (
@@ -24,6 +25,7 @@ interface ProjectItemRowProps {
   index: number;
   onOpenShowcase: (id?: string) => void;
   onOpenBrandUiShowcase: (id?: string) => void;
+  onOpenGrowthEngineShowcase: (id?: string) => void;
 }
 
 function ProjectItemRow({
@@ -31,6 +33,7 @@ function ProjectItemRow({
   index,
   onOpenShowcase,
   onOpenBrandUiShowcase,
+  onOpenGrowthEngineShowcase,
 }: ProjectItemRowProps) {
   const isEven = index % 2 === 0;
 

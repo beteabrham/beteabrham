@@ -202,7 +202,7 @@ export default function GraphicsShowcaseModal({
         </div>
 
         {/* Main Showcase Split: Left (Image Canvas & Metadata) + Right (Mini Images List) */}
-        <div className="relative flex-1 min-h-0 flex flex-col md:flex-row gap-4 lg:gap-6 items-stretch px-3 sm:px-6 py-2 overflow-hidden">
+        <div className="relative flex-1 min-h-0 flex flex-col md:flex-row gap-6 lg:gap-8 items-stretch px-3 sm:px-6 py-2 overflow-hidden">
           {/* Left Column: Image Canvas & Info Panel */}
           <div className="flex-1 flex flex-col min-h-0 min-w-0 justify-between">
             {/* Showcase Canvas (Completely transparent, NO container holding the image) */}
@@ -313,8 +313,8 @@ export default function GraphicsShowcaseModal({
             </div>
           </div>
 
-          {/* Right Side: Mini Images List (Vertical stack on desktop, transparent) */}
-          <div className="w-full md:w-24 lg:w-28 shrink-0 flex flex-row md:flex-col gap-2 overflow-x-auto md:overflow-y-auto no-scrollbar md:max-h-[calc(95vh-160px)] py-1 md:py-0">
+          {/* Right Side: Mini Images List (No containers, spaced from scroller and each other) */}
+          <div className="w-full md:w-28 lg:w-32 shrink-0 flex flex-row md:flex-col gap-5 md:gap-6 overflow-x-auto md:overflow-y-auto py-2 pr-4 md:pr-6 md:pl-2 md:max-h-[calc(95vh-160px)] [scrollbar-width:thin] [scrollbar-color:rgba(255,255,255,0.25)_transparent]">
             {filteredItems.map((item, idx) => {
               const isCurrent = idx === currentIndex;
               return (
@@ -326,10 +326,10 @@ export default function GraphicsShowcaseModal({
                       el.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
                     }
                   }}
-                  className={`group relative w-16 sm:w-20 md:w-full aspect-square overflow-hidden transition-all shrink-0 focus:outline-hidden cursor-pointer ${
+                  className={`group relative w-16 h-16 sm:w-20 sm:h-20 md:w-20 md:h-20 lg:w-24 lg:h-24 transition-all duration-200 shrink-0 focus:outline-hidden cursor-pointer flex items-center justify-center bg-transparent border-0 ring-0 shadow-none ${
                     isCurrent
-                      ? "ring-2 ring-white scale-105 opacity-100 shadow-md shadow-black/60"
-                      : "opacity-40 hover:opacity-100"
+                      ? "opacity-100 scale-110 drop-shadow-[0_0_12px_rgba(255,255,255,0.4)]"
+                      : "opacity-35 hover:opacity-85 hover:scale-105"
                   }`}
                   aria-label={`Select ${item.title}`}
                 >
@@ -337,8 +337,8 @@ export default function GraphicsShowcaseModal({
                     src={encodeURI(item.image)}
                     alt={item.title}
                     fill
-                    sizes="112px"
-                    className="object-cover"
+                    sizes="100px"
+                    className="object-contain transition-transform duration-300"
                   />
                 </button>
               );

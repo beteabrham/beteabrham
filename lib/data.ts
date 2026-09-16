@@ -88,6 +88,17 @@ export interface BrandUiScreenshotItem {
   year?: string;
 }
 
+export interface GrowthEngineScreenshotItem {
+  id: string;
+  title: string;
+  category: "Overview" | "Search & AI Overview" | "Streaming Telemetry" | "Audience & Geo" | "Demographics & Sources";
+  client: string;
+  description: string;
+  image: string;
+  tags: string[];
+  year?: string;
+}
+
 export const personalInfo = {
   name: "Bete Abrham",
   brandName: "Growth & Design by Bete.",

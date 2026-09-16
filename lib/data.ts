@@ -431,18 +431,6 @@ export const projectsData: ProjectItem[] = [
     image: "/brand-ui/Screenshot 2026-09-16 204227.png",
     featured: true,
   },
-  {
-    id: "performance-marketing",
-    title: "Multi-Channel Social & Ad Strategy",
-    category: "Performance & Social Marketing",
-    tagline: "HP LIFE & Google certified multi-channel marketing campaigns",
-    description:
-      "Targeted digital advertising architectures, audience segmentation, high-converting social media creative assets, and cross-channel campaign analytics.",
-    tags: ["Social Media Marketing", "Online Advertising", "Brand Strategy", "Content Marketing", "Canva"],
-    liveUrl: "https://www.linkedin.com/in/bete-a-526899434",
-    image: "/images/project-web.webp",
-    featured: true,
-  },
 ];
 
 export const explorationsData: ExplorationItem[] = [

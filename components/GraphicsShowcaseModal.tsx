@@ -128,7 +128,7 @@ export default function GraphicsShowcaseModal({
       />
 
       {/* Main Showcase Viewport Wrapper (Transparent, no container box) */}
-      <div className="relative w-full max-w-5xl max-h-[95vh] bg-transparent border-none shadow-none ring-0 flex flex-col z-10">
+      <div className="relative w-full max-w-6xl max-h-[95vh] bg-transparent border-none shadow-none ring-0 flex flex-col z-10">
         {/* Top Header Bar (Transparent, only texts and close button) */}
         <div className="flex items-center justify-between px-3 sm:px-6 py-2.5 bg-transparent border-none shrink-0">
           <div className="flex items-center gap-2.5 min-w-0">
@@ -201,116 +201,120 @@ export default function GraphicsShowcaseModal({
           })}
         </div>
 
-        {/* Showcase Canvas (Completely transparent, NO container holding the image) */}
-        <div className="relative flex-1 min-h-[300px] sm:min-h-[420px] bg-transparent flex items-center justify-center p-2 sm:p-4 overflow-hidden">
-          {/* Active Image Stage: DIRECT IMAGE, NO CONTAINER, NO BACKGROUND, NO BORDER, NO SHADOW */}
-          <div className="relative w-full h-full flex items-center justify-center min-h-0">
-            <div
-              className="relative transition-all duration-300 flex items-center justify-center"
-              style={{
-                width:
-                  activeItem.aspect === "banner"
-                    ? "min(100%, 860px)"
-                    : activeItem.aspect === "landscape"
-                      ? "min(100%, 680px)"
-                      : "min(100%, min(52vh, 460px))",
-                height:
-                  activeItem.aspect === "banner"
-                    ? "min(26vh, 200px)"
-                    : activeItem.aspect === "landscape"
-                      ? "min(50vh, 440px)"
-                      : "min(52vh, 460px)",
-                aspectRatio:
-                  activeItem.aspect === "banner"
-                    ? "16 / 5"
-                    : activeItem.aspect === "landscape"
-                      ? "4 / 3"
-                      : "1 / 1",
-                maxWidth: "100%",
-                maxHeight: "100%",
-              }}
-            >
-              <Image
-                src={encodeURI(activeItem.image)}
-                alt={activeItem.title}
-                fill
-                sizes="(max-width: 768px) 95vw, 860px"
-                className="object-contain transition-transform duration-500 hover:scale-105"
-                priority
-              />
-            </div>
-          </div>
-
-          {/* Previous Button */}
-          <button
-            onClick={handlePrev}
-            aria-label="Previous image"
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 shadow-lg flex items-center justify-center transition-all hover:scale-105 backdrop-blur-md focus:outline-hidden cursor-pointer"
-          >
-            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
-          </button>
-
-          {/* Next Button */}
-          <button
-            onClick={handleNext}
-            aria-label="Next image"
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 shadow-lg flex items-center justify-center transition-all hover:scale-105 backdrop-blur-md focus:outline-hidden cursor-pointer"
-          >
-            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
-          </button>
-        </div>
-
-        {/* Info & Metadata Panel (Transparent, only texts and buttons) */}
-        <div className="px-3 sm:px-6 py-2 bg-transparent border-none shrink-0">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
-            <div className="space-y-0.5 min-w-0">
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-sm font-semibold text-white tracking-tight truncate max-w-xs sm:max-w-md">
-                  {activeItem.title}
-                </span>
-                <span className="text-[11px] font-mono text-neutral-300 shrink-0">
-                  {activeItem.client}
-                </span>
-                {activeItem.year && (
-                  <span className="text-[11px] font-mono text-neutral-400 shrink-0">
-                    &bull; {activeItem.year}
-                  </span>
-                )}
+        {/* Main Showcase Split: Left (Image Canvas & Metadata) + Right (Mini Images List) */}
+        <div className="relative flex-1 min-h-0 flex flex-col md:flex-row gap-4 lg:gap-6 items-stretch px-3 sm:px-6 py-2 overflow-hidden">
+          {/* Left Column: Image Canvas & Info Panel */}
+          <div className="flex-1 flex flex-col min-h-0 min-w-0 justify-between">
+            {/* Showcase Canvas (Completely transparent, NO container holding the image) */}
+            <div className="relative flex-1 min-h-[300px] sm:min-h-[420px] bg-transparent flex items-center justify-center p-2 overflow-hidden">
+              {/* Active Image Stage: DIRECT IMAGE, NO CONTAINER, NO BACKGROUND, NO BORDER, NO SHADOW */}
+              <div className="relative w-full h-full flex items-center justify-center min-h-0">
+                <div
+                  className="relative transition-all duration-300 flex items-center justify-center"
+                  style={{
+                    width:
+                      activeItem.aspect === "banner"
+                        ? "min(100%, 820px)"
+                        : activeItem.aspect === "landscape"
+                          ? "min(100%, 640px)"
+                          : "min(100%, min(52vh, 460px))",
+                    height:
+                      activeItem.aspect === "banner"
+                        ? "min(26vh, 200px)"
+                        : activeItem.aspect === "landscape"
+                          ? "min(50vh, 440px)"
+                          : "min(52vh, 460px)",
+                    aspectRatio:
+                      activeItem.aspect === "banner"
+                        ? "16 / 5"
+                        : activeItem.aspect === "landscape"
+                          ? "4 / 3"
+                          : "1 / 1",
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                  }}
+                >
+                  <Image
+                    src={encodeURI(activeItem.image)}
+                    alt={activeItem.title}
+                    fill
+                    sizes="(max-width: 768px) 95vw, 820px"
+                    className="object-contain transition-transform duration-500 hover:scale-105"
+                    priority
+                  />
+                </div>
               </div>
-              <p className="text-xs text-neutral-300 max-w-3xl leading-relaxed line-clamp-1 sm:line-clamp-2">
-                {activeItem.description}
-              </p>
-            </div>
 
-            {/* Tags & Action Link */}
-            <div className="flex items-center gap-2 flex-wrap shrink-0">
-              <div className="hidden sm:flex items-center gap-1.5 flex-wrap">
-                {activeItem.tags.slice(0, 3).map((tag, idx) => (
-                  <span
-                    key={idx}
-                    className="inline-flex items-center gap-1 text-[10px] font-mono px-2 py-0.5 rounded-sm bg-white/10 text-neutral-300 border border-white/15"
-                  >
-                    <Tag className="w-2.5 h-2.5 text-neutral-400" />
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <a
-                href={encodeURI(activeItem.image)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-[11px] font-medium text-white px-2.5 py-1 rounded-md bg-white/10 hover:bg-white/20 border border-white/15 transition-colors shrink-0 backdrop-blur-sm"
+              {/* Previous Button */}
+              <button
+                onClick={handlePrev}
+                aria-label="Previous image"
+                className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 shadow-lg flex items-center justify-center transition-all hover:scale-105 backdrop-blur-md focus:outline-hidden cursor-pointer"
               >
-                <span>Full Asset</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
+                <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+              </button>
+
+              {/* Next Button */}
+              <button
+                onClick={handleNext}
+                aria-label="Next image"
+                className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 shadow-lg flex items-center justify-center transition-all hover:scale-105 backdrop-blur-md focus:outline-hidden cursor-pointer"
+              >
+                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              </button>
+            </div>
+
+            {/* Info & Metadata Panel (Transparent, only texts and buttons) */}
+            <div className="py-2 bg-transparent border-none shrink-0">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+                <div className="space-y-0.5 min-w-0">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-sm font-semibold text-white tracking-tight truncate max-w-xs sm:max-w-md">
+                      {activeItem.title}
+                    </span>
+                    <span className="text-[11px] font-mono text-neutral-300 shrink-0">
+                      {activeItem.client}
+                    </span>
+                    {activeItem.year && (
+                      <span className="text-[11px] font-mono text-neutral-400 shrink-0">
+                        &bull; {activeItem.year}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-xs text-neutral-300 max-w-3xl leading-relaxed line-clamp-1 sm:line-clamp-2">
+                    {activeItem.description}
+                  </p>
+                </div>
+
+                {/* Tags & Action Link */}
+                <div className="flex items-center gap-2 flex-wrap shrink-0">
+                  <div className="hidden sm:flex items-center gap-1.5 flex-wrap">
+                    {activeItem.tags.slice(0, 3).map((tag, idx) => (
+                      <span
+                        key={idx}
+                        className="inline-flex items-center gap-1 text-[10px] font-mono px-2 py-0.5 rounded-sm bg-white/10 text-neutral-300 border border-white/15"
+                      >
+                        <Tag className="w-2.5 h-2.5 text-neutral-400" />
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <a
+                    href={encodeURI(activeItem.image)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[11px] font-medium text-white px-2.5 py-1 rounded-md bg-white/10 hover:bg-white/20 border border-white/15 transition-colors shrink-0 backdrop-blur-sm"
+                  >
+                    <span>Full Asset</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Thumbnail Selector Strip (Transparent, only thumbnails and button outlines) */}
-        <div className="px-3 sm:px-6 py-2 bg-transparent border-none overflow-x-auto shrink-0 no-scrollbar">
-          <div className="flex items-center gap-2 min-w-max pb-0.5">
+          {/* Right Side: Mini Images List (Vertical stack on desktop, transparent) */}
+          <div className="w-full md:w-24 lg:w-28 shrink-0 flex flex-row md:flex-col gap-2 overflow-x-auto md:overflow-y-auto no-scrollbar md:max-h-[calc(95vh-160px)] py-1 md:py-0">
             {filteredItems.map((item, idx) => {
               const isCurrent = idx === currentIndex;
               return (
@@ -322,15 +326,9 @@ export default function GraphicsShowcaseModal({
                       el.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
                     }
                   }}
-                  className={`group relative h-10 sm:h-11 overflow-hidden transition-all shrink-0 focus:outline-hidden cursor-pointer ${
-                    item.aspect === "banner"
-                      ? "w-20 sm:w-22"
-                      : item.aspect === "landscape"
-                        ? "w-14 sm:w-16"
-                        : "w-10 sm:w-11"
-                  } ${
+                  className={`group relative w-16 sm:w-20 md:w-full aspect-square overflow-hidden transition-all shrink-0 focus:outline-hidden cursor-pointer ${
                     isCurrent
-                      ? "ring-2 ring-white scale-105 opacity-100"
+                      ? "ring-2 ring-white scale-105 opacity-100 shadow-md shadow-black/60"
                       : "opacity-40 hover:opacity-100"
                   }`}
                   aria-label={`Select ${item.title}`}
@@ -339,7 +337,7 @@ export default function GraphicsShowcaseModal({
                     src={encodeURI(item.image)}
                     alt={item.title}
                     fill
-                    sizes="96px"
+                    sizes="112px"
                     className="object-cover"
                   />
                 </button>

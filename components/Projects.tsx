@@ -208,27 +208,50 @@ function ProjectItemRow({ project, index, onOpenShowcase }: ProjectItemRowProps)
     );
   }
 
-  // STANDARD ROWS: Direct project image, no container holding it, sharp straight corners
-  const projectImgSrc = standardProjectImages[project.id];
-
+  // STANDARD ROWS (02, 03, 04...): Clean stylized preview without direct images, sharp straight corners
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14 items-center py-10 border-b border-neutral-200/50 dark:border-neutral-800/60 last:border-b-0">
-      {/* Project Image: Direct image, no container holding it, sharp straight corners */}
+      {/* Visual Presentation: Clean stylized preview, no direct image, sharp straight corners */}
       <div className={`w-full ${isEven ? "order-1 md:order-1" : "order-1 md:order-2"}`}>
-        <div className="aspect-[4/3] w-full relative overflow-hidden group/img cursor-pointer">
-          {projectImgSrc ? (
-            <Image
-              src={projectImgSrc}
-              alt={project.title}
-              fill
-              sizes="(max-width: 768px) 100vw, 480px"
-              className="object-cover group-hover/img:scale-105 transition-transform duration-300"
-            />
-          ) : (
-            <div className="w-full h-full bg-neutral-100 dark:bg-neutral-900 flex items-center justify-center">
-              <span className="text-xs font-mono text-neutral-400">{project.title}</span>
+        <div className="aspect-[4/3] w-full p-6 flex flex-col justify-between border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 rounded-none">
+          {/* Mockup Top Header */}
+          <div className="flex items-center justify-between text-[11px] font-mono text-neutral-400 border-b border-neutral-200/60 dark:border-neutral-800 pb-2.5">
+            <span className="truncate max-w-[160px] sm:max-w-[200px]">
+              {project.title.toLowerCase().replace(/[^a-z0-9]/g, "-")}.app
+            </span>
+            <div className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-[10px] text-neutral-500 uppercase">Live</span>
             </div>
-          )}
+          </div>
+
+          {/* Central Visual Presentation */}
+          <div className="my-auto py-4 text-center">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-none bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-xs mb-2.5">
+              {project.id === "growth-engine" ? (
+                <TrendingUp className="w-7 h-7 text-neutral-700 dark:text-neutral-300" />
+              ) : project.id === "performance-marketing" ? (
+                <Share2 className="w-7 h-7 text-neutral-700 dark:text-neutral-300" />
+              ) : (
+                <Layout className="w-7 h-7 text-neutral-700 dark:text-neutral-300" />
+              )}
+            </div>
+            <h4 className="text-xs font-mono text-neutral-500 dark:text-neutral-400 font-medium">
+              {project.category}
+            </h4>
+          </div>
+
+          {/* Stack Tags Preview */}
+          <div className="flex flex-wrap gap-1">
+            {project.tags.slice(0, 3).map((tag, tIdx) => (
+              <span
+                key={tIdx}
+                className="text-[9px] font-mono px-1.5 py-0.5 rounded-none bg-white/80 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300 border border-neutral-200/40 dark:border-neutral-700/40"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 

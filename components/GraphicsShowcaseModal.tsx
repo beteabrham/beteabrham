@@ -141,7 +141,7 @@ export default function GraphicsShowcaseModal({
                 className="text-sm sm:text-base font-semibold text-white tracking-tight truncate flex items-center gap-2"
               >
                 <span>Graphic Design &amp; Logo Showcase</span>
-                <span className="text-[11px] font-mono font-normal px-2 py-0.5 rounded-full bg-neutral-800 text-neutral-300 border border-neutral-700/60">
+                <span className="text-[11px] font-mono font-normal px-2 py-0.5 rounded-full bg-white/10 text-neutral-200 border border-white/15">
                   {currentIndex + 1} of {filteredItems.length}
                 </span>
               </h2>
@@ -152,10 +152,10 @@ export default function GraphicsShowcaseModal({
           <div className="flex items-center gap-2">
             <button
               onClick={onClose}
-              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs text-neutral-400 hover:text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-700/60 transition-colors focus:outline-hidden focus:ring-2 focus:ring-white/20 cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs text-neutral-300 hover:text-white bg-white/10 hover:bg-white/20 border border-white/15 transition-colors focus:outline-hidden focus:ring-2 focus:ring-white/20 cursor-pointer backdrop-blur-sm"
               aria-label="Close modal"
             >
-              <span className="hidden sm:inline font-mono text-[10px] text-neutral-500 uppercase">
+              <span className="hidden sm:inline font-mono text-[10px] text-neutral-400 uppercase">
                 ESC
               </span>
               <X className="w-4 h-4" />

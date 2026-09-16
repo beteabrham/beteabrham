@@ -283,15 +283,22 @@ export default function BrandUiShowcaseModal({
                       </span>
                     ))}
                   </div>
-                  <a
-                    href={encodeURI(activeItem.image)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-[11px] font-medium text-white px-2.5 py-1 rounded-md bg-white/10 hover:bg-white/20 border border-white/15 transition-colors shrink-0 backdrop-blur-sm"
-                  >
-                    <span>Full Asset</span>
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
+                  {activeItem.id === "fresh-cave-mockup-overview" ? (
+                    <div className="inline-flex items-center gap-1.5 text-[11px] font-mono font-medium text-blue-400 px-2.5 py-1 rounded-md bg-blue-500/10 border border-blue-500/30">
+                      <Sparkles className="w-3 h-3 text-blue-400 animate-pulse" />
+                      <span>Interactive 3D Stage</span>
+                    </div>
+                  ) : (
+                    <a
+                      href={encodeURI(activeItem.image)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[11px] font-medium text-white px-2.5 py-1 rounded-md bg-white/10 hover:bg-white/20 border border-white/15 transition-colors shrink-0 backdrop-blur-sm"
+                    >
+                      <span>Full Asset</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -317,13 +324,21 @@ export default function BrandUiShowcaseModal({
                   }`}
                   aria-label={`Select ${item.title}`}
                 >
-                  <Image
-                    src={encodeURI(item.image)}
-                    alt={item.title}
-                    fill
-                    sizes="96px"
-                    className="object-contain"
-                  />
+                  {item.id === "fresh-cave-mockup-overview" ? (
+                    <div className="w-full h-full rounded-lg bg-gradient-to-br from-[#0d0d0f] to-[#050404] border border-blue-500/40 flex flex-col items-center justify-center p-1 text-center group-hover:border-blue-400 transition-colors shadow-xs">
+                      <Box className="w-4 h-4 text-blue-400 animate-pulse mb-0.5" />
+                      <span className="text-[7.5px] font-mono font-bold text-white uppercase leading-none">3D Stage</span>
+                      <span className="text-[6.5px] font-mono text-blue-400 leading-none mt-0.5">Live</span>
+                    </div>
+                  ) : (
+                    <Image
+                      src={encodeURI(item.image)}
+                      alt={item.title}
+                      fill
+                      sizes="96px"
+                      className="object-contain"
+                    />
+                  )}
                 </button>
               );
             })}

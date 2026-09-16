@@ -81,9 +81,11 @@ export interface BrandUiScreenshotItem {
   id: string;
   title: string;
   category: "Overview" | "Landing & Hero" | "Platform & DSP" | "Artist & Studio" | "Pricing & Splits";
+  client: string;
   description: string;
   image: string;
   tags: string[];
+  year?: string;
 }
 
 export const personalInfo = {

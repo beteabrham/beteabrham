@@ -896,7 +896,7 @@ export const growthEngineScreenshotsData: GrowthEngineScreenshotItem[] = [
     category: "Streaming Telemetry",
     client: "ICE — Mestawet EP",
     year: "2026",
-    description: "Multi-DSP telemetry dashboard recording 7,460 total streams across Spotify, Apple Music, YouTube, and Amazon Music within 30 days of release, highlighting viral release-day velocity.",
+    description: "Multi-DSP telemetry dashboard recording 7,460 total streams across Spotify, Apple Music, YouTube, and Amazon Music from Aug 27 to present, highlighting viral release-day velocity.",
     image: "/growth-engine/Screenshot 2026-09-16 222808.png",
     tags: ["Streaming Metrics", "DSP Distribution", "Growth Curve", "Launch Velocity"],
   },

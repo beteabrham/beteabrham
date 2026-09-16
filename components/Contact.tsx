@@ -133,7 +133,7 @@ export default function Contact() {
                   title={social.name}
                   className="group relative flex flex-col items-center gap-2"
                 >
-                  <div className="w-12 h-12 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 flex items-center justify-center text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white hover:border-neutral-400 dark:hover:border-neutral-600 hover:scale-110 transition-all duration-200 shadow-2xs golden-shimmer-container">
+                  <div className="w-12 h-12 rounded-full bg-white dark:bg-neutral-900 flex items-center justify-center text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white hover:scale-110 transition-all duration-200 shadow-2xs golden-shimmer-container">
                     <SocialIcon
                       name={social.name}
                       className="w-5 h-5 transition-transform duration-200 group-hover:scale-110"

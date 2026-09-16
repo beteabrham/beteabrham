@@ -92,7 +92,7 @@ export default function Projects() {
                 <div
                   key={project.id}
                   onClick={() => handleOpenShowcase()}
-                  className="group relative flex flex-col justify-between border border-neutral-200/90 dark:border-neutral-800 rounded-xl p-5 bg-white dark:bg-neutral-900/40 hover:bg-neutral-50 dark:hover:bg-neutral-900/70 transition-all duration-300 shadow-xs cursor-pointer ring-1 ring-amber-500/10 hover:shadow-lg golden-shimmer-container"
+                  className="group relative flex flex-col justify-between rounded-xl p-5 bg-white dark:bg-neutral-900/70 hover:bg-neutral-50 dark:hover:bg-neutral-900/90 transition-all duration-300 shadow-xs cursor-pointer hover:shadow-lg golden-shimmer-container"
                 >
                   {/* Visual Preview Container: 4-Quadrant Design Showcase Grid */}
                   <div className="aspect-[4/3] rounded-lg bg-neutral-950 border border-neutral-800/80 overflow-hidden relative mb-4 group-hover:border-neutral-700 transition-colors">
@@ -240,7 +240,7 @@ export default function Projects() {
             return (
               <div
                 key={project.id}
-                className="group flex flex-col justify-between border border-neutral-200/90 dark:border-neutral-800 rounded-xl p-5 bg-white dark:bg-neutral-900/40 hover:border-neutral-400 dark:hover:border-neutral-600 transition-all duration-300 shadow-xs golden-shimmer-container"
+                className="group flex flex-col justify-between rounded-xl p-5 bg-white dark:bg-neutral-900/70 hover:bg-neutral-50 dark:hover:bg-neutral-900/90 transition-all duration-300 shadow-xs golden-shimmer-container"
               >
                 {/* Project Visual Preview Container */}
                 <div className="aspect-[4/3] rounded-lg bg-neutral-100 dark:bg-neutral-950 border border-neutral-200/60 dark:border-neutral-800/80 overflow-hidden relative mb-4 p-4 flex flex-col justify-between group-hover:shadow-xs transition-shadow">

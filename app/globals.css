@@ -82,18 +82,21 @@
 
 /* ==========================================================================
    Skin-Tone Glow Effect System (White Buttons & Containers)
-   Warm bronze (#b87342), caramel (#cd8452), honey (#e4a270) sampled from portrait
+   No stroke (border) — only the pure soft ambient glow effect
    ========================================================================== */
 
-/* White Button Skin-Tone Glow */
+/* White Button Skin-Tone Glow (No stroke, only glow) */
 .golden-shimmer-btn {
   position: relative;
+  border: none !important;
+  outline: none !important;
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-              border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .golden-shimmer-btn:hover {
+  border: none !important;
+  outline: none !important;
   /* Warm skin-tone ambient glow */
   box-shadow: 0 0 24px 2px rgba(205, 132, 82, 0.45),
               0 0 10px 0px rgba(228, 162, 112, 0.35);
@@ -104,35 +107,14 @@
   transform: translateY(0);
 }
 
-/* Container Skin-Tone Glow */
+/* Container Skin-Tone Glow (No stroke, only glow effect) */
 .golden-shimmer-container {
   position: relative;
   overflow: hidden;
-  transition: border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-              box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+  border: none !important;
+  outline: none !important;
+  transition: box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
               transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Warm Skin-Tone Top-Edge Hairline Highlight */
-.golden-shimmer-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 10%;
-  right: 10%;
-  height: 1.5px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(184, 115, 66, 0.35) 20%,
-    rgba(228, 162, 112, 0.9) 50%,
-    rgba(184, 115, 66, 0.35) 80%,
-    transparent 100%
-  );
-  opacity: 0;
-  transition: opacity 0.35s ease;
-  pointer-events: none;
-  z-index: 10;
 }
 
 /* Soft Ambient Surface Glow (50% opacity) */
@@ -142,7 +124,7 @@
   inset: 0;
   background: radial-gradient(
     700px circle at 50% 0%,
-    rgba(205, 132, 82, 0.16),
+    rgba(205, 132, 82, 0.14),
     transparent 70%
   );
   opacity: 0;
@@ -152,13 +134,10 @@
 }
 
 .golden-shimmer-container:hover {
-  border-color: rgba(205, 132, 82, 0.48) !important;
-  box-shadow: 0 4px 22px -2px rgba(184, 115, 66, 0.2),
-              0 0 18px 0px rgba(205, 132, 82, 0.18) !important;
-}
-
-.golden-shimmer-container:hover::before {
-  opacity: 0.5; /* 50% opacity on top hairline */
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 4px 24px -2px rgba(184, 115, 66, 0.22),
+              0 0 22px 0px rgba(205, 132, 82, 0.2) !important;
 }
 
 .golden-shimmer-container:hover::after {

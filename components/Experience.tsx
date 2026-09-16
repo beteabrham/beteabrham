@@ -4,6 +4,81 @@ import React from "react";
 import { personalInfo } from "@/lib/data";
 import { Briefcase, GraduationCap, Award, Calendar, MapPin, ExternalLink } from "lucide-react";
 
+const getBrandConfig = (issuer: string) => {
+  const norm = issuer.toLowerCase();
+  if (norm.includes("udemy")) {
+    return {
+      hoverBorder: "hover:border-[#a435f0]/60 dark:hover:border-[#a435f0]/70",
+      hoverShadow: "hover:shadow-[0_12px_28px_-6px_rgba(164,53,240,0.35)]",
+      hoverGradient:
+        "bg-[linear-gradient(135deg,rgba(164,53,240,0.18)_0%,rgba(86,36,208,0.22)_50%,rgba(164,53,240,0.14)_100%)] dark:bg-[linear-gradient(135deg,rgba(164,53,240,0.26)_0%,rgba(86,36,208,0.28)_50%,rgba(164,53,240,0.18)_100%)]",
+      topAccent: "bg-gradient-to-r from-[#a435f0] via-purple-500 to-[#5624d0]",
+      issuerColor: "group-hover:text-[#a435f0] dark:group-hover:text-[#c084fc]",
+      verifiedColor: "group-hover:text-[#a435f0] dark:group-hover:text-[#c084fc]",
+      skillTagHover:
+        "group-hover:bg-[#a435f0]/15 group-hover:text-purple-700 dark:group-hover:text-purple-300 group-hover:border-[#a435f0]/30",
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 shrink-0" fill="currentColor" aria-hidden="true">
+          <path d="M12 0L2 6v7.5C2 19.3 6.3 24 12 24s10-4.7 10-10.5V6L12 0zm0 17.5c-3.1 0-5.5-2.4-5.5-5.5V8.5h2.5V12c0 1.7 1.3 3 3 3s3-1.3 3-3V8.5h2.5V12c0 3.1-2.4 5.5-5.5 5.5z" />
+        </svg>
+      ),
+    };
+  }
+
+  if (norm.includes("google")) {
+    return {
+      hoverBorder: "hover:border-[#4285F4]/60 dark:hover:border-[#4285F4]/70",
+      hoverShadow: "hover:shadow-[0_12px_28px_-6px_rgba(66,133,244,0.3),0_0_20px_rgba(234,67,53,0.15)]",
+      hoverGradient:
+        "bg-[linear-gradient(135deg,rgba(66,133,244,0.18)_0%,rgba(234,67,53,0.15)_35%,rgba(251,188,5,0.15)_68%,rgba(52,168,83,0.18)_100%)] dark:bg-[linear-gradient(135deg,rgba(66,133,244,0.26)_0%,rgba(234,67,53,0.22)_35%,rgba(251,188,5,0.20)_68%,rgba(52,168,83,0.26)_100%)]",
+      topAccent: "bg-[linear-gradient(to_right,#4285F4_25%,#EA4335_25%_50%,#FBBC05_50%_75%,#34A853_75%)]",
+      issuerColor: "group-hover:text-[#4285F4] dark:group-hover:text-[#60a5fa]",
+      verifiedColor: "group-hover:text-[#4285F4] dark:group-hover:text-[#60a5fa]",
+      skillTagHover:
+        "group-hover:bg-[#4285F4]/15 group-hover:text-blue-700 dark:group-hover:text-blue-300 group-hover:border-[#4285F4]/30",
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 shrink-0" aria-hidden="true">
+          <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z" />
+          <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24Z" />
+          <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15Z" />
+          <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98Z" />
+        </svg>
+      ),
+    };
+  }
+
+  if (norm.includes("hp")) {
+    return {
+      hoverBorder: "hover:border-[#0096D6]/60 dark:hover:border-[#0096D6]/70",
+      hoverShadow: "hover:shadow-[0_12px_28px_-6px_rgba(0,150,214,0.35)]",
+      hoverGradient:
+        "bg-[linear-gradient(135deg,rgba(0,150,214,0.18)_0%,rgba(0,125,184,0.22)_50%,rgba(0,150,214,0.14)_100%)] dark:bg-[linear-gradient(135deg,rgba(0,150,214,0.26)_0%,rgba(0,125,184,0.28)_50%,rgba(0,150,214,0.18)_100%)]",
+      topAccent: "bg-gradient-to-r from-[#0096D6] via-sky-500 to-[#007DB8]",
+      issuerColor: "group-hover:text-[#0096D6] dark:group-hover:text-[#38bdf8]",
+      verifiedColor: "group-hover:text-[#0096D6] dark:group-hover:text-[#38bdf8]",
+      skillTagHover:
+        "group-hover:bg-[#0096D6]/15 group-hover:text-sky-700 dark:group-hover:text-sky-300 group-hover:border-[#0096D6]/30",
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 shrink-0" fill="currentColor" aria-hidden="true">
+          <circle cx="12" cy="12" r="11" fill="#0096D6" />
+          <path fill="#ffffff" d="M9.8 17.5l2.4-7.8h1.6l-2.4 7.8H9.8zm3.8-1.5l1.9-6.3h1.6l-1.9 6.3h-1.6zm-5.4 0l1.9-6.3h1.6L9.8 16H8.2z" />
+        </svg>
+      ),
+    };
+  }
+
+  return {
+    hoverBorder: "hover:border-neutral-300 dark:hover:border-neutral-700",
+    hoverShadow: "hover:shadow-md",
+    hoverGradient: "bg-neutral-50/70 dark:bg-neutral-900/90",
+    topAccent: "bg-neutral-400",
+    issuerColor: "group-hover:text-black dark:group-hover:text-white",
+    verifiedColor: "group-hover:text-neutral-900 dark:group-hover:text-neutral-100",
+    skillTagHover: "group-hover:bg-neutral-200/70 dark:group-hover:bg-neutral-800/80",
+    icon: null,
+  };
+};
+
 export default function Experience() {
   return (
     <section
@@ -152,48 +227,66 @@ export default function Experience() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {personalInfo.certifications.map((cert, cIdx) => (
-                <a
-                  key={cIdx}
-                  href={cert.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Verify ${cert.title} issued by ${cert.issuer} (opens in a new tab)`}
-                  className="group p-4 rounded-xl bg-white dark:bg-neutral-900/70 hover:bg-neutral-50/70 dark:hover:bg-neutral-900/90 flex flex-col justify-between shadow-2xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] transition-all duration-200 cursor-pointer text-left block golden-shimmer-container"
-                >
-                  <div>
-                    <div className="flex items-center justify-between text-xs text-neutral-400 mb-1 font-mono">
-                      <span className="font-semibold text-neutral-900 dark:text-neutral-100 group-hover:text-black dark:group-hover:text-white transition-colors">
-                        {cert.issuer}
-                      </span>
-                      <span className="inline-flex items-center gap-1 text-[11px] text-neutral-500 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-100 transition-colors">
-                        <span>Verified</span>
-                        <ExternalLink className="w-3 h-3 text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                      </span>
-                    </div>
-                    <h5 className="text-xs font-semibold text-neutral-800 dark:text-neutral-200 group-hover:text-neutral-950 dark:group-hover:text-white leading-snug transition-colors">
-                      {cert.title}
-                    </h5>
-                    <p className="text-[11px] text-neutral-400 mt-1">{cert.date}</p>
-                    {cert.credentialId && (
-                      <p className="text-[10px] font-mono text-neutral-500 mt-0.5 truncate">
-                        ID: {cert.credentialId}
-                      </p>
-                    )}
-                  </div>
+              {personalInfo.certifications.map((cert, cIdx) => {
+                const brand = getBrandConfig(cert.issuer);
+                return (
+                  <a
+                    key={cIdx}
+                    href={cert.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Verify ${cert.title} issued by ${cert.issuer} (opens in a new tab)`}
+                    className={`group relative p-4 rounded-xl bg-white dark:bg-neutral-900/70 border border-neutral-200/80 dark:border-neutral-800/80 flex flex-col justify-between shadow-2xs hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] transition-all duration-300 cursor-pointer text-left block overflow-hidden golden-shimmer-container ${brand.hoverBorder} ${brand.hoverShadow}`}
+                  >
+                    {/* Top Accent Strip (Animated on hover) */}
+                    <div
+                      className={`absolute top-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 ${brand.topAccent}`}
+                    />
 
-                  <div className="flex flex-wrap gap-1 mt-3 pt-2 border-t border-neutral-100 dark:border-neutral-800">
-                    {cert.skills.map((skill, skIdx) => (
-                      <span
-                        key={skIdx}
-                        className="text-[9px] font-mono px-1.5 py-0.5 rounded-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-500 group-hover:bg-neutral-200/70 dark:group-hover:bg-neutral-800/80 transition-colors"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </a>
-              ))}
+                    {/* Brand Hover Gradient Layer (Smoothly transitions container color on hover) */}
+                    <div
+                      className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0 ${brand.hoverGradient}`}
+                    />
+
+                    <div className="relative z-10">
+                      <div className="flex items-center justify-between text-xs text-neutral-400 mb-1.5 font-mono">
+                        <div className="flex items-center gap-1.5 font-semibold text-neutral-900 dark:text-neutral-100 transition-colors">
+                          {brand.icon}
+                          <span className={`transition-colors ${brand.issuerColor}`}>
+                            {cert.issuer}
+                          </span>
+                        </div>
+                        <span
+                          className={`inline-flex items-center gap-1 text-[11px] text-neutral-500 dark:text-neutral-400 transition-colors ${brand.verifiedColor}`}
+                        >
+                          <span>Verified</span>
+                          <ExternalLink className="w-3 h-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </span>
+                      </div>
+                      <h5 className="text-xs font-semibold text-neutral-800 dark:text-neutral-200 group-hover:text-neutral-950 dark:group-hover:text-white leading-snug transition-colors">
+                        {cert.title}
+                      </h5>
+                      <p className="text-[11px] text-neutral-400 mt-1">{cert.date}</p>
+                      {cert.credentialId && (
+                        <p className="text-[10px] font-mono text-neutral-500 mt-0.5 truncate">
+                          ID: {cert.credentialId}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="relative z-10 flex flex-wrap gap-1 mt-3 pt-2 border-t border-neutral-100 dark:border-neutral-800/80">
+                      {cert.skills.map((skill, skIdx) => (
+                        <span
+                          key={skIdx}
+                          className={`text-[9px] font-mono px-1.5 py-0.5 rounded-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-500 transition-all duration-200 border border-transparent ${brand.skillTagHover}`}
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>

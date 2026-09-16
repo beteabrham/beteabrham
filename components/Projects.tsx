@@ -82,283 +82,351 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Projects Grid: 2-Column Balanced Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {displayedProjects.map((project) => {
+        {/* Projects List: Alternating Side-by-Side Showcase Layout */}
+        <div className="flex flex-col gap-8 md:gap-10">
+          {displayedProjects.map((project, index) => {
+            const isEven = index % 2 === 0;
+
             // SPECIAL CONTAINER: Graphic Design & Logo Designs
             if (project.id === "graphics-design-logos") {
               return (
                 <div
                   key={project.id}
-                  onClick={() => handleOpenShowcase()}
-                  className="group relative flex flex-col justify-between rounded-xl p-5 bg-white dark:bg-neutral-900/70 hover:bg-neutral-50 dark:hover:bg-neutral-900/90 transition-all duration-300 shadow-xs cursor-pointer hover:shadow-lg golden-shimmer-container"
+                  className="group relative rounded-2xl p-5 sm:p-6 md:p-8 bg-white dark:bg-neutral-900/70 hover:bg-neutral-50 dark:hover:bg-neutral-900/90 transition-all duration-300 shadow-xs hover:shadow-lg golden-shimmer-container"
                 >
-                  {/* Visual Preview Container: 4-Quadrant Design Showcase Grid */}
-                  <div className="aspect-[4/3] rounded-lg bg-neutral-950 border border-neutral-800/80 overflow-hidden relative mb-4 group-hover:border-neutral-700 transition-colors">
-                    {/* 4 Edge-to-Edge Filled 1:1 Images Grid */}
-                    <div className="grid grid-cols-2 grid-rows-2 w-full h-full gap-1 p-1 bg-neutral-950">
-                      {/* Tile 1: Pattern 33 Logo (1:1) */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-center">
+                    {/* Visual Preview Container: 4-Quadrant Design Showcase Grid */}
+                    <div
+                      className={`w-full ${
+                        isEven ? "order-1 md:order-1" : "order-1 md:order-2"
+                      }`}
+                    >
                       <div
-                        role="button"
-                        tabIndex={0}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleOpenShowcase("pattern-33-dark");
-                        }}
-                        onKeyDown={(e) => {
-                          if (e.key === "Enter" || e.key === " ") {
-                            e.stopPropagation();
-                            e.preventDefault();
-                            handleOpenShowcase("pattern-33-dark");
-                          }
-                        }}
-                        aria-label="View Pattern 33 Logo in showcase"
-                        className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile cursor-pointer active:scale-[0.97] transition-transform"
+                        onClick={() => handleOpenShowcase()}
+                        className="aspect-[4/3] rounded-xl bg-neutral-950 border border-neutral-800/80 overflow-hidden relative group-hover:border-neutral-700 transition-colors cursor-pointer shadow-inner"
                       >
-                        <Image
-                          src="/graphics%20work/pattern33-1.jpg"
-                          alt="Pattern 33 Logo"
-                          fill
-                          sizes="(max-width: 768px) 50vw, 260px"
-                          className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
-                        />
-                        <div className="absolute inset-0 bg-black/15 group-hover/tile:bg-transparent transition-colors" />
-                        <span className="absolute bottom-1.5 left-1.5 text-[9px] font-mono font-medium px-1.5 py-0.5 rounded-xs bg-black/75 text-neutral-200 backdrop-blur-md border border-white/10">
-                          Logo
-                        </span>
-                      </div>
+                        {/* 4 Edge-to-Edge Filled 1:1 Images Grid */}
+                        <div className="grid grid-cols-2 grid-rows-2 w-full h-full gap-1 p-1 bg-neutral-950">
+                          {/* Tile 1: Pattern 33 Logo (1:1) */}
+                          <div
+                            role="button"
+                            tabIndex={0}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleOpenShowcase("pattern-33-dark");
+                            }}
+                            onKeyDown={(e) => {
+                              if (e.key === "Enter" || e.key === " ") {
+                                e.stopPropagation();
+                                e.preventDefault();
+                                handleOpenShowcase("pattern-33-dark");
+                              }
+                            }}
+                            aria-label="View Pattern 33 Logo in showcase"
+                            className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile cursor-pointer active:scale-[0.97] transition-transform"
+                          >
+                            <Image
+                              src="/graphics%20work/pattern33-1.jpg"
+                              alt="Pattern 33 Logo"
+                              fill
+                              sizes="(max-width: 768px) 50vw, 320px"
+                              className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
+                            />
+                            <div className="absolute inset-0 bg-black/15 group-hover/tile:bg-transparent transition-colors" />
+                            <span className="absolute bottom-1.5 left-1.5 text-[9px] font-mono font-medium px-1.5 py-0.5 rounded-xs bg-black/75 text-neutral-200 backdrop-blur-md border border-white/10">
+                              Logo
+                            </span>
+                          </div>
 
-                      {/* Tile 2: Lele Baltena Brand Suite (1:1) */}
-                      <div
-                        role="button"
-                        tabIndex={0}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleOpenShowcase("lele-baltena-brand-suite");
-                        }}
-                        onKeyDown={(e) => {
-                          if (e.key === "Enter" || e.key === " ") {
-                            e.stopPropagation();
-                            e.preventDefault();
-                            handleOpenShowcase("lele-baltena-brand-suite");
-                          }
-                        }}
-                        aria-label="View Lele Baltena Brand Packaging Suite in showcase"
-                        className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile cursor-pointer active:scale-[0.97] transition-transform"
-                      >
-                        <Image
-                          src="/graphics%20work/lele-baltena-brand-suite.jpg"
-                          alt="Lele Baltena Brand Packaging Suite"
-                          fill
-                          sizes="(max-width: 768px) 50vw, 260px"
-                          className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
-                        />
-                        <div className="absolute inset-0 bg-black/15 group-hover/tile:bg-transparent transition-colors" />
-                        <span className="absolute bottom-1.5 left-1.5 text-[9px] font-mono font-medium px-1.5 py-0.5 rounded-xs bg-black/75 text-neutral-200 backdrop-blur-md border border-white/10">
-                          Branding
-                        </span>
-                      </div>
+                          {/* Tile 2: Lele Baltena Brand Suite (1:1) */}
+                          <div
+                            role="button"
+                            tabIndex={0}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleOpenShowcase("lele-baltena-brand-suite");
+                            }}
+                            onKeyDown={(e) => {
+                              if (e.key === "Enter" || e.key === " ") {
+                                e.stopPropagation();
+                                e.preventDefault();
+                                handleOpenShowcase("lele-baltena-brand-suite");
+                              }
+                            }}
+                            aria-label="View Lele Baltena Brand Packaging Suite in showcase"
+                            className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile cursor-pointer active:scale-[0.97] transition-transform"
+                          >
+                            <Image
+                              src="/graphics%20work/lele-baltena-brand-suite.jpg"
+                              alt="Lele Baltena Brand Packaging Suite"
+                              fill
+                              sizes="(max-width: 768px) 50vw, 320px"
+                              className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
+                            />
+                            <div className="absolute inset-0 bg-black/15 group-hover/tile:bg-transparent transition-colors" />
+                            <span className="absolute bottom-1.5 left-1.5 text-[9px] font-mono font-medium px-1.5 py-0.5 rounded-xs bg-black/75 text-neutral-200 backdrop-blur-md border border-white/10">
+                              Branding
+                            </span>
+                          </div>
 
-                      {/* Tile 3: Aye Hiking Tour Ad Campaign (1:1) */}
-                      <div
-                        role="button"
-                        tabIndex={0}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleOpenShowcase("aye-hiking-ziway");
-                        }}
-                        onKeyDown={(e) => {
-                          if (e.key === "Enter" || e.key === " ") {
-                            e.stopPropagation();
-                            e.preventDefault();
-                            handleOpenShowcase("aye-hiking-ziway");
-                          }
-                        }}
-                        aria-label="View Aye Hiking Tour Ad Campaign in showcase"
-                        className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile cursor-pointer active:scale-[0.97] transition-transform"
-                      >
-                        <Image
-                          src="/graphics%20work/0001-1778030199_20210524_064435_0000%20(2).png"
-                          alt="Aye Hiking Tour Ad Campaign"
-                          fill
-                          sizes="(max-width: 768px) 50vw, 260px"
-                          className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
-                        />
-                        <div className="absolute inset-0 bg-black/15 group-hover/tile:bg-transparent transition-colors" />
-                        <span className="absolute bottom-1.5 left-1.5 text-[9px] font-mono font-medium px-1.5 py-0.5 rounded-xs bg-black/75 text-neutral-200 backdrop-blur-md border border-white/10">
-                          Ad Campaign
-                        </span>
-                      </div>
+                          {/* Tile 3: Aye Hiking Tour Ad Campaign (1:1) */}
+                          <div
+                            role="button"
+                            tabIndex={0}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleOpenShowcase("aye-hiking-ziway");
+                            }}
+                            onKeyDown={(e) => {
+                              if (e.key === "Enter" || e.key === " ") {
+                                e.stopPropagation();
+                                e.preventDefault();
+                                handleOpenShowcase("aye-hiking-ziway");
+                              }
+                            }}
+                            aria-label="View Aye Hiking Tour Ad Campaign in showcase"
+                            className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile cursor-pointer active:scale-[0.97] transition-transform"
+                          >
+                            <Image
+                              src="/graphics%20work/0001-1778030199_20210524_064435_0000%20(2).png"
+                              alt="Aye Hiking Tour Ad Campaign"
+                              fill
+                              sizes="(max-width: 768px) 50vw, 320px"
+                              className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
+                            />
+                            <div className="absolute inset-0 bg-black/15 group-hover/tile:bg-transparent transition-colors" />
+                            <span className="absolute bottom-1.5 left-1.5 text-[9px] font-mono font-medium px-1.5 py-0.5 rounded-xs bg-black/75 text-neutral-200 backdrop-blur-md border border-white/10">
+                              Ad Campaign
+                            </span>
+                          </div>
 
-                      {/* Tile 4: Kaff Leather Oxford Ad (1:1) */}
-                      <div
-                        role="button"
-                        tabIndex={0}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleOpenShowcase("kaff-ad-code23");
-                        }}
-                        onKeyDown={(e) => {
-                          if (e.key === "Enter" || e.key === " ") {
-                            e.stopPropagation();
-                            e.preventDefault();
-                            handleOpenShowcase("kaff-ad-code23");
-                          }
-                        }}
-                        aria-label="View Kaff Leather Oxford Ad in showcase"
-                        className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile cursor-pointer active:scale-[0.97] transition-transform"
-                      >
-                        <Image
-                          src="/graphics%20work/12_20240502_215445_0011.png"
-                          alt="Kaff Leather Oxford Ad"
-                          fill
-                          sizes="(max-width: 768px) 50vw, 260px"
-                          className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
-                        />
-                        <div className="absolute inset-0 bg-black/15 group-hover/tile:bg-transparent transition-colors" />
-                        <span className="absolute bottom-1.5 left-1.5 text-[9px] font-mono font-medium px-1.5 py-0.5 rounded-xs bg-black/75 text-neutral-200 backdrop-blur-md border border-white/10">
-                          Commercial
-                        </span>
+                          {/* Tile 4: Kaff Leather Oxford Ad (1:1) */}
+                          <div
+                            role="button"
+                            tabIndex={0}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleOpenShowcase("kaff-ad-code23");
+                            }}
+                            onKeyDown={(e) => {
+                              if (e.key === "Enter" || e.key === " ") {
+                                e.stopPropagation();
+                                e.preventDefault();
+                                handleOpenShowcase("kaff-ad-code23");
+                              }
+                            }}
+                            aria-label="View Kaff Leather Oxford Ad in showcase"
+                            className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile cursor-pointer active:scale-[0.97] transition-transform"
+                          >
+                            <Image
+                              src="/graphics%20work/12_20240502_215445_0011.png"
+                              alt="Kaff Leather Oxford Ad"
+                              fill
+                              sizes="(max-width: 768px) 50vw, 320px"
+                              className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
+                            />
+                            <div className="absolute inset-0 bg-black/15 group-hover/tile:bg-transparent transition-colors" />
+                            <span className="absolute bottom-1.5 left-1.5 text-[9px] font-mono font-medium px-1.5 py-0.5 rounded-xs bg-black/75 text-neutral-200 backdrop-blur-md border border-white/10">
+                              Commercial
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Floating Top Header Badge */}
+                        <div className="absolute top-2.5 left-2.5 flex items-center pointer-events-none">
+                          <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-neutral-950/85 text-neutral-200 backdrop-blur-md border border-white/15 shadow-sm">
+                            <Palette className="w-3 h-3 text-neutral-300" />
+                            <span>Graphic &amp; Logo Designs</span>
+                          </span>
+                        </div>
                       </div>
                     </div>
 
-                    {/* Floating Top Header Badge */}
-                    <div className="absolute top-2 left-2 flex items-center pointer-events-none">
-                      <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-neutral-950/85 text-neutral-200 backdrop-blur-md border border-white/15 shadow-sm">
-                        <Palette className="w-3 h-3 text-neutral-300" />
-                        <span>Graphic &amp; Logo Designs</span>
-                      </span>
-                    </div>
+                    {/* Headline & Description Column */}
+                    <div
+                      className={`w-full flex flex-col justify-between space-y-4 ${
+                        isEven ? "order-2 md:order-2" : "order-2 md:order-1"
+                      }`}
+                    >
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="inline-flex items-center text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 border border-neutral-200/60 dark:border-neutral-700/50">
+                            {project.category}
+                          </span>
+                          <span className="text-xs font-mono text-neutral-400 dark:text-neutral-500">
+                            0{index + 1}
+                          </span>
+                        </div>
 
-                  </div>
-
-                  {/* Title & Metadata */}
-                  <div className="flex flex-col flex-1 justify-between">
-                    <div>
-                      <div className="flex items-baseline justify-between gap-2">
-                        <h3 className="text-base font-semibold text-neutral-900 dark:text-white tracking-tight group-hover:text-neutral-950 dark:group-hover:text-white transition-colors">
+                        <h3 className="text-xl sm:text-2xl font-semibold text-neutral-900 dark:text-white tracking-tight group-hover:text-neutral-950 dark:group-hover:text-white transition-colors">
                           {project.title}
                         </h3>
-                        <span className="text-[11px] font-mono text-neutral-400 shrink-0">
-                          {project.category.split(" ")[0]}
+
+                        {project.tagline && (
+                          <p className="text-xs sm:text-sm font-medium text-neutral-700 dark:text-neutral-300">
+                            {project.tagline}
+                          </p>
+                        )}
+
+                        <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
+                          {project.description}
+                        </p>
+
+                        {/* Stack Tags */}
+                        <div className="flex flex-wrap gap-1.5 pt-1">
+                          {project.tags.map((tag, tIdx) => (
+                            <span
+                              key={tIdx}
+                              className="text-[10px] sm:text-[11px] font-mono px-2 py-0.5 rounded-md bg-neutral-100 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300 border border-neutral-200/60 dark:border-neutral-700/50"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Action Link / Trigger */}
+                      <div className="flex items-center justify-between pt-4 mt-2 border-t border-neutral-100 dark:border-neutral-800/60">
+                        <button
+                          type="button"
+                          onClick={() => handleOpenShowcase()}
+                          className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-neutral-900 dark:text-white hover:text-blue-400 dark:hover:text-blue-400 transition-colors cursor-pointer"
+                        >
+                          <Maximize2 className="w-4 h-4" />
+                          <span>Open Showcase Popup</span>
+                        </button>
+                        <span className="text-xs font-mono text-neutral-400">
+                          12 Images
                         </span>
                       </div>
-                      <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1.5 leading-relaxed line-clamp-2">
-                        {project.description}
-                      </p>
-                    </div>
-
-                    {/* Stack Tags */}
-                    <div className="flex flex-wrap gap-1 mt-3">
-                      {project.tags.map((tag, tIdx) => (
-                        <span
-                          key={tIdx}
-                          className="text-[9px] font-mono px-1.5 py-0.5 rounded-sm bg-neutral-100 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300 border border-neutral-200/60 dark:border-neutral-700/50"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Action Link / Trigger */}
-                    <div className="flex items-center justify-between pt-4 mt-3 border-t border-neutral-100 dark:border-neutral-800/60">
-                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-900 dark:text-white group-hover:text-neutral-950 dark:group-hover:text-white transition-colors">
-                        <Maximize2 className="w-3.5 h-3.5" />
-                        <span>Open Showcase Popup</span>
-                      </span>
-                      <span className="text-[11px] font-mono text-neutral-400">
-                        12 Images
-                      </span>
                     </div>
                   </div>
                 </div>
               );
             }
 
-            // STANDARD PROJECT CONTAINERS
+            // STANDARD PROJECT CONTAINERS (Alternating layout)
             return (
               <div
                 key={project.id}
-                className="group flex flex-col justify-between rounded-xl p-5 bg-white dark:bg-neutral-900/70 hover:bg-neutral-50 dark:hover:bg-neutral-900/90 transition-all duration-300 shadow-xs golden-shimmer-container"
+                className="group relative rounded-2xl p-5 sm:p-6 md:p-8 bg-white dark:bg-neutral-900/70 hover:bg-neutral-50 dark:hover:bg-neutral-900/90 transition-all duration-300 shadow-xs hover:shadow-lg golden-shimmer-container"
               >
-                {/* Project Visual Preview Container */}
-                <div className="aspect-[4/3] rounded-lg bg-neutral-100 dark:bg-neutral-950 border border-neutral-200/60 dark:border-neutral-800/80 overflow-hidden relative mb-4 p-4 flex flex-col justify-between group-hover:shadow-xs transition-shadow">
-                  {/* Subtle Mockup Header */}
-                  <div className="flex items-center justify-between text-[11px] font-mono text-neutral-400 border-b border-neutral-200/50 dark:border-neutral-800 pb-2">
-                    <span className="truncate max-w-[140px]">
-                      {project.title.toLowerCase().replace(/[^a-z0-9]/g, "-")}.app
-                    </span>
-                    <span className="text-[10px] text-neutral-500 uppercase">Live</span>
-                  </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-center">
+                  {/* Project Visual Preview Column */}
+                  <div
+                    className={`w-full ${
+                      isEven ? "order-1 md:order-1" : "order-1 md:order-2"
+                    }`}
+                  >
+                    <div className="aspect-[4/3] rounded-xl bg-neutral-100 dark:bg-neutral-950 border border-neutral-200/60 dark:border-neutral-800/80 overflow-hidden relative p-5 flex flex-col justify-between group-hover:border-neutral-700 transition-colors shadow-inner">
+                      {/* Subtle Mockup Header */}
+                      <div className="flex items-center justify-between text-[11px] font-mono text-neutral-400 border-b border-neutral-200/50 dark:border-neutral-800 pb-2.5">
+                        <span className="truncate max-w-[160px] sm:max-w-[200px]">
+                          {project.title.toLowerCase().replace(/[^a-z0-9]/g, "-")}.app
+                        </span>
+                        <div className="flex items-center gap-1.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                          <span className="text-[10px] text-neutral-500 uppercase">Live</span>
+                        </div>
+                      </div>
 
-                  {/* Central Visual Presentation */}
-                  <div className="my-auto py-3 text-center">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-xs group-hover:scale-110 transition-transform duration-300 mb-2">
-                      {project.id === "growth-engine" ? (
-                        <TrendingUp className="w-6 h-6 text-neutral-700 dark:text-neutral-300" />
-                      ) : project.id === "performance-marketing" ? (
-                        <Share2 className="w-6 h-6 text-neutral-700 dark:text-neutral-300" />
-                      ) : (
-                        <Layout className="w-6 h-6 text-neutral-700 dark:text-neutral-300" />
-                      )}
+                      {/* Central Visual Presentation */}
+                      <div className="my-auto py-4 text-center">
+                        <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-xs group-hover:scale-110 transition-transform duration-300 mb-2.5">
+                          {project.id === "growth-engine" ? (
+                            <TrendingUp className="w-7 h-7 text-neutral-700 dark:text-neutral-300" />
+                          ) : project.id === "performance-marketing" ? (
+                            <Share2 className="w-7 h-7 text-neutral-700 dark:text-neutral-300" />
+                          ) : (
+                            <Layout className="w-7 h-7 text-neutral-700 dark:text-neutral-300" />
+                          )}
+                        </div>
+                        <h4 className="text-xs font-mono text-neutral-500 dark:text-neutral-400 font-medium">
+                          {project.category}
+                        </h4>
+                      </div>
+
+                      {/* Stack Tags Preview */}
+                      <div className="flex flex-wrap gap-1">
+                        {project.tags.slice(0, 3).map((tag, tIdx) => (
+                          <span
+                            key={tIdx}
+                            className="text-[9px] font-mono px-1.5 py-0.5 rounded-sm bg-white/80 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300 border border-neutral-200/40 dark:border-neutral-700/40"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                    <h4 className="text-xs font-mono text-neutral-500 dark:text-neutral-400">
-                      {project.category}
-                    </h4>
                   </div>
 
-                  {/* Stack Tags */}
-                  <div className="flex flex-wrap gap-1">
-                    {project.tags.slice(0, 3).map((tag, tIdx) => (
-                      <span
-                        key={tIdx}
-                        className="text-[9px] font-mono px-1.5 py-0.5 rounded-sm bg-white/80 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300 border border-neutral-200/40 dark:border-neutral-700/40"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                  {/* Headline & Description Column */}
+                  <div
+                    className={`w-full flex flex-col justify-between space-y-4 ${
+                      isEven ? "order-2 md:order-2" : "order-2 md:order-1"
+                    }`}
+                  >
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="inline-flex items-center text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 border border-neutral-200/60 dark:border-neutral-700/50">
+                          {project.category}
+                        </span>
+                        <span className="text-xs font-mono text-neutral-400 dark:text-neutral-500">
+                          0{index + 1}
+                        </span>
+                      </div>
 
-                {/* Title & Metadata */}
-                <div className="flex flex-col flex-1 justify-between">
-                  <div>
-                    <div className="flex items-baseline justify-between">
-                      <h3 className="text-base font-semibold text-neutral-900 dark:text-white tracking-tight">
+                      <h3 className="text-xl sm:text-2xl font-semibold text-neutral-900 dark:text-white tracking-tight">
                         {project.title}
                       </h3>
-                      <span className="text-[11px] font-mono text-neutral-400">
-                        {project.category.split(" ")[0]}
-                      </span>
+
+                      {project.tagline && (
+                        <p className="text-xs sm:text-sm font-medium text-neutral-700 dark:text-neutral-300">
+                          {project.tagline}
+                        </p>
+                      )}
+
+                      <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
+                        {project.description}
+                      </p>
+
+                      {/* Stack Tags */}
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {project.tags.map((tag, tIdx) => (
+                          <span
+                            key={tIdx}
+                            className="text-[10px] sm:text-[11px] font-mono px-2 py-0.5 rounded-md bg-neutral-100 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300 border border-neutral-200/60 dark:border-neutral-700/50"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                    <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1.5 line-clamp-2 leading-relaxed">
-                      {project.description}
-                    </p>
-                  </div>
 
-                  {/* External Action Links */}
-                  <div className="flex items-center gap-3 pt-4 mt-3 border-t border-neutral-100 dark:border-neutral-800/60">
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs font-medium text-neutral-800 hover:text-black dark:text-neutral-200 dark:hover:text-white transition-colors"
-                    >
-                      <span>View Project Details</span>
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
-
-                    {project.githubUrl && (
+                    {/* External Action Links */}
+                    <div className="flex items-center gap-3 pt-4 mt-2 border-t border-neutral-100 dark:border-neutral-800/60">
                       <a
-                        href={project.githubUrl}
+                        href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-xs font-medium text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white transition-colors"
+                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-neutral-800 hover:text-black dark:text-neutral-200 dark:hover:text-white transition-colors"
                       >
-                        <GithubIcon className="w-3 h-3" />
-                        <span>Source</span>
+                        <span>View Project Details</span>
+                        <ExternalLink className="w-3.5 h-3.5" />
                       </a>
-                    )}
+
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white transition-colors"
+                        >
+                          <GithubIcon className="w-3.5 h-3.5" />
+                          <span>Source</span>
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>

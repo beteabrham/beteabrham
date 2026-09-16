@@ -10,7 +10,7 @@ import {
   ExternalLink,
   Layers,
   Tag,
-  Monitor,
+  Palette,
 } from "lucide-react";
 
 interface BrandUiShowcaseModalProps {
@@ -87,7 +87,7 @@ export default function BrandUiShowcaseModal({
     setCurrentIndex((prev) => (prev === filteredItems.length - 1 ? 0 : prev + 1));
   }, [filteredItems.length]);
 
-  // Keyboard navigation
+  // Keyboard navigation & Esc to close
   useEffect(() => {
     if (!isOpen) return;
 
@@ -118,13 +118,13 @@ export default function BrandUiShowcaseModal({
     <div
       role="dialog"
       aria-modal="true"
-      aria-labelledby="brand-ui-showcase-title"
+      aria-labelledby="brand-ui-showcase-modal-title"
       className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 animate-in fade-in duration-200"
     >
       {/* Blurred Translucent Backdrop */}
       <div
         onClick={onClose}
-        className="fixed inset-0 bg-black/60 backdrop-blur-xl transition-opacity"
+        className="fixed inset-0 bg-black/50 backdrop-blur-xl transition-opacity"
         aria-hidden="true"
       />
 
@@ -133,10 +133,10 @@ export default function BrandUiShowcaseModal({
         {/* Top Header Bar (Transparent, only texts and close button) */}
         <div className="flex items-center justify-between px-3 sm:px-6 py-2.5 bg-transparent border-none shrink-0">
           <div className="flex items-center gap-2.5 min-w-0">
-            <Monitor className="w-4 h-4 text-neutral-300 shrink-0" />
+            <Palette className="w-4 h-4 text-neutral-300 shrink-0" />
             <div className="min-w-0">
               <h2
-                id="brand-ui-showcase-title"
+                id="brand-ui-showcase-modal-title"
                 className="text-sm sm:text-base font-semibold text-white tracking-tight truncate flex items-center gap-2"
               >
                 <span>Fresh Cave — Web Design &amp; UI Showcase</span>
@@ -151,7 +151,7 @@ export default function BrandUiShowcaseModal({
           <div className="flex items-center gap-2">
             <button
               onClick={onClose}
-              className="w-8 h-8 rounded-none flex items-center justify-center text-neutral-300 hover:text-white bg-white/10 hover:bg-white/20 border border-white/15 transition-colors focus:outline-hidden cursor-pointer backdrop-blur-sm"
+              className="w-8 h-8 rounded-lg flex items-center justify-center text-neutral-300 hover:text-white bg-white/10 hover:bg-white/20 border border-white/15 transition-colors focus:outline-hidden cursor-pointer backdrop-blur-sm"
               aria-label="Close modal"
             >
               <X className="w-4 h-4" />
@@ -178,7 +178,7 @@ export default function BrandUiShowcaseModal({
                   setSelectedCategory(cat);
                   setCurrentIndex(0);
                 }}
-                className={`px-3 py-1 rounded-none text-xs font-medium transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 cursor-pointer ${
+                className={`px-3 py-1 rounded-full text-xs font-medium transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 cursor-pointer ${
                   isSelected
                     ? "bg-white text-neutral-950 font-semibold shadow-xs"
                     : "text-neutral-300 hover:text-white bg-white/10 hover:bg-white/20 border border-white/15"
@@ -186,7 +186,7 @@ export default function BrandUiShowcaseModal({
               >
                 <span>{cat}</span>
                 <span
-                  className={`text-[10px] font-mono px-1.5 py-0.2 ${
+                  className={`text-[10px] font-mono rounded-full px-1.5 py-0.2 ${
                     isSelected
                       ? "bg-neutral-900 text-white"
                       : "bg-white/15 text-neutral-300"
@@ -220,8 +220,8 @@ export default function BrandUiShowcaseModal({
               {/* Previous Button */}
               <button
                 onClick={handlePrev}
-                aria-label="Previous screen"
-                className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-none bg-white/10 hover:bg-white/20 text-white border border-white/20 shadow-lg flex items-center justify-center transition-all hover:scale-105 backdrop-blur-md focus:outline-hidden cursor-pointer"
+                aria-label="Previous image"
+                className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 shadow-lg flex items-center justify-center transition-all hover:scale-105 backdrop-blur-md focus:outline-hidden cursor-pointer"
               >
                 <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
@@ -229,8 +229,8 @@ export default function BrandUiShowcaseModal({
               {/* Next Button */}
               <button
                 onClick={handleNext}
-                aria-label="Next screen"
-                className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-none bg-white/10 hover:bg-white/20 text-white border border-white/20 shadow-lg flex items-center justify-center transition-all hover:scale-105 backdrop-blur-md focus:outline-hidden cursor-pointer"
+                aria-label="Next image"
+                className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 shadow-lg flex items-center justify-center transition-all hover:scale-105 backdrop-blur-md focus:outline-hidden cursor-pointer"
               >
                 <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
@@ -245,11 +245,13 @@ export default function BrandUiShowcaseModal({
                       {activeItem.title}
                     </span>
                     <span className="text-[11px] font-mono text-neutral-300 shrink-0">
-                      Fresh Cave
+                      {activeItem.client}
                     </span>
-                    <span className="text-[11px] font-mono text-neutral-400 shrink-0">
-                      &bull; {activeItem.category}
-                    </span>
+                    {activeItem.year && (
+                      <span className="text-[11px] font-mono text-neutral-400 shrink-0">
+                        &bull; {activeItem.year}
+                      </span>
+                    )}
                   </div>
                   <p className="text-xs text-neutral-300 max-w-3xl leading-relaxed line-clamp-1 sm:line-clamp-2">
                     {activeItem.description}
@@ -262,7 +264,7 @@ export default function BrandUiShowcaseModal({
                     {activeItem.tags.slice(0, 3).map((tag, idx) => (
                       <span
                         key={idx}
-                        className="inline-flex items-center gap-1 text-[10px] font-mono px-2 py-0.5 rounded-none bg-white/10 text-neutral-300 border border-white/15"
+                        className="inline-flex items-center gap-1 text-[10px] font-mono px-2 py-0.5 rounded-sm bg-white/10 text-neutral-300 border border-white/15"
                       >
                         <Tag className="w-2.5 h-2.5 text-neutral-400" />
                         {tag}
@@ -273,9 +275,9 @@ export default function BrandUiShowcaseModal({
                     href={encodeURI(activeItem.image)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-[11px] font-medium text-white px-2.5 py-1 rounded-none bg-white/10 hover:bg-white/20 border border-white/15 transition-colors shrink-0 backdrop-blur-sm"
+                    className="inline-flex items-center gap-1 text-[11px] font-medium text-white px-2.5 py-1 rounded-md bg-white/10 hover:bg-white/20 border border-white/15 transition-colors shrink-0 backdrop-blur-sm"
                   >
-                    <span>Full Screen</span>
+                    <span>Full Asset</span>
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>
@@ -283,7 +285,7 @@ export default function BrandUiShowcaseModal({
             </div>
           </div>
 
-          {/* Right Side: Mini Images List (Vertical only, no horizontal scroll, no glow, no containers, spaced) */}
+          {/* Right Side: Mini Images List (Vertical only, no horizontal scroll, no glow, no containers) */}
           <div className="w-20 sm:w-24 lg:w-28 shrink-0 flex flex-col gap-4 sm:gap-5 overflow-y-auto overflow-x-hidden py-2 pr-3 sm:pr-4 pl-1 max-h-[calc(95vh-160px)] [scrollbar-width:thin] [scrollbar-color:rgba(255,255,255,0.2)_transparent]">
             {filteredItems.map((item, idx) => {
               const isCurrent = idx === currentIndex;
@@ -296,7 +298,7 @@ export default function BrandUiShowcaseModal({
                       el.scrollIntoView({ behavior: "smooth", block: "nearest" });
                     }
                   }}
-                  className={`group relative w-full aspect-[16/10] transition-all duration-200 shrink-0 focus:outline-hidden cursor-pointer flex items-center justify-center bg-transparent border-0 ring-0 shadow-none ${
+                  className={`group relative w-full aspect-square transition-all duration-200 shrink-0 focus:outline-hidden cursor-pointer flex items-center justify-center bg-transparent border-0 ring-0 shadow-none ${
                     isCurrent
                       ? "opacity-100 scale-105"
                       : "opacity-40 hover:opacity-80"
@@ -307,8 +309,8 @@ export default function BrandUiShowcaseModal({
                     src={encodeURI(item.image)}
                     alt={item.title}
                     fill
-                    sizes="112px"
-                    className="object-contain rounded-none"
+                    sizes="96px"
+                    className="object-contain"
                   />
                 </button>
               );

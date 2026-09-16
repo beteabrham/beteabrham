@@ -21,7 +21,6 @@ interface GrowthEngineShowcaseModalProps {
 
 type CategoryFilter =
   | "All"
-  | "Overview"
   | "Search & AI Overview"
   | "Streaming Telemetry"
   | "Audience & Geo"
@@ -29,7 +28,6 @@ type CategoryFilter =
 
 const CATEGORIES: CategoryFilter[] = [
   "All",
-  "Overview",
   "Search & AI Overview",
   "Streaming Telemetry",
   "Audience & Geo",

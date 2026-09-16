@@ -91,7 +91,7 @@ export interface BrandUiScreenshotItem {
 export interface GrowthEngineScreenshotItem {
   id: string;
   title: string;
-  category: "Overview" | "Search & AI Overview" | "Streaming Telemetry" | "Audience & Geo" | "Demographics & Sources";
+  category: "Search & AI Overview" | "Streaming Telemetry" | "Audience & Geo" | "Demographics & Sources";
   client: string;
   description: string;
   image: string;
@@ -880,16 +880,6 @@ export const brandUiScreenshotsData: BrandUiScreenshotItem[] = [
 ];
 
 export const growthEngineScreenshotsData: GrowthEngineScreenshotItem[] = [
-  {
-    id: "growth-engine-overview",
-    title: "Search & Digital Growth Engine — 3D Analysis Overview",
-    category: "Overview",
-    client: "ICE — Mestawet EP",
-    year: "2026",
-    description: "Full-spectrum 3D analytics dashboard presenting Google SERP #1 ranking, AI Overview knowledge snippet, 7,460 streaming volume, listener acquisition curves, source attribution, and demographic distribution.",
-    image: "/growth-engine/growth-engine-analysis-mockup.jpg",
-    tags: ["3D Analysis", "Data Visualization", "SEO/SEM", "SERP Dominance", "Analytics"],
-  },
   {
     id: "growth-engine-serp-ai-overview",
     title: "Google Search #1 Ranking & Featured AI Overview",

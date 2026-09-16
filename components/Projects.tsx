@@ -7,6 +7,7 @@ import { ExternalLink, Maximize2, TrendingUp, Layout, Share2 } from "lucide-reac
 import GraphicsShowcaseModal from "@/components/GraphicsShowcaseModal";
 import BrandUiShowcaseModal from "@/components/BrandUiShowcaseModal";
 import GrowthEngineShowcaseModal from "@/components/GrowthEngineShowcaseModal";
+import GrowthEngineAnalyticsPreview from "@/components/GrowthEngineAnalyticsPreview";
 
 function GithubIcon({ className = "w-3 h-3" }: { className?: string }) {
   return (
@@ -218,25 +219,15 @@ function ProjectItemRow({
     );
   }
 
-  // SPECIAL ROW: Search & Digital Growth Engine (Show mockup analysis image, sharp straight corners, modal trigger)
+  // SPECIAL ROW: Search & Digital Growth Engine (Responsive UI Analytics Dashboard, sharp straight corners, modal trigger)
   if (project.id === "growth-engine") {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14 items-center py-10 border-b border-neutral-200/50 dark:border-neutral-800/60 last:border-b-0">
-        {/* Mockup Preview: Show only the analysis mockup without adding anything */}
+        {/* Responsive UI Design of the Analytics Dashboard (Not a mockup image) */}
         <div className={`w-full ${isEven ? "order-1 md:order-1" : "order-1 md:order-2"}`}>
-          <div
-            onClick={() => onOpenGrowthEngineShowcase()}
-            className="aspect-[4/3] w-full relative cursor-pointer overflow-hidden rounded-none"
-          >
-            <Image
-              src="/growth-engine/growth-engine-analysis-mockup.jpg"
-              alt="Search & Digital Growth Engine Analysis"
-              fill
-              sizes="(max-width: 768px) 100vw, 560px"
-              className="object-cover hover:scale-105 transition-transform duration-300 rounded-none"
-              priority
-            />
-          </div>
+          <GrowthEngineAnalyticsPreview
+            onOpenShowcase={(id) => onOpenGrowthEngineShowcase(id)}
+          />
         </div>
 
         {/* Headline & Description Column: Beside the images, clean neutral text, no blue hover */}
@@ -293,7 +284,7 @@ function ProjectItemRow({
               <span>Open Showcase Popup</span>
             </button>
             <span className="text-xs font-mono text-neutral-400">
-              7 Images
+              6 Source Screenshots
             </span>
           </div>
         </div>

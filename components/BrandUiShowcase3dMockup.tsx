@@ -9,7 +9,7 @@ import {
   Sparkles,
   Music,
   Tv,
-  Youtube,
+  Video,
   ShieldCheck,
   Disc,
   Headphones,
@@ -246,7 +246,7 @@ export default function BrandUiShowcase3dMockup({
             <div>
               <div className="flex items-center justify-between mb-1">
                 <span className="text-[8px] font-mono uppercase tracking-wider text-[#FBFCFF]/40 flex items-center gap-1">
-                  <Youtube className="w-2.5 h-2.5 text-[#8C1C13]" /> Channel Claims
+                  <Video className="w-2.5 h-2.5 text-[#8C1C13]" /> Channel Claims
                 </span>
                 <ArrowUpRight className="w-3 h-3 text-[#FBFCFF]/40 group-hover:text-[#8C1C13] transition-colors shrink-0" />
               </div>

@@ -146,4 +146,34 @@
   opacity: 0.35; /* Soft 35% opacity on surface glow */
 }
 
+/* ==========================================================================
+   3D Isometric Mockup Presentation System (Project 03 Fresh Cave)
+   Replicates isometric tilted plane with floating cards and blue atmospheric aura
+   ========================================================================== */
+
+.mockup-3d-viewport {
+  perspective: 1200px;
+  perspective-origin: 50% 40%;
+}
+
+.mockup-3d-stage {
+  transform-style: preserve-3d;
+  transform: rotateX(46deg) rotateZ(-26deg) rotateY(3deg);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.mockup-card-layer {
+  transform-style: preserve-3d;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+.mockup-card-layer:hover {
+  transform: translateZ(26px) scale(1.025);
+  box-shadow: 0 20px 45px -8px rgba(0, 0, 0, 0.75),
+              0 0 24px 2px rgba(37, 99, 235, 0.38) !important;
+}
+
 

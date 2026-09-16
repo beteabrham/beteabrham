@@ -218,6 +218,89 @@ function ProjectItemRow({
     );
   }
 
+  // SPECIAL ROW: Search & Digital Growth Engine (Show mockup analysis image, sharp straight corners, modal trigger)
+  if (project.id === "growth-engine") {
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14 items-center py-10 border-b border-neutral-200/50 dark:border-neutral-800/60 last:border-b-0">
+        {/* Mockup Preview: Show only the analysis mockup without adding anything */}
+        <div className={`w-full ${isEven ? "order-1 md:order-1" : "order-1 md:order-2"}`}>
+          <div
+            onClick={() => onOpenGrowthEngineShowcase()}
+            className="aspect-[4/3] w-full relative cursor-pointer overflow-hidden rounded-none"
+          >
+            <Image
+              src="/growth-engine/growth-engine-analysis-mockup.jpg"
+              alt="Search & Digital Growth Engine Analysis"
+              fill
+              sizes="(max-width: 768px) 100vw, 560px"
+              className="object-cover hover:scale-105 transition-transform duration-300 rounded-none"
+              priority
+            />
+          </div>
+        </div>
+
+        {/* Headline & Description Column: Beside the images, clean neutral text, no blue hover */}
+        <div
+          className={`w-full flex flex-col justify-between space-y-4 ${
+            isEven ? "order-2 md:order-2" : "order-2 md:order-1"
+          }`}
+        >
+          <div className="space-y-3">
+            <div className="flex items-center justify-between gap-2">
+              <span className="inline-flex items-center text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 border border-neutral-200/60 dark:border-neutral-700/50">
+                {project.category}
+              </span>
+              <span className="text-xs font-mono text-neutral-400 dark:text-neutral-500">
+                0{index + 1}
+              </span>
+            </div>
+
+            <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-neutral-950 dark:text-neutral-50">
+              {project.title}
+            </h3>
+
+            {project.tagline && (
+              <p className="text-xs sm:text-sm font-medium text-neutral-700 dark:text-neutral-300">
+                {project.tagline}
+              </p>
+            )}
+
+            <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
+              {project.description}
+            </p>
+
+            {/* Stack Tags */}
+            <div className="flex flex-wrap gap-1.5 pt-1">
+              {project.tags.map((tag, tIdx) => (
+                <span
+                  key={tIdx}
+                  className="text-[10px] sm:text-[11px] font-mono px-2 py-0.5 rounded-md bg-neutral-100 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300 border border-neutral-200/60 dark:border-neutral-700/50"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Action Link / Trigger */}
+          <div className="flex items-center justify-between pt-4 mt-2 border-t border-neutral-200/60 dark:border-neutral-800/60">
+            <button
+              type="button"
+              onClick={() => onOpenGrowthEngineShowcase()}
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-neutral-900 dark:text-neutral-100 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors cursor-pointer"
+            >
+              <Maximize2 className="w-4 h-4" />
+              <span>Open Showcase Popup</span>
+            </button>
+            <span className="text-xs font-mono text-neutral-400">
+              7 Images
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // SPECIAL ROW: Fresh Cave Web Design & UI System (Show only the mockup web design, no extra elements, sharp straight corners)
   if (project.id === "brand-ui-system") {
     return (

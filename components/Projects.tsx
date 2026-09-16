@@ -32,17 +32,19 @@ interface ProjectItemRowProps {
 
 function ProjectItemRow({ project, index, onOpenShowcase }: ProjectItemRowProps) {
   const isEven = index % 2 === 0;
-  const [isDescHovered, setIsDescHovered] = useState(false);
 
-  // SPECIAL CONTAINER: Graphic Design & Logo Designs
+  // SPECIAL ROW: Graphic Design & Logo Designs (Direct images, no glow, no container behind)
   if (project.id === "graphics-design-logos") {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center py-6 border-b border-neutral-200/50 dark:border-neutral-800/60 last:border-b-0">
-        {/* Visual Preview Container: only images at rest, slides in everything when hovering description */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center py-8 border-b border-neutral-200/50 dark:border-neutral-800/60 last:border-b-0">
+        {/* Images Grid: Direct images without container behind them or glow effect */}
         <div className={`w-full ${isEven ? "order-1 md:order-1" : "order-1 md:order-2"}`}>
-          <div className="aspect-[4/3] rounded-2xl bg-neutral-950 border border-neutral-800/80 overflow-hidden relative golden-shimmer-container shadow-lg transition-all duration-300">
-            {/* 4 Edge-to-Edge Filled 1:1 Images Grid (Pure Clean Images at rest) */}
-            <div className="grid grid-cols-2 grid-rows-2 w-full h-full gap-1 p-1 bg-neutral-950">
+          <div
+            onClick={() => onOpenShowcase()}
+            className="aspect-[4/3] rounded-2xl overflow-hidden relative cursor-pointer border border-neutral-200/70 dark:border-neutral-800/80 shadow-xs"
+          >
+            {/* 4 Edge-to-Edge Filled 1:1 Images Grid */}
+            <div className="grid grid-cols-2 grid-rows-2 w-full h-full gap-1 p-1 bg-neutral-100 dark:bg-neutral-900">
               {/* Tile 1: Pattern 33 Logo */}
               <div
                 role="button"
@@ -59,7 +61,7 @@ function ProjectItemRow({ project, index, onOpenShowcase }: ProjectItemRowProps)
                   }
                 }}
                 aria-label="View Pattern 33 Logo in showcase"
-                className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile cursor-pointer active:scale-[0.97] transition-transform"
+                className="relative w-full h-full overflow-hidden rounded-md group/tile cursor-pointer active:scale-[0.98] transition-transform"
               >
                 <Image
                   src="/graphics%20work/pattern33-1.jpg"
@@ -68,7 +70,7 @@ function ProjectItemRow({ project, index, onOpenShowcase }: ProjectItemRowProps)
                   sizes="(max-width: 768px) 50vw, 320px"
                   className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-black/10 group-hover/tile:bg-transparent transition-colors" />
+                <div className="absolute inset-0 bg-black/5 group-hover/tile:bg-transparent transition-colors" />
               </div>
 
               {/* Tile 2: Lele Baltena Brand Suite */}
@@ -87,7 +89,7 @@ function ProjectItemRow({ project, index, onOpenShowcase }: ProjectItemRowProps)
                   }
                 }}
                 aria-label="View Lele Baltena Brand Packaging Suite in showcase"
-                className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile cursor-pointer active:scale-[0.97] transition-transform"
+                className="relative w-full h-full overflow-hidden rounded-md group/tile cursor-pointer active:scale-[0.98] transition-transform"
               >
                 <Image
                   src="/graphics%20work/lele-baltena-brand-suite.jpg"
@@ -96,7 +98,7 @@ function ProjectItemRow({ project, index, onOpenShowcase }: ProjectItemRowProps)
                   sizes="(max-width: 768px) 50vw, 320px"
                   className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-black/10 group-hover/tile:bg-transparent transition-colors" />
+                <div className="absolute inset-0 bg-black/5 group-hover/tile:bg-transparent transition-colors" />
               </div>
 
               {/* Tile 3: Aye Hiking Tour Ad Campaign */}
@@ -115,7 +117,7 @@ function ProjectItemRow({ project, index, onOpenShowcase }: ProjectItemRowProps)
                   }
                 }}
                 aria-label="View Aye Hiking Tour Ad Campaign in showcase"
-                className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile cursor-pointer active:scale-[0.97] transition-transform"
+                className="relative w-full h-full overflow-hidden rounded-md group/tile cursor-pointer active:scale-[0.98] transition-transform"
               >
                 <Image
                   src="/graphics%20work/0001-1778030199_20210524_064435_0000%20(2).png"
@@ -124,7 +126,7 @@ function ProjectItemRow({ project, index, onOpenShowcase }: ProjectItemRowProps)
                   sizes="(max-width: 768px) 50vw, 320px"
                   className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-black/10 group-hover/tile:bg-transparent transition-colors" />
+                <div className="absolute inset-0 bg-black/5 group-hover/tile:bg-transparent transition-colors" />
               </div>
 
               {/* Tile 4: Kaff Leather Oxford Ad */}
@@ -143,7 +145,7 @@ function ProjectItemRow({ project, index, onOpenShowcase }: ProjectItemRowProps)
                   }
                 }}
                 aria-label="View Kaff Leather Oxford Ad in showcase"
-                className="relative w-full h-full overflow-hidden rounded-xs bg-neutral-900 group/tile cursor-pointer active:scale-[0.97] transition-transform"
+                className="relative w-full h-full overflow-hidden rounded-md group/tile cursor-pointer active:scale-[0.98] transition-transform"
               >
                 <Image
                   src="/graphics%20work/12_20240502_215445_0011.png"
@@ -152,84 +154,17 @@ function ProjectItemRow({ project, index, onOpenShowcase }: ProjectItemRowProps)
                   sizes="(max-width: 768px) 50vw, 320px"
                   className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-black/10 group-hover/tile:bg-transparent transition-colors" />
-              </div>
-            </div>
-
-            {/* Slide-In Overlay: Applied ONLY on the container, slides in when hovering on description */}
-            <div
-              className={`absolute inset-0 p-6 sm:p-7 bg-neutral-950/95 backdrop-blur-md border border-blue-500/30 rounded-2xl flex flex-col justify-between transition-transform duration-500 ease-out z-20 ${
-                isDescHovered
-                  ? "translate-x-0 pointer-events-auto"
-                  : isEven
-                  ? "translate-x-full pointer-events-none"
-                  : "-translate-x-full pointer-events-none"
-              }`}
-              onMouseEnter={() => setIsDescHovered(true)}
-              onMouseLeave={() => setIsDescHovered(false)}
-            >
-              <div className="space-y-2.5">
-                <div className="flex items-center justify-between gap-2">
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-blue-400 font-semibold">
-                    {project.category}
-                  </span>
-                  <span className="text-[10px] font-mono text-neutral-400">
-                    22 Showcase Works
-                  </span>
-                </div>
-
-                <h4 className="text-lg sm:text-xl font-semibold text-white tracking-tight">
-                  {project.title}
-                </h4>
-
-                {project.tagline && (
-                  <p className="text-xs text-neutral-300 line-clamp-2 leading-relaxed">
-                    {project.tagline}
-                  </p>
-                )}
-
-                <p className="text-xs text-neutral-400 line-clamp-3 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Quick Stack Tags */}
-                <div className="flex flex-wrap gap-1 pt-1">
-                  {project.tags.map((tag, tIdx) => (
-                    <span
-                      key={tIdx}
-                      className="text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded-sm bg-white/10 text-neutral-200 border border-white/10"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Action Button */}
-              <div className="pt-3 flex items-center justify-between border-t border-white/10 mt-2">
-                <button
-                  type="button"
-                  onClick={() => onOpenShowcase()}
-                  className="inline-flex items-center gap-2 text-xs font-semibold text-white hover:text-blue-400 transition-colors cursor-pointer"
-                >
-                  <Maximize2 className="w-4 h-4" />
-                  <span>Open Interactive Showcase</span>
-                </button>
-                <span className="text-[10px] font-mono text-neutral-400">
-                  12 Viewer Images
-                </span>
+                <div className="absolute inset-0 bg-black/5 group-hover/tile:bg-transparent transition-colors" />
               </div>
             </div>
           </div>
         </div>
 
-        {/* Headline & Description Column: ALWAYS VISIBLE OUTSIDE THE CONTAINER */}
+        {/* Headline & Description Column: Beside the images, clean neutral text, no blue hover */}
         <div
           className={`w-full flex flex-col justify-between space-y-4 ${
             isEven ? "order-2 md:order-2" : "order-2 md:order-1"
           }`}
-          onMouseEnter={() => setIsDescHovered(true)}
-          onMouseLeave={() => setIsDescHovered(false)}
         >
           <div className="space-y-3">
             <div className="flex items-center justify-between gap-2">
@@ -241,11 +176,7 @@ function ProjectItemRow({ project, index, onOpenShowcase }: ProjectItemRowProps)
               </span>
             </div>
 
-            <h3 className={`text-xl sm:text-2xl font-semibold tracking-tight transition-colors ${
-              isDescHovered
-                ? "text-blue-600 dark:text-blue-400"
-                : "text-neutral-900 dark:text-white"
-            }`}>
+            <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-neutral-950 dark:text-neutral-50">
               {project.title}
             </h3>
 
@@ -277,7 +208,7 @@ function ProjectItemRow({ project, index, onOpenShowcase }: ProjectItemRowProps)
             <button
               type="button"
               onClick={() => onOpenShowcase()}
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-neutral-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-neutral-900 dark:text-neutral-100 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors cursor-pointer"
             >
               <Maximize2 className="w-4 h-4" />
               <span>Open Showcase Popup</span>
@@ -291,14 +222,14 @@ function ProjectItemRow({ project, index, onOpenShowcase }: ProjectItemRowProps)
     );
   }
 
-  // STANDARD PROJECT CONTAINERS (Alternating Layout)
+  // STANDARD ROWS (SEO, Brand System, Marketing - Direct visual, no glow, no container behind)
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center py-6 border-b border-neutral-200/50 dark:border-neutral-800/60 last:border-b-0">
-      {/* Project Visual Preview Container: only mockup at rest, slides in everything when hovering description */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center py-8 border-b border-neutral-200/50 dark:border-neutral-800/60 last:border-b-0">
+      {/* Project Visual: Direct visual without container behind it or glow effect */}
       <div className={`w-full ${isEven ? "order-1 md:order-1" : "order-1 md:order-2"}`}>
-        <div className="aspect-[4/3] rounded-2xl bg-neutral-100 dark:bg-neutral-950 border border-neutral-200/70 dark:border-neutral-800/80 overflow-hidden relative p-5 flex flex-col justify-between golden-shimmer-container shadow-lg transition-all duration-300">
-          {/* Subtle Mockup Header */}
-          <div className="flex items-center justify-between text-[11px] font-mono text-neutral-400 border-b border-neutral-200/50 dark:border-neutral-800 pb-2.5">
+        <div className="aspect-[4/3] rounded-2xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200/70 dark:border-neutral-800/80 overflow-hidden relative p-5 flex flex-col justify-between shadow-xs">
+          {/* Mockup Top Header */}
+          <div className="flex items-center justify-between text-[11px] font-mono text-neutral-400 border-b border-neutral-200/60 dark:border-neutral-800 pb-2.5">
             <span className="truncate max-w-[160px] sm:max-w-[200px]">
               {project.title.toLowerCase().replace(/[^a-z0-9]/g, "-")}.app
             </span>
@@ -335,92 +266,14 @@ function ProjectItemRow({ project, index, onOpenShowcase }: ProjectItemRowProps)
               </span>
             ))}
           </div>
-
-          {/* Slide-In Overlay: Applied ONLY on the container, slides in when hovering on description */}
-          <div
-            className={`absolute inset-0 p-6 sm:p-7 bg-neutral-950/95 backdrop-blur-md border border-blue-500/30 rounded-2xl flex flex-col justify-between transition-transform duration-500 ease-out z-20 ${
-              isDescHovered
-                ? "translate-x-0 pointer-events-auto"
-                : isEven
-                ? "translate-x-full pointer-events-none"
-                : "-translate-x-full pointer-events-none"
-            }`}
-            onMouseEnter={() => setIsDescHovered(true)}
-            onMouseLeave={() => setIsDescHovered(false)}
-          >
-            <div className="space-y-2.5">
-              <div className="flex items-center justify-between gap-2">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-blue-400 font-semibold">
-                  {project.category}
-                </span>
-                <div className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-[10px] font-mono text-neutral-300">Live Active</span>
-                </div>
-              </div>
-
-              <h4 className="text-lg sm:text-xl font-semibold text-white tracking-tight">
-                {project.title}
-              </h4>
-
-              {project.tagline && (
-                <p className="text-xs text-neutral-300 line-clamp-2 leading-relaxed">
-                  {project.tagline}
-                </p>
-              )}
-
-              <p className="text-xs text-neutral-400 line-clamp-3 leading-relaxed">
-                {project.description}
-              </p>
-
-              {/* Quick Stack Tags */}
-              <div className="flex flex-wrap gap-1 pt-1">
-                {project.tags.map((tag, tIdx) => (
-                  <span
-                    key={tIdx}
-                    className="text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded-sm bg-white/10 text-neutral-200 border border-white/10"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Direct Action Links */}
-            <div className="pt-3 flex items-center justify-between border-t border-white/10 mt-2">
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-white hover:text-blue-400 transition-colors"
-              >
-                <span>View Project Details</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-
-              {project.githubUrl && (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-[11px] font-mono text-neutral-300 hover:text-white transition-colors"
-                >
-                  <GithubIcon className="w-3 h-3" />
-                  <span>Source</span>
-                </a>
-              )}
-            </div>
-          </div>
         </div>
       </div>
 
-      {/* Headline & Description Column: ALWAYS VISIBLE OUTSIDE THE CONTAINER */}
+      {/* Headline & Description Column: Beside the visual, clean neutral text, no blue hover */}
       <div
         className={`w-full flex flex-col justify-between space-y-4 ${
           isEven ? "order-2 md:order-2" : "order-2 md:order-1"
         }`}
-        onMouseEnter={() => setIsDescHovered(true)}
-        onMouseLeave={() => setIsDescHovered(false)}
       >
         <div className="space-y-3">
           <div className="flex items-center justify-between gap-2">
@@ -432,11 +285,7 @@ function ProjectItemRow({ project, index, onOpenShowcase }: ProjectItemRowProps)
             </span>
           </div>
 
-          <h3 className={`text-xl sm:text-2xl font-semibold tracking-tight transition-colors ${
-            isDescHovered
-              ? "text-blue-600 dark:text-blue-400"
-              : "text-neutral-900 dark:text-white"
-          }`}>
+          <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-neutral-950 dark:text-neutral-50">
             {project.title}
           </h3>
 
@@ -469,7 +318,7 @@ function ProjectItemRow({ project, index, onOpenShowcase }: ProjectItemRowProps)
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-neutral-800 hover:text-black dark:text-neutral-200 dark:hover:text-white transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-neutral-900 dark:text-neutral-100 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
           >
             <span>View Project Details</span>
             <ExternalLink className="w-3.5 h-3.5" />
@@ -528,7 +377,7 @@ export default function Projects() {
                 onClick={() => setActiveTab("all")}
                 className={`text-xs px-3.5 py-1 rounded-full transition-colors cursor-pointer ${
                   activeTab === "all"
-                    ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 golden-shimmer-btn shadow-xs"
+                    ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 shadow-xs"
                     : "text-neutral-500 hover:text-neutral-900 dark:hover:text-white"
                 }`}
               >
@@ -538,7 +387,7 @@ export default function Projects() {
                 onClick={() => setActiveTab("featured")}
                 className={`text-xs px-3.5 py-1 rounded-full transition-colors cursor-pointer ${
                   activeTab === "featured"
-                    ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 golden-shimmer-btn shadow-xs"
+                    ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 shadow-xs"
                     : "text-neutral-500 hover:text-neutral-900 dark:hover:text-white"
                 }`}
               >

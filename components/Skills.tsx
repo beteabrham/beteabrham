@@ -73,8 +73,8 @@ export default function Skills() {
                 </p>
               </div>
 
-              {/* Bottom Skill Tags & Interaction Hint */}
-              <div className="pt-4 border-t border-neutral-100 dark:border-neutral-800/80 space-y-3">
+              {/* Bottom Skill Tags */}
+              <div className="pt-4 border-t border-neutral-100 dark:border-neutral-800/80">
                 <div className="flex flex-wrap gap-1.5">
                   {service.skills.slice(0, 3).map((skill, sIdx) => (
                     <span
@@ -89,11 +89,6 @@ export default function Skills() {
                       +{service.skills.length - 3}
                     </span>
                   )}
-                </div>
-
-                <div className="text-[11px] font-medium text-neutral-400 dark:text-neutral-500 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors flex items-center justify-between">
-                  <span>Click to view details</span>
-                  <span className="text-xs">→</span>
                 </div>
               </div>
             </div>

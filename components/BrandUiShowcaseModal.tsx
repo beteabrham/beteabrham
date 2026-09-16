@@ -207,9 +207,17 @@ export default function BrandUiShowcaseModal({
           {/* Left Column: Image Canvas & Info Panel */}
           <div className="flex-1 flex flex-col min-h-0 min-w-0 justify-between">
             {/* Showcase Canvas (Completely transparent, NO container holding the image) */}
-            <div className="relative flex-1 min-h-[300px] sm:min-h-[420px] bg-transparent flex items-center justify-center p-2 overflow-hidden">
+            <div
+              className={`relative flex-1 min-h-[300px] sm:min-h-[420px] bg-transparent flex items-center justify-center p-2 ${
+                activeItem.id === "fresh-cave-mockup-overview" ? "overflow-visible" : "overflow-hidden"
+              }`}
+            >
               {/* Active Image Stage: DIRECT IMAGE, PERFECT NATURAL FIT SIZE */}
-              <div className="relative w-full h-full max-h-[58vh] sm:max-h-[64vh] flex items-center justify-center min-h-0">
+              <div
+                className={`relative w-full h-full max-h-[58vh] sm:max-h-[66vh] flex items-center justify-center min-h-0 ${
+                  activeItem.id === "fresh-cave-mockup-overview" ? "overflow-visible" : "overflow-hidden"
+                }`}
+              >
                 {activeItem.id === "fresh-cave-mockup-overview" ? (
                   <BrandUiShowcase3dMockup
                     onSelectScreen={(screenId) => {

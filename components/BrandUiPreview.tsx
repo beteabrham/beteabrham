@@ -13,17 +13,19 @@ export default function BrandUiPreview({ onOpenShowcase }: BrandUiPreviewProps) 
     <div className="w-full select-none flex items-center justify-center [perspective:1200px] overflow-visible py-1 sm:py-2">
       {/* 
         3D ISOMETRIC GATHERED MOCKUP
-        - Preserves the exact gathered size that fits the headline & description column
-        - Implements the 3D isometric angle (rotateX(22deg) rotateZ(-12deg) rotateY(4deg))
+        - Responsive scaler wrapper cleanly separates scale from 3D rotation
+        - Perfectly fits the headline & description column
+        - Calibrated 3D isometric angle (rotateX(18deg) rotateZ(-9deg) rotateY(3deg))
         - Uses authentic code, typography, and original photo assets from fresh-cave
         - Completely borderless / free-floating (no outer container)
       */}
-      <div
-        className="w-full space-y-2.5 [transform-style:preserve-3d] transition-transform duration-500 origin-center scale-[0.92] xs:scale-[0.96] sm:scale-[1] md:scale-[0.95] lg:scale-[1]"
-        style={{
-          transform: "rotateX(22deg) rotateZ(-12deg) rotateY(4deg)",
-        }}
-      >
+      <div className="w-full flex items-center justify-center origin-center scale-[0.88] xs:scale-[0.92] sm:scale-[0.96] md:scale-[0.92] lg:scale-[0.98]">
+        <div
+          className="w-full space-y-2 [transform-style:preserve-3d] transition-transform duration-500 origin-center"
+          style={{
+            transform: "rotateX(18deg) rotateZ(-9deg) rotateY(3deg)",
+          }}
+        >
         {/* 
           1. TOP FLOATING NAVBAR MOCKUP
           Directly recreated from fresh-cave/components/Navbar.tsx

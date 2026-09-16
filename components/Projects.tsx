@@ -215,37 +215,126 @@ function ProjectItemRow({
     );
   }
 
-  // SPECIAL ROW: Fresh Cave Web Design & UI System (Isometric Mockup, sharp straight corners, showcase modal trigger)
+  // SPECIAL ROW: Fresh Cave Web Design & UI System (4-photo grid, no container behind, sharp straight corners)
   if (project.id === "brand-ui-system") {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14 items-center py-10 border-b border-neutral-200/50 dark:border-neutral-800/60 last:border-b-0">
-        {/* Isometric Mockup Image Showcase: Direct image, sharp straight corners, no glow */}
+        {/* Images Grid: Direct images, no container holding them, sharp straight corners */}
         <div className={`w-full ${isEven ? "order-1 md:order-1" : "order-1 md:order-2"}`}>
           <div
             onClick={() => onOpenBrandUiShowcase()}
-            className="aspect-[4/3] w-full relative cursor-pointer group overflow-hidden border border-neutral-200/80 dark:border-neutral-800 rounded-none bg-neutral-900"
+            className="aspect-[4/3] w-full relative cursor-pointer"
           >
-            <Image
-              src="/Brand%20%26%20UI/fresh-cave-ui-mockup.jpg"
-              alt="Fresh Cave Web Design Mockup"
-              fill
-              sizes="(max-width: 768px) 100vw, 560px"
-              className="object-cover group-hover:scale-105 transition-transform duration-500 rounded-none"
-              priority
-            />
-            {/* Overlay badge with 12 screens & Mockup info */}
-            <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-white px-2.5 py-1 text-[11px] font-mono rounded-none border border-white/15 flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-              <span>12 Screens &amp; 3D Mockup</span>
-            </div>
-            <div className="absolute bottom-3 right-3 bg-black/70 backdrop-blur-md text-white px-2.5 py-1 text-[11px] font-medium rounded-none border border-white/15 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-              <Maximize2 className="w-3 h-3" />
-              <span>Open UI Showcase</span>
+            {/* 4 Edge-to-Edge Filled 1:1 Images Grid (No container, no curved corners) */}
+            <div className="grid grid-cols-2 grid-rows-2 w-full h-full gap-2">
+              {/* Tile 1: 3D Isometric Mockup */}
+              <div
+                role="button"
+                tabIndex={0}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onOpenBrandUiShowcase("fresh-cave-mockup-overview");
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.stopPropagation();
+                    onOpenBrandUiShowcase("fresh-cave-mockup-overview");
+                  }
+                }}
+                aria-label="View Fresh Cave 3D UI Mockup in showcase"
+                className="relative w-full h-full overflow-hidden group/tile cursor-pointer"
+              >
+                <Image
+                  src="/Brand%20%26%20UI/fresh-cave-ui-mockup.jpg"
+                  alt="Fresh Cave 3D UI Mockup"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 320px"
+                  className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
+                />
+              </div>
+
+              {/* Tile 2: Hero Section */}
+              <div
+                role="button"
+                tabIndex={0}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onOpenBrandUiShowcase("fresh-cave-hero");
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.stopPropagation();
+                    onOpenBrandUiShowcase("fresh-cave-hero");
+                  }
+                }}
+                aria-label="View Fresh Cave Hero Landing in showcase"
+                className="relative w-full h-full overflow-hidden group/tile cursor-pointer"
+              >
+                <Image
+                  src="/Brand%20%26%20UI/Screenshot%202026-09-16%20204227.png"
+                  alt="Fresh Cave Hero Landing"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 320px"
+                  className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
+                />
+              </div>
+
+              {/* Tile 3: Artist Spotlight (Atlas Nova) */}
+              <div
+                role="button"
+                tabIndex={0}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onOpenBrandUiShowcase("fresh-cave-artist-spotlight");
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.stopPropagation();
+                    onOpenBrandUiShowcase("fresh-cave-artist-spotlight");
+                  }
+                }}
+                aria-label="View Atlas Nova Artist Spotlight in showcase"
+                className="relative w-full h-full overflow-hidden group/tile cursor-pointer"
+              >
+                <Image
+                  src="/Brand%20%26%20UI/Screenshot%202026-09-16%20204634.png"
+                  alt="Atlas Nova Artist Spotlight"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 320px"
+                  className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
+                />
+              </div>
+
+              {/* Tile 4: Distribution Rates & Pricing Tiers */}
+              <div
+                role="button"
+                tabIndex={0}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onOpenBrandUiShowcase("fresh-cave-pricing-tiers");
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.stopPropagation();
+                    onOpenBrandUiShowcase("fresh-cave-pricing-tiers");
+                  }
+                }}
+                aria-label="View Fresh Cave Distribution Rates in showcase"
+                className="relative w-full h-full overflow-hidden group/tile cursor-pointer"
+              >
+                <Image
+                  src="/Brand%20%26%20UI/Screenshot%202026-09-16%20204657.png"
+                  alt="Fresh Cave Distribution Rates"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 320px"
+                  className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
+                />
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Headline & Description Column: Beside the image, clean neutral text, no blue hover */}
+        {/* Headline & Description Column: Beside the images, clean neutral text, no blue hover */}
         <div
           className={`w-full flex flex-col justify-between space-y-4 ${
             isEven ? "order-2 md:order-2" : "order-2 md:order-1"
@@ -296,10 +385,10 @@ function ProjectItemRow({
               className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-neutral-900 dark:text-neutral-100 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors cursor-pointer"
             >
               <Maximize2 className="w-4 h-4" />
-              <span>Explore 12 UI Screens &amp; Mockup</span>
+              <span>Open Showcase Popup</span>
             </button>
             <span className="text-xs font-mono text-neutral-400">
-              12 Screens
+              13 Images
             </span>
           </div>
         </div>

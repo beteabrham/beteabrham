@@ -85,7 +85,7 @@
    Deep indigo & electric cobalt dark light aura (No stroke, pure atmospheric glow)
    ========================================================================== */
 
-/* White Button Dark Light Blue Glow */
+/* White Button Dark Light Blue Glow (Subtle refined opacity) */
 .golden-shimmer-btn {
   position: relative;
   border: none !important;
@@ -97,10 +97,10 @@
 .golden-shimmer-btn:hover {
   border: none !important;
   outline: none !important;
-  /* Deep Blue Dark Light Glow - rich luminous electric cobalt & deep blue ambient falloff */
-  box-shadow: 0 0 18px 1px rgba(37, 99, 235, 0.62),
-              0 0 8px 0px rgba(96, 165, 250, 0.5),
-              0 0 32px 4px rgba(30, 58, 138, 0.42);
+  /* Deep Blue Dark Light Glow - refined subtle electric cobalt & deep blue ambient falloff */
+  box-shadow: 0 0 14px 1px rgba(37, 99, 235, 0.30),
+              0 0 6px 0px rgba(96, 165, 250, 0.22),
+              0 0 22px 2px rgba(30, 58, 138, 0.18);
   transform: translateY(-1px);
 }
 
@@ -108,7 +108,7 @@
   transform: translateY(0);
 }
 
-/* Container Dark Light Blue Glow (No stroke, only pure dark light ambient glow) */
+/* Container Dark Light Blue Glow (Soft, low-opacity dark light ambient aura) */
 .golden-shimmer-container {
   position: relative;
   overflow: hidden;
@@ -118,15 +118,15 @@
               transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Soft Ambient Surface Glow (Deep Blue Dark Light) */
+/* Subtle Ambient Surface Glow (Low-opacity Deep Blue) */
 .golden-shimmer-container::after {
   content: "";
   position: absolute;
   inset: 0;
   background: radial-gradient(
     700px circle at 50% 0%,
-    rgba(37, 99, 235, 0.18),
-    rgba(30, 58, 138, 0.08) 45%,
+    rgba(37, 99, 235, 0.08),
+    rgba(30, 58, 138, 0.04) 45%,
     transparent 70%
   );
   opacity: 0;
@@ -138,13 +138,12 @@
 .golden-shimmer-container:hover {
   border: none !important;
   outline: none !important;
-  box-shadow: 0 8px 32px -4px rgba(30, 58, 138, 0.45),
-              0 0 24px 2px rgba(37, 99, 235, 0.35),
-              0 0 45px 6px rgba(29, 78, 216, 0.22) !important;
+  box-shadow: 0 6px 20px -4px rgba(30, 58, 138, 0.22),
+              0 0 16px 1px rgba(37, 99, 235, 0.16) !important;
 }
 
 .golden-shimmer-container:hover::after {
-  opacity: 0.55; /* Soft ambient surface dark light glow */
+  opacity: 0.35; /* Soft 35% opacity on surface glow */
 }
 
 

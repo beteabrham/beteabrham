@@ -100,7 +100,7 @@ export default function ServiceDetailModal({
 
       {/* Horizontal Popup Window - Transparent Frosted Glass */}
       <div className="relative w-full max-w-5xl bg-neutral-950/45 border border-white/15 rounded-2xl shadow-2xl flex flex-col overflow-hidden z-10 backdrop-blur-2xl ring-1 ring-white/10">
-        
+
         {/* Top Header & Horizontal Service Selector Tabs */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 px-4 sm:px-6 py-3 border-b border-white/10 bg-white/[0.04] backdrop-blur-md shrink-0">
           {/* Header Identity */}
@@ -126,11 +126,10 @@ export default function ServiceDetailModal({
                 <button
                   key={s.id}
                   onClick={() => setCurrentIndex(idx)}
-                  className={`text-xs px-3 py-1.5 rounded-lg whitespace-nowrap transition-all duration-200 cursor-pointer ${
-                    isActive
+                  className={`text-xs px-3 py-1.5 rounded-lg whitespace-nowrap transition-all duration-200 cursor-pointer ${isActive
                       ? "bg-white text-neutral-950 font-semibold shadow-xs golden-shimmer-btn"
                       : "text-neutral-300 hover:text-white hover:bg-white/10 border border-white/10"
-                  }`}
+                    }`}
                 >
                   <span>{s.title.split("&")[0].trim()}</span>
                 </button>
@@ -151,7 +150,7 @@ export default function ServiceDetailModal({
         {/* Modal Main Content: Perfectly Balanced, Unscrollable 2-Column Split */}
         <div className="p-4 sm:p-5 md:p-6 overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
-            
+
             {/* Left Column (Overview, Metrics, Tools, CTA) - 5 cols */}
             <div className="lg:col-span-5 flex flex-col justify-between space-y-4">
               <div className="space-y-2">
@@ -228,7 +227,7 @@ export default function ServiceDetailModal({
 
             {/* Right Column (Deliverables & Execution Roadmap) - 7 cols */}
             <div className="lg:col-span-7 flex flex-col justify-between space-y-4 lg:border-l lg:border-white/10 lg:pl-6">
-              
+
               {/* Deliverables Section - 2 Column Grid to fit cleanly */}
               <div className="space-y-2.5">
                 <div className="flex items-center gap-1.5 text-xs font-mono text-neutral-400 uppercase tracking-wider">

@@ -8,6 +8,7 @@ import GraphicsShowcaseModal from "@/components/GraphicsShowcaseModal";
 import BrandUiShowcaseModal from "@/components/BrandUiShowcaseModal";
 import GrowthEngineShowcaseModal from "@/components/GrowthEngineShowcaseModal";
 import GrowthEngineAnalyticsPreview from "@/components/GrowthEngineAnalyticsPreview";
+import BrandUiPreview from "@/components/BrandUiPreview";
 
 function GithubIcon({ className = "w-3 h-3" }: { className?: string }) {
   return (
@@ -292,25 +293,13 @@ function ProjectItemRow({
     );
   }
 
-  // SPECIAL ROW: Fresh Cave Web Design & UI System (Show only the mockup web design, no extra elements, sharp straight corners)
+  // SPECIAL ROW: Fresh Cave Web Design & UI System (Interactive UI Mockup with screenshot elements, Services & Capabilities styling, and blue glow)
   if (project.id === "brand-ui-system") {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14 items-center py-10 border-b border-neutral-200/50 dark:border-neutral-800/60 last:border-b-0">
-        {/* Mockup Preview: Show only the mockup web design without adding anything */}
+        {/* Interactive Web UI Mockup Preview */}
         <div className={`w-full ${isEven ? "order-1 md:order-1" : "order-1 md:order-2"}`}>
-          <div
-            onClick={() => onOpenBrandUiShowcase()}
-            className="aspect-[4/3] w-full relative cursor-pointer overflow-hidden rounded-none"
-          >
-            <Image
-              src="/brand-ui/fresh-cave-dark-mockup.jpg"
-              alt="Fresh Cave Web Design Mockup"
-              fill
-              sizes="(max-width: 768px) 100vw, 560px"
-              className="object-cover hover:scale-105 transition-transform duration-300 rounded-none"
-              priority
-            />
-          </div>
+          <BrandUiPreview onOpenShowcase={(id) => onOpenBrandUiShowcase(id)} />
         </div>
 
         {/* Headline & Description Column: Beside the images, clean neutral text, no blue hover */}
@@ -367,7 +356,7 @@ function ProjectItemRow({
               <span>Open Showcase Popup</span>
             </button>
             <span className="text-xs font-mono text-neutral-400">
-              13 Images
+              12 Interface Screens
             </span>
           </div>
         </div>

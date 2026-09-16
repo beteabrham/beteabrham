@@ -126,7 +126,7 @@ export default function Experience() {
               <span>Education</span>
             </div>
 
-            <div className="p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/30 golden-shimmer-container">
+            <div className="p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/30">
               <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
                 <h4 className="text-sm font-semibold text-neutral-900 dark:text-white">
                   {personalInfo.educationDetails.institution}

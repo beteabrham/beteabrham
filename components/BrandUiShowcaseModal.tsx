@@ -11,7 +11,10 @@ import {
   Layers,
   Tag,
   Palette,
+  Box,
+  Sparkles,
 } from "lucide-react";
+import BrandUiShowcase3dMockup from "./BrandUiShowcase3dMockup";
 
 interface BrandUiShowcaseModalProps {
   isOpen: boolean;

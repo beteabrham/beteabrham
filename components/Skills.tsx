@@ -52,11 +52,8 @@ export default function Skills() {
               aria-label={`View full details for ${service.title}`}
               className="group flex flex-col justify-between rounded-xl p-6 bg-white dark:bg-neutral-900/70 hover:bg-neutral-50 dark:hover:bg-neutral-900/90 transition-all duration-300 min-h-[340px] shadow-xs cursor-pointer hover:-translate-y-1 hover:shadow-lg active:translate-y-0 golden-shimmer-container"
             >
-              {/* Top Row: Index & Interactive Detail Pill */}
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-mono text-neutral-400 dark:text-neutral-500">
-                  {service.number}
-                </span>
+              {/* Top Row: Interactive Detail Pill */}
+              <div className="flex items-center justify-end">
                 <span className="inline-flex items-center gap-1 text-[11px] font-mono text-neutral-400 dark:text-neutral-500 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors">
                   <span>Details</span>
                   <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

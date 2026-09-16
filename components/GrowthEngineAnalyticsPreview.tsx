@@ -19,29 +19,7 @@ export default function GrowthEngineAnalyticsPreview({
 }: GrowthEngineAnalyticsPreviewProps) {
   return (
     <div className="w-full select-none space-y-2.5">
-      {/* 1. Top Minimalist Telemetry Bar */}
-      <div className="flex items-center justify-between text-[11px] font-mono pb-1 border-b border-neutral-200/80 dark:border-neutral-800 text-neutral-500 dark:text-neutral-400">
-        <div className="flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-neutral-900 dark:bg-white animate-pulse" />
-          <span className="uppercase tracking-widest text-neutral-900 dark:text-white font-medium text-[10px]">
-            Telemetry Engine
-          </span>
-          <span className="text-neutral-400 dark:text-neutral-600">•</span>
-          <span className="text-neutral-500 dark:text-neutral-400 truncate text-[10px]">ICE — &quot;MESTAWET&quot; EP</span>
-        </div>
-
-        <button
-          type="button"
-          onClick={() => onOpenShowcase()}
-          className="inline-flex items-center gap-1 text-[10px] text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors cursor-pointer group"
-          title="Inspect verified source screenshots"
-        >
-          <span>6 Source Screenshots</span>
-          <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-        </button>
-      </div>
-
-      {/* 2. Hero Stream Container (Matches Services & Capabilities Container + Blue Glow Effect) */}
+      {/* 1. Hero Stream Container (Matches Services & Capabilities Container + Blue Glow Effect) */}
       <div
         onClick={() => onOpenShowcase("growth-engine-streaming-telemetry")}
         className="golden-shimmer-container group rounded-xl p-3.5 sm:p-4 bg-white dark:bg-neutral-900/70 hover:bg-neutral-50 dark:hover:bg-neutral-900/90 transition-all duration-300 shadow-xs hover:-translate-y-1 active:translate-y-0 cursor-pointer relative overflow-hidden"

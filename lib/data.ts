@@ -428,7 +428,7 @@ export const projectsData: ProjectItem[] = [
       "A comprehensive web application interface and design system crafted for Fresh Cave music distribution. Features high-contrast dark visual aesthetics, direct DSP pipelines, artist spotlight modules (Atlas Nova), verified studio directories, and royalty split engines. Click to explore all 12 interface screens.",
     tags: ["Web Design", "UI/UX", "Figma", "Design Systems", "Fresh Cave", "Isometric Mockup"],
     liveUrl: "#work",
-    image: "/brand-ui/fresh-cave-dark-mockup.jpg",
+    image: "/brand-ui/Screenshot 2026-09-16 204227.png",
     featured: true,
   },
   {

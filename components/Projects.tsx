@@ -509,6 +509,8 @@ export default function Projects() {
   const [selectedGraphicId, setSelectedGraphicId] = useState<string | undefined>(undefined);
   const [isBrandUiShowcaseOpen, setIsBrandUiShowcaseOpen] = useState(false);
   const [selectedBrandUiId, setSelectedBrandUiId] = useState<string | undefined>(undefined);
+  const [isGrowthEngineShowcaseOpen, setIsGrowthEngineShowcaseOpen] = useState(false);
+  const [selectedGrowthEngineId, setSelectedGrowthEngineId] = useState<string | undefined>(undefined);
 
   const displayedProjects =
     activeTab === "featured"
@@ -523,6 +525,11 @@ export default function Projects() {
   const handleOpenBrandUiShowcase = (id?: string) => {
     setSelectedBrandUiId(id);
     setIsBrandUiShowcaseOpen(true);
+  };
+
+  const handleOpenGrowthEngineShowcase = (id?: string) => {
+    setSelectedGrowthEngineId(id);
+    setIsGrowthEngineShowcaseOpen(true);
   };
 
   return (
@@ -575,6 +582,7 @@ export default function Projects() {
               index={index}
               onOpenShowcase={handleOpenShowcase}
               onOpenBrandUiShowcase={handleOpenBrandUiShowcase}
+              onOpenGrowthEngineShowcase={handleOpenGrowthEngineShowcase}
             />
           ))}
         </div>
@@ -598,6 +606,16 @@ export default function Projects() {
           setSelectedBrandUiId(undefined);
         }}
         initialItemId={selectedBrandUiId}
+      />
+
+      {/* Search & Digital Growth Engine Showcase Modal */}
+      <GrowthEngineShowcaseModal
+        isOpen={isGrowthEngineShowcaseOpen}
+        onClose={() => {
+          setIsGrowthEngineShowcaseOpen(false);
+          setSelectedGrowthEngineId(undefined);
+        }}
+        initialItemId={selectedGrowthEngineId}
       />
     </section>
   );

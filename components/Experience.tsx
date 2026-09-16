@@ -257,10 +257,9 @@ export default function Experience() {
                           </span>
                         </div>
                         <span
-                          className={`inline-flex items-center gap-1 text-[11px] text-neutral-500 dark:text-neutral-400 transition-colors ${brand.verifiedColor}`}
+                          className={`inline-flex items-center text-neutral-400 dark:text-neutral-500 transition-colors ${brand.verifiedColor}`}
                         >
-                          <span>Verified</span>
-                          <ExternalLink className="w-3 h-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                          <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                         </span>
                       </div>
                       <h5 className="text-xs font-semibold text-neutral-800 dark:text-neutral-200 group-hover:text-neutral-950 dark:group-hover:text-white leading-snug transition-colors">

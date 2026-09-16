@@ -264,5 +264,6 @@ export default function BrandUiPreview({ onOpenShowcase }: BrandUiPreviewProps) 
         </div>
       </div>
     </div>
-  );
+  </div>
+);
 }

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { projectsData } from "@/lib/data";
-import { ExternalLink, Maximize2 } from "lucide-react";
+import { ExternalLink, Maximize2, TrendingUp, Layout, Share2 } from "lucide-react";
 import GraphicsShowcaseModal from "@/components/GraphicsShowcaseModal";
 
 function GithubIcon({ className = "w-3 h-3" }: { className?: string }) {
@@ -17,12 +17,6 @@ function GithubIcon({ className = "w-3 h-3" }: { className?: string }) {
     </svg>
   );
 }
-
-const standardProjectImages: Record<string, string> = {
-  "growth-engine": "/graphics work/15.png",
-  "brand-ui-system": "/graphics work/lele-baltena-brand-suite.jpg",
-  "performance-marketing": "/graphics work/10_20240502_215444_0009.png",
-};
 
 interface ProjectItemRowProps {
   project: (typeof projectsData)[0];

@@ -120,17 +120,17 @@ export default function GraphicsShowcaseModal({
       aria-labelledby="showcase-modal-title"
       className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 animate-in fade-in duration-200"
     >
-      {/* Heavy Blurred Backdrop */}
+      {/* Blurred Translucent Backdrop */}
       <div
         onClick={onClose}
-        className="fixed inset-0 bg-black/85 backdrop-blur-xl transition-opacity"
+        className="fixed inset-0 bg-black/40 backdrop-blur-xl transition-opacity"
         aria-hidden="true"
       />
 
-      {/* Main Glassmorphic Modal Window */}
-      <div className="relative w-full max-w-5xl max-h-[92vh] sm:max-h-[90vh] bg-neutral-950/95 border border-neutral-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden z-10 backdrop-blur-2xl ring-1 ring-white/10">
+      {/* Main Transparent Blurred Glassmorphic Modal Window */}
+      <div className="relative w-full max-w-5xl max-h-[92vh] sm:max-h-[90vh] bg-neutral-950/45 border border-white/15 rounded-2xl shadow-2xl flex flex-col overflow-hidden z-10 backdrop-blur-2xl ring-1 ring-white/10">
         {/* Top Header Bar */}
-        <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-neutral-800/80 bg-neutral-900/60 shrink-0">
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-white/10 bg-white/[0.04] backdrop-blur-md shrink-0">
           <div className="flex items-center gap-2.5 min-w-0">
             <div className="w-7 h-7 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center shrink-0">
               <Palette className="w-3.5 h-3.5 text-neutral-200" />
@@ -164,9 +164,9 @@ export default function GraphicsShowcaseModal({
         </div>
 
         {/* Category Filters Bar */}
-        <div className="flex items-center gap-1.5 px-4 sm:px-6 py-2.5 overflow-x-auto border-b border-neutral-800/50 bg-neutral-900/30 text-xs shrink-0">
-          <span className="text-[11px] font-mono text-neutral-400 uppercase tracking-wider mr-1 shrink-0 flex items-center gap-1">
-            <Layers className="w-3 h-3" /> Filter:
+        <div className="flex items-center gap-1.5 px-4 sm:px-6 py-2.5 overflow-x-auto border-b border-white/10 bg-white/[0.02] backdrop-blur-sm text-xs shrink-0">
+          <span className="text-[11px] font-mono text-neutral-300 uppercase tracking-wider mr-1 shrink-0 flex items-center gap-1">
+            <Layers className="w-3 h-3 text-neutral-400" /> Filter:
           </span>
           {CATEGORIES.map((cat) => {
             const count =
@@ -183,15 +183,15 @@ export default function GraphicsShowcaseModal({
                   setCurrentIndex(0);
                 }}
                 className={`px-3 py-1 rounded-full text-xs font-medium transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 cursor-pointer ${isSelected
-                  ? "bg-white text-neutral-950 font-semibold shadow-xs golden-shimmer-btn"
-                  : "text-neutral-400 hover:text-white hover:bg-neutral-800/70"
+                  ? "bg-white text-neutral-950 font-semibold shadow-xs"
+                  : "text-neutral-300 hover:text-white hover:bg-white/10"
                   }`}
               >
                 <span>{cat}</span>
                 <span
                   className={`text-[10px] font-mono rounded-full px-1.5 py-0.2 ${isSelected
                     ? "bg-neutral-900 text-white"
-                    : "bg-neutral-800 text-neutral-400"
+                    : "bg-white/10 text-neutral-300"
                     }`}
                 >
                   {count}
@@ -201,15 +201,15 @@ export default function GraphicsShowcaseModal({
           })}
         </div>
 
-        {/* Spotlight Showcase Canvas */}
-        <div className="relative flex-1 min-h-0 bg-neutral-950 flex items-center justify-center p-3 sm:p-5 overflow-hidden">
-          {/* Subtle Stage Gradient Glow - Lower Opacity Dark Light Blue Ambiance */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(37,99,235,0.035),transparent_70%)] pointer-events-none" />
+        {/* Spotlight Showcase Canvas (Transparent with subtle ambiance) */}
+        <div className="relative flex-1 min-h-0 bg-transparent flex items-center justify-center p-3 sm:p-5 overflow-hidden">
+          {/* Subtle Stage Gradient Glow */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(37,99,235,0.06),transparent_70%)] pointer-events-none" />
 
           {/* Active Image Stage with Dynamic Viewport Fitting */}
           <div className="relative w-full h-full flex items-center justify-center min-h-0">
             <div
-              className="relative transition-all duration-300 flex items-center justify-center rounded-xl overflow-hidden bg-neutral-900/40 shadow-2xl golden-shimmer-container"
+              className="relative transition-all duration-300 flex items-center justify-center rounded-xl overflow-hidden bg-black/20 backdrop-blur-sm border border-white/10 shadow-2xl"
               style={{
                 width:
                   activeItem.aspect === "banner"
@@ -248,7 +248,7 @@ export default function GraphicsShowcaseModal({
           <button
             onClick={handlePrev}
             aria-label="Previous image"
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-neutral-900/90 hover:bg-neutral-800 text-neutral-300 hover:text-white border border-neutral-700/80 shadow-lg flex items-center justify-center transition-all hover:scale-105 backdrop-blur-md focus:outline-hidden cursor-pointer"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/40 hover:bg-black/70 text-neutral-200 hover:text-white border border-white/20 shadow-lg flex items-center justify-center transition-all hover:scale-105 backdrop-blur-md focus:outline-hidden cursor-pointer"
           >
             <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
@@ -257,21 +257,21 @@ export default function GraphicsShowcaseModal({
           <button
             onClick={handleNext}
             aria-label="Next image"
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-neutral-900/90 hover:bg-neutral-800 text-neutral-300 hover:text-white border border-neutral-700/80 shadow-lg flex items-center justify-center transition-all hover:scale-105 backdrop-blur-md focus:outline-hidden cursor-pointer"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/40 hover:bg-black/70 text-neutral-200 hover:text-white border border-white/20 shadow-lg flex items-center justify-center transition-all hover:scale-105 backdrop-blur-md focus:outline-hidden cursor-pointer"
           >
             <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
         </div>
 
-        {/* Info & Metadata Panel */}
-        <div className="px-4 sm:px-6 py-2.5 sm:py-3 border-t border-neutral-800/80 bg-neutral-900/80 shrink-0">
+        {/* Info & Metadata Panel (Transparent & Blurred) */}
+        <div className="px-4 sm:px-6 py-2.5 sm:py-3 border-t border-white/10 bg-white/[0.04] backdrop-blur-md shrink-0">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
             <div className="space-y-0.5 min-w-0">
               <div className="flex items-center gap-2 flex-wrap">
                 <span className="text-xs font-semibold text-white tracking-tight truncate max-w-xs sm:max-w-md">
                   {activeItem.title}
                 </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-sm bg-neutral-800 text-neutral-300 border border-neutral-700/60 shrink-0">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-sm bg-white/10 text-neutral-200 border border-white/10 shrink-0">
                   {activeItem.client}
                 </span>
                 {activeItem.year && (
@@ -280,7 +280,7 @@ export default function GraphicsShowcaseModal({
                   </span>
                 )}
               </div>
-              <p className="text-xs text-neutral-400 max-w-3xl leading-relaxed line-clamp-1 sm:line-clamp-2">
+              <p className="text-xs text-neutral-300 max-w-3xl leading-relaxed line-clamp-1 sm:line-clamp-2">
                 {activeItem.description}
               </p>
             </div>
@@ -291,7 +291,7 @@ export default function GraphicsShowcaseModal({
                 {activeItem.tags.slice(0, 3).map((tag, idx) => (
                   <span
                     key={idx}
-                    className="inline-flex items-center gap-1 text-[10px] font-mono px-2 py-0.5 rounded-sm bg-neutral-800/80 text-neutral-300 border border-neutral-700/40"
+                    className="inline-flex items-center gap-1 text-[10px] font-mono px-2 py-0.5 rounded-sm bg-white/10 text-neutral-300 border border-white/10"
                   >
                     <Tag className="w-2.5 h-2.5 text-neutral-400" />
                     {tag}
@@ -302,7 +302,7 @@ export default function GraphicsShowcaseModal({
                 href={encodeURI(activeItem.image)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-[11px] font-medium text-neutral-300 hover:text-white px-2.5 py-1 rounded-md bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 transition-colors shrink-0"
+                className="inline-flex items-center gap-1 text-[11px] font-medium text-white px-2.5 py-1 rounded-md bg-white/10 hover:bg-white/20 border border-white/15 transition-colors shrink-0"
               >
                 <span>Full Asset</span>
                 <ExternalLink className="w-3 h-3" />
@@ -311,8 +311,8 @@ export default function GraphicsShowcaseModal({
           </div>
         </div>
 
-        {/* Thumbnail Selector Strip */}
-        <div className="px-4 sm:px-6 py-2 bg-neutral-950 border-t border-neutral-800/60 overflow-x-auto shrink-0">
+        {/* Thumbnail Selector Strip (Transparent & Blurred) */}
+        <div className="px-4 sm:px-6 py-2 bg-black/30 backdrop-blur-md border-t border-white/10 overflow-x-auto shrink-0">
           <div className="flex items-center gap-2 min-w-max pb-0.5">
             {filteredItems.map((item, idx) => {
               const isCurrent = idx === currentIndex;

@@ -21,18 +21,13 @@ export default function Skills() {
     >
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
-        <div className="mb-8 md:mb-10 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
-          <div>
-            <h2 className="text-lg md:text-xl font-normal tracking-tight text-neutral-950 dark:text-neutral-50">
-              Services &amp; Capabilities
-            </h2>
-            <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
-              Select any capability to open its comprehensive horizontal detail view
-            </p>
-          </div>
-          <span className="text-xs font-mono text-neutral-400 hidden sm:inline-block">
-            4 Core Offerings
-          </span>
+        <div className="mb-8 md:mb-10">
+          <h2 className="text-lg md:text-xl font-normal tracking-tight text-neutral-950 dark:text-neutral-50">
+            Services &amp; Capabilities
+          </h2>
+          <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
+            Select any capability to open its comprehensive horizontal detail view
+          </p>
         </div>
 
         {/* 4-Column Grid - Frameless Glowing Containers */}

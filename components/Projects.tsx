@@ -105,7 +105,7 @@ export default function Projects() {
                         onClick={() => handleOpenShowcase()}
                         className="aspect-[4/3] rounded-xl bg-neutral-950 border border-neutral-800/80 overflow-hidden relative group-hover:border-neutral-700 transition-colors cursor-pointer shadow-inner"
                       >
-                        {/* 4 Edge-to-Edge Filled 1:1 Images Grid */}
+                        {/* 4 Edge-to-Edge Filled 1:1 Images Grid (Only Images at rest) */}
                         <div className="grid grid-cols-2 grid-rows-2 w-full h-full gap-1 p-1 bg-neutral-950">
                           {/* Tile 1: Pattern 33 Logo (1:1) */}
                           <div
@@ -133,7 +133,8 @@ export default function Projects() {
                               className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
                             />
                             <div className="absolute inset-0 bg-black/15 group-hover/tile:bg-transparent transition-colors" />
-                            <span className="absolute bottom-1.5 left-1.5 text-[9px] font-mono font-medium px-1.5 py-0.5 rounded-xs bg-black/75 text-neutral-200 backdrop-blur-md border border-white/10">
+                            {/* Individual badge fades in only on tile hover */}
+                            <span className="absolute top-1.5 left-1.5 text-[9px] font-mono font-medium px-1.5 py-0.5 rounded-xs bg-black/80 text-neutral-200 backdrop-blur-md border border-white/10 opacity-0 group-hover/tile:opacity-100 transition-opacity pointer-events-none">
                               Logo
                             </span>
                           </div>
@@ -164,7 +165,7 @@ export default function Projects() {
                               className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
                             />
                             <div className="absolute inset-0 bg-black/15 group-hover/tile:bg-transparent transition-colors" />
-                            <span className="absolute bottom-1.5 left-1.5 text-[9px] font-mono font-medium px-1.5 py-0.5 rounded-xs bg-black/75 text-neutral-200 backdrop-blur-md border border-white/10">
+                            <span className="absolute top-1.5 left-1.5 text-[9px] font-mono font-medium px-1.5 py-0.5 rounded-xs bg-black/80 text-neutral-200 backdrop-blur-md border border-white/10 opacity-0 group-hover/tile:opacity-100 transition-opacity pointer-events-none">
                               Branding
                             </span>
                           </div>
@@ -195,7 +196,7 @@ export default function Projects() {
                               className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
                             />
                             <div className="absolute inset-0 bg-black/15 group-hover/tile:bg-transparent transition-colors" />
-                            <span className="absolute bottom-1.5 left-1.5 text-[9px] font-mono font-medium px-1.5 py-0.5 rounded-xs bg-black/75 text-neutral-200 backdrop-blur-md border border-white/10">
+                            <span className="absolute top-1.5 left-1.5 text-[9px] font-mono font-medium px-1.5 py-0.5 rounded-xs bg-black/80 text-neutral-200 backdrop-blur-md border border-white/10 opacity-0 group-hover/tile:opacity-100 transition-opacity pointer-events-none">
                               Ad Campaign
                             </span>
                           </div>
@@ -226,18 +227,62 @@ export default function Projects() {
                               className="object-cover group-hover/tile:scale-105 transition-transform duration-300"
                             />
                             <div className="absolute inset-0 bg-black/15 group-hover/tile:bg-transparent transition-colors" />
-                            <span className="absolute bottom-1.5 left-1.5 text-[9px] font-mono font-medium px-1.5 py-0.5 rounded-xs bg-black/75 text-neutral-200 backdrop-blur-md border border-white/10">
+                            <span className="absolute top-1.5 left-1.5 text-[9px] font-mono font-medium px-1.5 py-0.5 rounded-xs bg-black/80 text-neutral-200 backdrop-blur-md border border-white/10 opacity-0 group-hover/tile:opacity-100 transition-opacity pointer-events-none">
                               Commercial
                             </span>
                           </div>
                         </div>
 
-                        {/* Floating Top Header Badge */}
-                        <div className="absolute top-2.5 left-2.5 flex items-center pointer-events-none">
-                          <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-neutral-950/85 text-neutral-200 backdrop-blur-md border border-white/15 shadow-sm">
-                            <Palette className="w-3 h-3 text-neutral-300" />
-                            <span>Graphic &amp; Logo Designs</span>
-                          </span>
+                        {/* Slide-Up Overlay: slides up on hover over description or container */}
+                        <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 bg-gradient-to-t from-neutral-950 via-neutral-950/95 to-neutral-950/80 backdrop-blur-md border-t border-blue-500/30 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out pointer-events-none group-hover:pointer-events-auto flex flex-col justify-end gap-2 z-20">
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="text-[10px] font-mono uppercase tracking-wider text-blue-400 font-medium">
+                              {project.category}
+                            </span>
+                            <span className="text-[10px] font-mono text-neutral-400">
+                              22 Showcase Works
+                            </span>
+                          </div>
+
+                          <h4 className="text-base sm:text-lg font-semibold text-white tracking-tight">
+                            {project.title}
+                          </h4>
+
+                          {project.tagline && (
+                            <p className="text-xs text-neutral-300 line-clamp-2 leading-relaxed">
+                              {project.tagline}
+                            </p>
+                          )}
+
+                          {/* Quick Stack Tags */}
+                          <div className="flex flex-wrap gap-1 pt-0.5">
+                            {project.tags.map((tag, tIdx) => (
+                              <span
+                                key={tIdx}
+                                className="text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded-sm bg-white/10 text-neutral-200 border border-white/10"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+
+                          {/* Interactive Launch Button */}
+                          <div className="pt-2 flex items-center justify-between border-t border-white/10 mt-0.5">
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleOpenShowcase();
+                              }}
+                              className="inline-flex items-center gap-1.5 text-xs font-semibold text-white hover:text-blue-400 transition-colors cursor-pointer"
+                            >
+                              <Maximize2 className="w-3.5 h-3.5" />
+                              <span>Open Showcase Popup</span>
+                            </button>
+                            <span className="text-[10px] font-mono text-neutral-400">
+                              12 Preview Images
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -346,16 +391,69 @@ export default function Projects() {
                         </h4>
                       </div>
 
-                      {/* Stack Tags Preview */}
-                      <div className="flex flex-wrap gap-1">
-                        {project.tags.slice(0, 3).map((tag, tIdx) => (
-                          <span
-                            key={tIdx}
-                            className="text-[9px] font-mono px-1.5 py-0.5 rounded-sm bg-white/80 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300 border border-neutral-200/40 dark:border-neutral-700/40"
-                          >
-                            {tag}
+                      {/* Resting minimal indicator */}
+                      <div className="flex items-center justify-between text-[10px] font-mono text-neutral-400">
+                        <span>Interactive App Preview</span>
+                        <span className="text-blue-500/80 group-hover:opacity-0 transition-opacity">Hover for details</span>
+                      </div>
+
+                      {/* Slide-Up Overlay: slides up on hover over description or container */}
+                      <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 bg-gradient-to-t from-neutral-950 via-neutral-950/95 to-neutral-950/85 backdrop-blur-md border-t border-blue-500/30 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out pointer-events-none group-hover:pointer-events-auto flex flex-col justify-end gap-2 z-20">
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="text-[10px] font-mono uppercase tracking-wider text-blue-400 font-medium">
+                            {project.category}
                           </span>
-                        ))}
+                          <div className="flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                            <span className="text-[10px] font-mono text-neutral-300">Live Active</span>
+                          </div>
+                        </div>
+
+                        <h4 className="text-base sm:text-lg font-semibold text-white tracking-tight">
+                          {project.title}
+                        </h4>
+
+                        {project.tagline && (
+                          <p className="text-xs text-neutral-300 line-clamp-2 leading-relaxed">
+                            {project.tagline}
+                          </p>
+                        )}
+
+                        {/* Quick Stack Tags */}
+                        <div className="flex flex-wrap gap-1 pt-0.5">
+                          {project.tags.map((tag, tIdx) => (
+                            <span
+                              key={tIdx}
+                              className="text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded-sm bg-white/10 text-neutral-200 border border-white/10"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+
+                        {/* Direct Action Links */}
+                        <div className="pt-2 flex items-center justify-between border-t border-white/10 mt-0.5">
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-white hover:text-blue-400 transition-colors"
+                          >
+                            <span>View Project Details</span>
+                            <ExternalLink className="w-3.5 h-3.5" />
+                          </a>
+                          {project.githubUrl && (
+                            <a
+                              href={project.githubUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 text-[11px] font-mono text-neutral-300 hover:text-white transition-colors"
+                            >
+                              <GithubIcon className="w-3 h-3" />
+                              <span>Source</span>
+                            </a>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>

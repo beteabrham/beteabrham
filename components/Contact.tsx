@@ -149,7 +149,7 @@ export default function Contact() {
 
           <div className="flex flex-col justify-between space-y-6">
             {/* Availability & Location Card */}
-            <div className="p-5 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-white dark:bg-neutral-950 shadow-2xs space-y-4 golden-shimmer-container">
+            <div className="p-5 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-white dark:bg-neutral-950 shadow-2xs space-y-4">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-medium text-neutral-900 dark:text-white">
                   Current Availability
@@ -170,7 +170,7 @@ export default function Contact() {
             </div>
 
             {/* Direct Inquiries Note */}
-            <div className="p-5 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-white/70 dark:bg-neutral-950/60 shadow-2xs golden-shimmer-container">
+            <div className="p-5 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-white/70 dark:bg-neutral-950/60 shadow-2xs">
               <h4 className="text-xs font-semibold text-neutral-900 dark:text-white uppercase tracking-wider mb-1">
                 Direct Inquiries
               </h4>

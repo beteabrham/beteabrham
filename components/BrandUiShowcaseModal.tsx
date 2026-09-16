@@ -210,14 +210,23 @@ export default function BrandUiShowcaseModal({
             <div className="relative flex-1 min-h-[300px] sm:min-h-[420px] bg-transparent flex items-center justify-center p-2 overflow-hidden">
               {/* Active Image Stage: DIRECT IMAGE, PERFECT NATURAL FIT SIZE */}
               <div className="relative w-full h-full max-h-[58vh] sm:max-h-[64vh] flex items-center justify-center min-h-0">
-                <Image
-                  src={encodeURI(activeItem.image)}
-                  alt={activeItem.title}
-                  fill
-                  sizes="(max-width: 1024px) 90vw, 880px"
-                  className="object-contain transition-transform duration-300"
-                  priority
-                />
+                {activeItem.id === "fresh-cave-mockup-overview" ? (
+                  <BrandUiShowcase3dMockup
+                    onSelectScreen={(screenId) => {
+                      const idx = filteredItems.findIndex((i) => i.id === screenId);
+                      if (idx !== -1) setCurrentIndex(idx);
+                    }}
+                  />
+                ) : (
+                  <Image
+                    src={encodeURI(activeItem.image)}
+                    alt={activeItem.title}
+                    fill
+                    sizes="(max-width: 1024px) 90vw, 880px"
+                    className="object-contain transition-transform duration-300"
+                    priority
+                  />
+                )}
               </div>
 
               {/* Previous Button */}

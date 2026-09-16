@@ -226,7 +226,7 @@ function ProjectItemRow({
             className="aspect-[4/3] w-full relative cursor-pointer overflow-hidden rounded-none"
           >
             <Image
-              src="/Brand%20%26%20UI/fresh-cave-ui-mockup.jpg"
+              src="/brand-ui/fresh-cave-dark-mockup.jpg"
               alt="Fresh Cave Web Design Mockup"
               fill
               sizes="(max-width: 768px) 100vw, 560px"

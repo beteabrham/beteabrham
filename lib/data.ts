@@ -417,7 +417,7 @@ export const projectsData: ProjectItem[] = [
       "A comprehensive web application interface and design system crafted for Fresh Cave music distribution. Features high-contrast dark visual aesthetics, direct DSP pipelines, artist spotlight modules (Atlas Nova), verified studio directories, and royalty split engines. Click to explore all 12 interface screens.",
     tags: ["Web Design", "UI/UX", "Figma", "Design Systems", "Fresh Cave", "Isometric Mockup"],
     liveUrl: "#work",
-    image: "/Brand%20%26%20UI/fresh-cave-ui-mockup.jpg",
+    image: "/brand-ui/fresh-cave-dark-mockup.jpg",
     featured: true,
   },
   {
@@ -743,7 +743,7 @@ export const brandUiScreenshotsData: BrandUiScreenshotItem[] = [
     client: "Fresh Cave",
     year: "2024",
     description: "Multi-screen 3D isometric perspective showcase presenting Fresh Cave's dark mode visual identity, navigation, hero banner, DSP streaming telemetry, artist spotlight cards, and tier pricing matrix.",
-    image: "/Brand & UI/fresh-cave-ui-mockup.jpg",
+    image: "/brand-ui/fresh-cave-dark-mockup.jpg",
     tags: ["3D Mockup", "Isometric Presentation", "Design System", "Figma", "Web Design"],
   },
   {
@@ -753,7 +753,7 @@ export const brandUiScreenshotsData: BrandUiScreenshotItem[] = [
     client: "Fresh Cave",
     year: "2024",
     description: "High-impact dark landing interface featuring bold typography, minimalist navigation ('ROSTER', 'DSP ACCESS', 'PRODUCERS', 'RATES'), call-to-action triggers, and active drop announcements.",
-    image: "/Brand & UI/Screenshot 2026-09-16 204227.png",
+    image: "/brand-ui/Screenshot 2026-09-16 204227.png",
     tags: ["Hero Section", "Typography", "Dark UI", "Navigation", "Call to Action"],
   },
   {
@@ -763,7 +763,7 @@ export const brandUiScreenshotsData: BrandUiScreenshotItem[] = [
     client: "Fresh Cave",
     year: "2024",
     description: "Global delivery architecture to Spotify, Apple Music, Vevo distribution, YouTube Official Artist Channel (OAC) synchronization, and smart rights lock.",
-    image: "/Brand & UI/Screenshot 2026-09-16 204257.png",
+    image: "/brand-ui/Screenshot 2026-09-16 204257.png",
     tags: ["DSP Distribution", "Streaming APIs", "Lossless Audio", "Rights Management"],
   },
   {
@@ -773,7 +773,7 @@ export const brandUiScreenshotsData: BrandUiScreenshotItem[] = [
     client: "Fresh Cave",
     year: "2024",
     description: "Artist advocacy metrics displaying 70% master ownership retention, rapid 48-hour DSP delivery turnaround, and real-time royalty sync across worldwide territories.",
-    image: "/Brand & UI/Screenshot 2026-09-16 204315.png",
+    image: "/brand-ui/Screenshot 2026-09-16 204315.png",
     tags: ["Artist Rights", "Master Ownership", "Speed & Delivery", "Global Sync"],
   },
   {
@@ -783,7 +783,7 @@ export const brandUiScreenshotsData: BrandUiScreenshotItem[] = [
     client: "Fresh Cave",
     year: "2024",
     description: "Interactive single and album release scheduling calendar with automated pre-save links, countdown timers, and DSP batch ingestion triggers.",
-    image: "/Brand & UI/Screenshot 2026-09-16 204344.png",
+    image: "/brand-ui/Screenshot 2026-09-16 204344.png",
     tags: ["Release Calendar", "Pre-Save", "Drop Countdown", "Automation"],
   },
   {
@@ -793,7 +793,7 @@ export const brandUiScreenshotsData: BrandUiScreenshotItem[] = [
     client: "Fresh Cave",
     year: "2024",
     description: "Live dashboard monitoring global stream volume, geographic heatmaps, playlist placements, listener demographics, and viral track momentum.",
-    image: "/Brand & UI/Screenshot 2026-09-16 204405.png",
+    image: "/brand-ui/Screenshot 2026-09-16 204405.png",
     tags: ["Analytics", "Data Dashboard", "Stream Counts", "Audience Insights"],
   },
   {
@@ -803,7 +803,7 @@ export const brandUiScreenshotsData: BrandUiScreenshotItem[] = [
     client: "Fresh Cave",
     year: "2024",
     description: "Automated multi-collaborator royalty split calculations, transparent payout reporting, and direct deposits for producers, vocalists, and engineers.",
-    image: "/Brand & UI/Screenshot 2026-09-16 204441.png",
+    image: "/brand-ui/Screenshot 2026-09-16 204441.png",
     tags: ["Royalty Splits", "Revenue Share", "Financial Dashboard", "Payout Engine"],
   },
   {
@@ -813,7 +813,7 @@ export const brandUiScreenshotsData: BrandUiScreenshotItem[] = [
     client: "Fresh Cave",
     year: "2024",
     description: "End-to-end ISRC and UPC code generation, lossless audio upload validation, explicit tagging, and high-resolution cover artwork compliance checker.",
-    image: "/Brand & UI/Screenshot 2026-09-16 204509.png",
+    image: "/brand-ui/Screenshot 2026-09-16 204509.png",
     tags: ["Metadata", "Catalog Manager", "ISRC & UPC", "Asset Quality"],
   },
   {
@@ -823,7 +823,7 @@ export const brandUiScreenshotsData: BrandUiScreenshotItem[] = [
     client: "Fresh Cave",
     year: "2024",
     description: "Curated directory of industry-vetted mixing & mastering engineers, certified acoustic recording studios, and sample pack creators.",
-    image: "/Brand & UI/Screenshot 2026-09-16 204538.png",
+    image: "/brand-ui/Screenshot 2026-09-16 204538.png",
     tags: ["Studio Directory", "Producer Line", "Sound Engineers", "Acoustic Spaces"],
   },
   {
@@ -833,7 +833,7 @@ export const brandUiScreenshotsData: BrandUiScreenshotItem[] = [
     client: "Fresh Cave",
     year: "2024",
     description: "Streamlined booking interface displaying studio hardware gear (analog boards, tube mics), calendar availability slots, engineer rates, and instant checkout.",
-    image: "/Brand & UI/Screenshot 2026-09-16 204558.png",
+    image: "/brand-ui/Screenshot 2026-09-16 204558.png",
     tags: ["Booking Flow", "Studio Gear", "Calendar Scheduler", "Checkout"],
   },
   {
@@ -843,7 +843,7 @@ export const brandUiScreenshotsData: BrandUiScreenshotItem[] = [
     client: "Fresh Cave",
     year: "2024",
     description: "One-stop sync licensing catalog for film, television, gaming, and commercial trailer placement with pre-cleared master and publishing rights.",
-    image: "/Brand & UI/Screenshot 2026-09-16 204612.png",
+    image: "/brand-ui/Screenshot 2026-09-16 204612.png",
     tags: ["Sync Licensing", "Film & TV", "Media Placements", "Publishing Rights"],
   },
   {
@@ -853,7 +853,7 @@ export const brandUiScreenshotsData: BrandUiScreenshotItem[] = [
     client: "Fresh Cave",
     year: "2024",
     description: "Artist showcase landing module featuring Atlas Nova's catalog, monthly active listeners, latest music video releases, upcoming tour schedules, and merch store.",
-    image: "/Brand & UI/Screenshot 2026-09-16 204634.png",
+    image: "/brand-ui/Screenshot 2026-09-16 204634.png",
     tags: ["Artist Spotlight", "Atlas Nova", "Roster", "Media Player", "Tour Dates"],
   },
   {
@@ -863,7 +863,7 @@ export const brandUiScreenshotsData: BrandUiScreenshotItem[] = [
     client: "Fresh Cave",
     year: "2024",
     description: "Transparent distribution tiers comparing Independent Artist, Breakthrough Pro, and Label Enterprise packages with automated payout frequencies.",
-    image: "/Brand & UI/Screenshot 2026-09-16 204657.png",
+    image: "/brand-ui/Screenshot 2026-09-16 204657.png",
     tags: ["Pricing Matrix", "Membership Tiers", "Enterprise Plans", "Distribution Fees"],
   },
 ];

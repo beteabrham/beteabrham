@@ -17,6 +17,11 @@ export interface ServiceItem {
   tagline: string;
   description: string;
   skills: string[];
+  overview?: string;
+  deliverables?: string[];
+  process?: { step: string; title: string; desc: string }[];
+  metrics?: { label: string; value: string }[];
+  tools?: string[];
 }
 
 export interface ExperienceItem {

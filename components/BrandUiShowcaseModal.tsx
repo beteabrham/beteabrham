@@ -131,8 +131,8 @@ export default function BrandUiShowcaseModal({
         aria-hidden="true"
       />
 
-      {/* Main Showcase Viewport Wrapper (Transparent, no container box) */}
-      <div className="relative w-full max-w-6xl max-h-[95vh] bg-transparent border-none shadow-none ring-0 flex flex-col z-10">
+      {/* Main Showcase Viewport Wrapper (Transparent, no container box, responsive height fit) */}
+      <div className="relative w-full max-w-6xl h-[92vh] max-h-[860px] min-h-[480px] bg-transparent border-none shadow-none ring-0 flex flex-col z-10">
         {/* Top Header Bar (Transparent, only texts and close button) */}
         <div className="flex items-center justify-between px-3 sm:px-6 py-2.5 bg-transparent border-none shrink-0">
           <div className="flex items-center gap-2.5 min-w-0">
@@ -203,18 +203,18 @@ export default function BrandUiShowcaseModal({
         </div>
 
         {/* Main Showcase Split: Left (Image Canvas & Metadata) + Right (Mini Images List) */}
-        <div className="relative flex-1 min-h-0 flex flex-col md:flex-row gap-6 lg:gap-8 items-stretch px-3 sm:px-6 py-2 overflow-hidden">
+        <div className="relative flex-1 min-h-0 flex flex-col md:flex-row gap-4 sm:gap-6 lg:gap-8 items-stretch px-3 sm:px-6 py-1 sm:py-2 overflow-hidden">
           {/* Left Column: Image Canvas & Info Panel */}
-          <div className="flex-1 flex flex-col min-h-0 min-w-0 justify-between">
-            {/* Showcase Canvas (Completely transparent, NO container holding the image) */}
+          <div className="flex-1 flex flex-col min-h-0 min-w-0 justify-between gap-2">
+            {/* Showcase Canvas (Completely transparent, flexible container holding the image) */}
             <div
-              className={`relative flex-1 min-h-[300px] sm:min-h-[420px] bg-transparent flex items-center justify-center p-2 ${
+              className={`relative flex-1 min-h-0 w-full bg-transparent flex items-center justify-center p-1 sm:p-2 ${
                 activeItem.id === "fresh-cave-mockup-overview" ? "overflow-visible" : "overflow-hidden"
               }`}
             >
               {/* Active Image Stage: DIRECT IMAGE, PERFECT NATURAL FIT SIZE */}
               <div
-                className={`relative w-full h-full max-h-[58vh] sm:max-h-[66vh] flex items-center justify-center min-h-0 ${
+                className={`relative w-full h-full flex items-center justify-center min-h-0 ${
                   activeItem.id === "fresh-cave-mockup-overview" ? "overflow-visible" : "overflow-hidden"
                 }`}
               >
@@ -230,7 +230,7 @@ export default function BrandUiShowcaseModal({
                     src={encodeURI(activeItem.image)}
                     alt={activeItem.title}
                     fill
-                    sizes="(max-width: 1024px) 90vw, 880px"
+                    sizes="(max-width: 1024px) 90vw, 920px"
                     className="object-contain transition-transform duration-300"
                     priority
                   />
@@ -241,7 +241,7 @@ export default function BrandUiShowcaseModal({
               <button
                 onClick={handlePrev}
                 aria-label="Previous image"
-                className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 shadow-lg flex items-center justify-center transition-all hover:scale-105 backdrop-blur-md focus:outline-hidden cursor-pointer"
+                className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/70 text-white border border-white/20 shadow-lg flex items-center justify-center transition-all hover:scale-105 backdrop-blur-md focus:outline-hidden cursor-pointer"
               >
                 <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
@@ -250,14 +250,14 @@ export default function BrandUiShowcaseModal({
               <button
                 onClick={handleNext}
                 aria-label="Next image"
-                className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 shadow-lg flex items-center justify-center transition-all hover:scale-105 backdrop-blur-md focus:outline-hidden cursor-pointer"
+                className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/70 text-white border border-white/20 shadow-lg flex items-center justify-center transition-all hover:scale-105 backdrop-blur-md focus:outline-hidden cursor-pointer"
               >
                 <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </div>
 
             {/* Info & Metadata Panel (Transparent, only texts and buttons) */}
-            <div className="py-2 bg-transparent border-none shrink-0">
+            <div className="pt-2 pb-1 bg-transparent border-none shrink-0">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
                 <div className="space-y-0.5 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap">
@@ -312,8 +312,8 @@ export default function BrandUiShowcaseModal({
             </div>
           </div>
 
-          {/* Right Side: Mini Images List (Vertical only, no horizontal scroll, no glow, no containers) */}
-          <div className="w-20 sm:w-24 lg:w-28 shrink-0 flex flex-col gap-4 sm:gap-5 overflow-y-auto overflow-x-hidden py-2 pr-3 sm:pr-4 pl-1 max-h-[calc(95vh-160px)] [scrollbar-width:thin] [scrollbar-color:rgba(255,255,255,0.2)_transparent]">
+          {/* Right Side: Mini Images List (Responsive horizontal bar on mobile, vertical sidebar on desktop) */}
+          <div className="w-full md:w-20 lg:w-24 shrink-0 flex flex-row md:flex-col gap-3 sm:gap-4 overflow-x-auto md:overflow-y-auto overflow-y-hidden md:overflow-x-hidden py-2 px-1 md:pr-2 md:pl-1 h-14 sm:h-16 md:h-full [scrollbar-width:thin] [scrollbar-color:rgba(255,255,255,0.2)_transparent]">
             {filteredItems.map((item, idx) => {
               const isCurrent = idx === currentIndex;
               return (
@@ -322,10 +322,10 @@ export default function BrandUiShowcaseModal({
                   onClick={() => setCurrentIndex(idx)}
                   ref={(el) => {
                     if (isCurrent && el) {
-                      el.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                      el.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
                     }
                   }}
-                  className={`group relative w-full aspect-square transition-all duration-200 shrink-0 focus:outline-hidden cursor-pointer flex items-center justify-center bg-transparent border-0 ring-0 shadow-none ${
+                  className={`group relative w-12 h-12 sm:w-14 sm:h-14 md:w-full md:aspect-square transition-all duration-200 shrink-0 focus:outline-hidden cursor-pointer flex items-center justify-center bg-transparent border-0 ring-0 shadow-none ${
                     isCurrent
                       ? "opacity-100 scale-105"
                       : "opacity-40 hover:opacity-80"

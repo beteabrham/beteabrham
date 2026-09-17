@@ -32,9 +32,9 @@ export default function BrandUiShowcase3dMockup({
       {/* 
         Responsive Scaler Wrapper:
         Scales the 3D isometric stage smoothly across mobile, tablet, and desktop viewports 
-        without interfering with the 3D rotation transform.
+        without interfering with the 3D rotation transform, ensuring zero clipping and comfortable fit.
       */}
-      <div className="w-full max-w-[780px] flex items-center justify-center origin-center scale-[0.68] xs:scale-[0.76] sm:scale-[0.84] md:scale-[0.90] lg:scale-[0.96] xl:scale-[1] transition-transform duration-300">
+      <div className="w-full max-w-[780px] flex items-center justify-center origin-center scale-[0.52] xs:scale-[0.60] sm:scale-[0.70] md:scale-[0.78] lg:scale-[0.84] xl:scale-[0.90] transition-transform duration-300">
         {/* 
           3D Isometric Stage:
           Proportionally fitted with balanced column heights (226px each) and calibrated tilt

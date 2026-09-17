@@ -408,18 +408,6 @@ export const projectsData: ProjectItem[] = [
     featured: true,
   },
   {
-    id: "growth-engine",
-    title: "Search & Digital Growth Engine — ICE 'Mestawet' EP",
-    category: "SEO & Digital Growth Strategy",
-    tagline: "Google SERP #1 ranking, AI Overview integration & multi-DSP streaming conversion",
-    description:
-      "A complete digital growth engine engineered for artist ICE's 'Mestawet' EP release. Secured #1 organic Google search ranking with featured AI Overview citation, captured 7,460+ multi-platform streams, and scaled audience reach to 5,035 international listeners across the Netherlands, Belgium, and Europe. Click to inspect live analytics and SERP audits.",
-    tags: ["SEO/SEM", "Google AI Overview", "Streaming Analytics", "Audience Growth", "Digital Strategy", "Conversion Funnel"],
-    liveUrl: "#work",
-    image: "/growth-engine/growth-engine-analysis-mockup.jpg",
-    featured: true,
-  },
-  {
     id: "brand-ui-system",
     title: "Fresh Cave — Music Web Platform & UI Design",
     category: "Web & UI/UX Design",
@@ -429,6 +417,18 @@ export const projectsData: ProjectItem[] = [
     tags: ["Web Design", "UI/UX", "Figma", "Design Systems", "Fresh Cave", "Isometric Mockup"],
     liveUrl: "#work",
     image: "/brand-ui/Screenshot 2026-09-16 204227.png",
+    featured: true,
+  },
+  {
+    id: "growth-engine",
+    title: "Search & Digital Growth Engine — ICE 'Mestawet' EP",
+    category: "SEO & Digital Growth Strategy",
+    tagline: "Google SERP #1 ranking, AI Overview integration & multi-DSP streaming conversion",
+    description:
+      "A complete digital growth engine engineered for artist ICE's 'Mestawet' EP release. Secured #1 organic Google search ranking with featured AI Overview citation, captured 7,460+ multi-platform streams, and scaled audience reach to 5,035 international listeners across the Netherlands, Belgium, and Europe. Click to inspect live analytics and SERP audits.",
+    tags: ["SEO/SEM", "Google AI Overview", "Streaming Analytics", "Audience Growth", "Digital Strategy", "Conversion Funnel"],
+    liveUrl: "#work",
+    image: "/growth-engine/growth-engine-analysis-mockup.jpg",
     featured: true,
   },
 ];

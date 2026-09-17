@@ -165,12 +165,9 @@ function ProjectItemRow({
           }`}
         >
           <div className="space-y-3">
-            <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
               <span className="inline-flex items-center text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 border border-neutral-200/60 dark:border-neutral-700/50">
                 {project.category}
-              </span>
-              <span className="text-xs font-mono text-neutral-400 dark:text-neutral-500">
-                0{index + 1}
               </span>
             </div>
 
@@ -238,12 +235,9 @@ function ProjectItemRow({
           }`}
         >
           <div className="space-y-3">
-            <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
               <span className="inline-flex items-center text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 border border-neutral-200/60 dark:border-neutral-700/50">
                 {project.category}
-              </span>
-              <span className="text-xs font-mono text-neutral-400 dark:text-neutral-500">
-                0{index + 1}
               </span>
             </div>
 
@@ -309,12 +303,9 @@ function ProjectItemRow({
           }`}
         >
           <div className="space-y-3">
-            <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
               <span className="inline-flex items-center text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 border border-neutral-200/60 dark:border-neutral-700/50">
                 {project.category}
-              </span>
-              <span className="text-xs font-mono text-neutral-400 dark:text-neutral-500">
-                0{index + 1}
               </span>
             </div>
 
@@ -416,12 +407,9 @@ function ProjectItemRow({
         }`}
       >
         <div className="space-y-3">
-          <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
             <span className="inline-flex items-center text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 border border-neutral-200/60 dark:border-neutral-700/50">
               {project.category}
-            </span>
-            <span className="text-xs font-mono text-neutral-400 dark:text-neutral-500">
-              0{index + 1}
             </span>
           </div>
 
